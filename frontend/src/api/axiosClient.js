@@ -5,7 +5,7 @@ import axios from 'axios';
  * Strictly configurable via VITE_API_BASE_URL environment variable.
  * Defaults to port 5000 in development.
  */
-const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 // Normalize base URL: strip trailing slashes and remove optional '/api' suffix
 // so that endpoints starting with '/api' never result in duplicate '/api/api'
 const API_BASE_URL = rawBaseUrl.trim().replace(/\/+$/, '').replace(/\/api$/, '');
