@@ -5,7 +5,8 @@ import axios from 'axios';
  * React communicates exclusively with Express (port 5000), NEVER with the internal FastAPI microservice.
  * Service credentials (AI_SERVICE_TOKEN) and FastAPI location (FASTAPI_BASE_URL) remain private to the backend.
  */
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = rawBaseUrl.trim().replace(/\/+$/, '').replace(/\/api$/, '');
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
