@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>BookSphere Patron Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#dc2626", "surface-dim": "#d4d6dc", "inverse-on-surface": "#e8eaf0", "on-secondary-container": "#585a68", "on-error-container": "#991b1b", "surface-container-high": "#dcdee4", "secondary-fixed-dim": "#b8baca", "background": "#e8eaf0", "surface-tint": "#6366f1", "on-surface-variant": "#585a68", "on-primary-fixed-variant": "#4338ca", "on-tertiary-fixed": "#2e1065", "on-surface": "#2e3040", "on-background": "#2e3040", "surface-bright": "#edeef4", "inverse-surface": "#2e3040", "secondary-fixed": "#d8dae6", "outline": "#8a8c9a", "secondary": "#6c6e7e", "tertiary-fixed-dim": "#c4b5fd", "on-error": "#ffffff", "tertiary": "#7c3aed", "on-primary": "#ffffff", "tertiary-fixed": "#ede9fe", "tertiary-container": "#a78bfa", "surface-container-lowest": "#f0f2f8", "primary": "#6366f1", "primary-fixed": "#e0e2ff", "on-tertiary-fixed-variant": "#5b21b6", "surface-container-low": "#e5e7ed", "surface": "#e8eaf0", "primary-container": "#818cf8", "on-secondary-fixed-variant": "#404252", "surface-variant": "#dcdee4", "outline-variant": "#d0d2dc", "surface-container": "#e2e4ea", "surface-container-highest": "#d6d8de", "primary-fixed-dim": "#a5b4fc", "on-secondary": "#ffffff", "inverse-primary": "#a5b4fc", "secondary-container": "#d8dae6", "on-primary-fixed": "#1e1b4b", "error-container": "fee2e2", "on-tertiary-container": "#3b1f63", "on-tertiary": "#ffffff", "on-secondary-fixed": "#1a1b26", "on-primary-container": "#e0e2ff" }, "borderRadius": { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" }, "spacing": {}, "fontFamily": { "headline": [ "Plus Jakarta Sans" ], "display": [ "Plus Jakarta Sans" ], "body": [ "Plus Jakarta Sans" ], "label": [ "Plus Jakarta Sans" ] }, "fontSize": {} } } }</script></head><body class="bg-background font-body text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><div class="flex items-center gap-3 cursor-pointer"><div class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center shadow-[4px_4px_10px_rgba(0,0,0,0.08),-4px_-4px_10px_rgba(255,255,255,0.7)] text-primary"><span class="material-symbols-outlined text-[22px]">auto_stories</span></div><span class="text-lg font-headline font-semibold tracking-tight text-on-surface">BookSphere</span></div><nav class="hidden xl:flex items-center gap-1.5" data-active-classes="bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] font-semibold"><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="dashboard" href="#">Dashboard</a><a aria-current="page" class="px-3.5 py-2 rounded-xl transition-all bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] font-semibold" data-path="explore-directory" href="#">Explore Directory</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="my-books" href="#">My Books</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="favorites" href="#">Favorites</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="recommendations" href="#">Recommendations</a></nav></div><div class="hidden md:flex items-center flex-1 max-w-xs mx-4"><div class="w-full flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)]"><span class="material-symbols-outlined text-outline text-[20px]">search</span><input class="w-full bg-transparent border-0 outline-none text-xs text-on-surface placeholder:text-outline font-medium" placeholder="Search catalog..." type="text"/><kbd class="px-1.5 py-0.5 text-[10px] rounded bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.6)] text-on-surface-variant font-mono">⌘K</kbd></div></div><div class="flex items-center gap-3.5"><div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.6)] cursor-pointer"><span class="material-symbols-outlined text-primary text-[18px]">book</span><span class="text-xs font-semibold text-on-surface">3 Active Loans</span></div><button class="relative w-9 h-9 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.6)] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-2.5 pl-1 cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="text-xs font-semibold text-on-surface leading-tight">Eleanor Vance</span><span class="text-[11px] text-on-surface-variant leading-tight">Patron</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Interactive Toast Notification Component -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3.5 px-5 py-4 rounded-xl bg-surface text-on-surface shadow-[6px_6px_16px_rgba(0,0,0,0.1),-6px_-6px_16px_rgba(255,255,255,0.7)]" id="actionToast">
+<div class="w-8 h-8 rounded-lg bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] flex items-center justify-center text-primary" id="toastIconContainer">
+<span class="material-symbols-outlined text-[18px]" id="toastIcon">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-semibold tracking-tight text-on-surface" id="toastTitle">Loan Confirmed</span>
+<span class="text-[11px] text-on-surface-variant" id="toastMessage">Your loan has been added to My Books.</span>
+</div>
+</div>
+<!-- Loan Confirmation Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/30 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" id="borrowModal">
+<div class="relative w-full max-w-lg p-8 rounded-2xl bg-surface shadow-[10px_10px_30px_rgba(0,0,0,0.15),-10px_-10px_30px_rgba(255,255,255,0.8)] text-on-surface">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface flex items-center justify-center text-primary shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="material-symbols-outlined text-[20px]">cloud_download</span>
+</div>
+<div>
+<h3 class="text-base font-headline font-semibold text-on-surface">Confirm Instant Borrowing</h3>
+<p class="text-xs text-on-surface-variant">Instant 21-day digital circulation lease</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center justify-center text-on-surface-variant transition-all" id="closeModalBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="mt-4 p-4 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-4">
+<div class="w-12 h-16 rounded-md bg-surface shadow-[2px_2px_6px_rgba(0,0,0,0.1),-2px_-2px_6px_rgba(255,255,255,0.8)] overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Cover of The Architecture of Silence showing austere minimalist brutalist stone arches with dramatic shaft of morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa3wlJnt1Hz8uJ3qrncmPH24pF5ZhPeri6iL9_3KcOOqlyzddTnRoaUt2dbzYo9BD5hJDMufe76kkgjW-8mHkbnzS_qR5YVvfNQ1Ozb5oD8f-ARUXafggm0kkCVwoJrlDzsmYPmhwWOTMAo5ZOMHVHcOSCkwJ6E-CUcsXkHkXZQinzVCgxgALGNn46c3amTzU2ks46RBejj40zF6ZIs6ZhvtnpcSgJlFWxSTkirUTmnnI-3sFS_XGPkA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-semibold text-on-surface truncate">The Architecture of Silence</span>
+<span class="text-[11px] text-on-surface-variant">Helena Vance • EPUB Edition</span>
+<div class="flex items-center gap-2 mt-1.5 text-[10px] text-primary font-medium">
+<span class="material-symbols-outlined text-[14px]">event_repeat</span>
+<span>Due in 21 days (Automatic Renewal if available)</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex flex-col gap-3">
+<label class="text-xs font-semibold text-on-surface">Delivery Format</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] flex items-center gap-2.5 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[18px]">menu_book</span>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-on-surface">Web Browser / App</span>
+<span class="text-[10px] text-on-surface-variant">Read immediately</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] flex items-center gap-2.5 cursor-pointer hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">devices</span>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-on-surface">E-Ink Sync</span>
+<span class="text-[10px] text-on-surface-variant">Kindle / Kobo Push</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-end gap-3">
+<button class="px-5 py-2.5 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] text-xs font-medium text-on-surface-variant hover:text-on-surface transition-all" id="cancelModalBtn">Cancel</button>
+<button class="px-6 py-2.5 rounded-xl bg-surface shadow-[5px_5px_12px_rgba(0,0,0,0.08),-5px_-5px_12px_rgba(255,255,255,0.8)] text-primary hover:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold flex items-center gap-2 transition-all" id="confirmLoanBtn">
+<span class="material-symbols-outlined text-[16px]">check</span>
+          Confirm Instant Lease
+        </button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col gap-10">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-on-surface-variant">
+<a class="hover:text-on-surface transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[15px]">home</span>
+        Catalog
+      </a>
+<span class="text-outline text-[12px] font-mono">/</span>
+<a class="hover:text-on-surface transition-colors" href="#">Literary Fiction</a>
+<span class="text-outline text-[12px] font-mono">/</span>
+<a class="hover:text-on-surface transition-colors" href="#">Contemporary European</a>
+<span class="text-outline text-[12px] font-mono">/</span>
+<span class="text-on-surface font-semibold truncate max-w-xs sm:max-w-md">The Architecture of Silence</span>
+</nav>
+<!-- Main Book Showcase: Asymmetric Two-Column Split Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-start">
+<!-- LEFT COLUMN: 3D Cover, Formats, Primary Actions (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<!-- 3D Rendered Book Canvas Box -->
+<div class="relative w-full rounded-2xl p-8 sm:p-10 bg-surface shadow-[8px_8px_20px_rgba(0,0,0,0.08),-8px_-8px_20px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Ambient Gradient Glow -->
+<div class="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-tertiary/10 blur-3xl pointer-events-none"></div>
+<!-- Quick Badges Overlay -->
+<div class="w-full flex items-center justify-between mb-6 z-10">
+<span class="px-3 py-1 rounded-full text-[11px] font-semibold text-primary bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Folio Prize Winner
+            </span>
+<span class="text-[11px] font-mono tracking-wider uppercase text-on-surface-variant">Archival #8841-A</span>
+</div>
+<!-- 3D Book Display with Ribbon & Spine Illusion -->
+<div class="relative group cursor-pointer my-4 py-2">
+<!-- Book Shadow Bed -->
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-6 bg-on-surface/15 blur-xl rounded-full"></div>
+<!-- Bookmark Ribbon -->
+<div class="absolute -top-3 right-8 w-5 h-20 bg-primary z-30 shadow-[2px_2px_6px_rgba(0,0,0,0.2)] rounded-t-sm flex flex-col justify-end">
+<div class="w-full border-b-[8px] border-l-[10px] border-r-[10px] border-b-transparent border-l-primary border-r-primary"></div>
+</div>
+<!-- Book Body Container -->
+<div class="relative w-56 sm:w-64 h-80 sm:h-92 rounded-r-xl rounded-l-sm bg-surface overflow-hidden shadow-[14px_14px_28px_rgba(0,0,0,0.18),-6px_-6px_16px_rgba(255,255,255,0.7)] transition-transform duration-500 ease-out group-hover:-translate-y-2 group-hover:rotate-1">
+<!-- Spine fold highlight strip -->
+<div class="absolute top-0 bottom-0 left-0 w-4 bg-gradient-to-r from-on-surface/30 via-transparent to-transparent z-20 pointer-events-none"></div>
+<div class="absolute top-0 bottom-0 left-2 w-0.5 bg-surface/40 z-20 pointer-events-none"></div>
+<!-- High-Fidelity Book Cover Art -->
+<img class="w-full h-full object-cover" data-alt="Monolithic architectural concrete sanctuary with dramatic slit window casting serene volumetric light across quiet reading alcove in cool grey and muted indigo tones with paper texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9YgjCJOAZxHuSzRlpw20R5kDkWEcQpKaRp6gyOYWWMQAWYD6Nooba79nu6gVprefZs8i57Krahs-8Zc8lm7tXmmuSxp07QAILcGowa6sfcUcrdf1fXy0bRlzK9Sc7lLKcbiof8GEVQ1lO3-HDmpQKD0izqTbpP_kX5XYI4RBNLweEmYy4aETiyf2v7lPeZHh5TG_tP81t-Q0WeYBzckMxy_E4Vb6zX_z_FbEGjh9NeUKY3-BCdD2lDg"/>
+<!-- Editorial Cover Typography Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent p-5 flex flex-col justify-between text-on-primary pointer-events-none">
+<div class="pt-2">
+<p class="text-[9px] uppercase tracking-[0.25em] font-semibold text-primary-fixed-dim">BookSphere Archival Series</p>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-lg leading-tight tracking-tight text-surface-bright">The Architecture of Silence</h4>
+<p class="text-[11px] text-surface-container-high mt-1 font-medium">Helena Vance</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive 3D Orbit / Preview Hint -->
+<div class="mt-6 flex items-center gap-4 text-xs text-on-surface-variant z-10">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] hover:text-primary transition-all text-[11px] font-medium">
+<span class="material-symbols-outlined text-[15px]">fullscreen</span>
+              Inspect Cover
+            </button>
+<span class="text-outline">•</span>
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-primary text-[15px]">check_circle</span>
+              High-Res Texture Verified
+            </span>
+</div>
+</div>
+<!-- Format Selector Pills -->
+<div class="flex flex-col gap-3">
+<label class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant px-1">Select Lending Format</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="formatSelectorGroup">
+<!-- EPUB Format Pill (Active) -->
+<button class="format-pill active-pill p-3.5 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.07),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-left flex flex-col gap-1 transition-all" data-format="epub">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[18px]">tablet_mac</span>
+<span class="text-[10px] font-semibold text-primary px-1.5 py-0.5 rounded bg-surface shadow-[1px_1px_3px_rgba(0,0,0,0.05)]">Ready</span>
+</div>
+<span class="text-xs font-semibold text-on-surface mt-1">Digital EPUB</span>
+<span class="text-[10px] text-on-surface-variant">Instant Device Lease</span>
+</button>
+<!-- Audiobook Format Pill -->
+<button class="format-pill p-3.5 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] text-left flex flex-col gap-1 transition-all" data-format="audio">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">headphones</span>
+<span class="text-[10px] font-mono text-on-surface-variant">11h 20m</span>
+</div>
+<span class="text-xs font-semibold text-on-surface mt-1">Audiobook</span>
+<span class="text-[10px] text-on-surface-variant">Simon Vance Narrator</span>
+</button>
+<!-- Hardcover Copy Format Pill -->
+<button class="format-pill p-3.5 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] text-left flex flex-col gap-1 transition-all" data-format="hardcover">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">library_books</span>
+<span class="text-[10px] font-semibold text-on-surface-variant">1 on shelf</span>
+</div>
+<span class="text-xs font-semibold text-on-surface mt-1">Hardcover</span>
+<span class="text-[10px] text-on-surface-variant">Central Archival Desk</span>
+</button>
+</div>
+</div>
+<!-- Primary Action Card (Neomorphic Raised) -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.08),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col gap-5">
+<!-- Availability Gauge & Status -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between text-xs">
+<span class="flex items-center gap-2 font-semibold text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
+                Available Now
+              </span>
+<span class="text-on-surface-variant font-mono text-[11px]">6 of 8 Licenses Free</span>
+</div>
+<!-- Neomorphic Inset Progress Bar -->
+<div class="w-full h-2.5 rounded-full bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.08),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] overflow-hidden p-0.5">
+<div class="h-full bg-primary rounded-full transition-all duration-700" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Main CTA Buttons Group -->
+<div class="flex flex-col sm:flex-row items-center gap-3">
+<button class="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-surface shadow-[5px_5px_12px_rgba(0,0,0,0.08),-5px_-5px_12px_rgba(255,255,255,0.8)] hover:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-primary font-semibold text-sm flex items-center justify-center gap-2 transition-all" id="openBorrowModalBtn">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+<span>Borrow Instant Copy</span>
+</button>
+<button class="w-full sm:w-auto p-3.5 rounded-xl bg-surface shadow-[5px_5px_12px_rgba(0,0,0,0.08),-5px_-5px_12px_rgba(255,255,255,0.8)] hover:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-on-surface-variant hover:text-error flex items-center justify-center gap-2 transition-all" id="favoriteBtn">
+<span class="material-symbols-outlined text-[20px]" id="heartIcon">favorite</span>
+<span class="sm:hidden text-xs font-semibold">Wishlist</span>
+</button>
+</div>
+<!-- Secondary Action: Send Sample -->
+<div class="pt-2 border-t-0 flex items-center justify-between text-xs text-on-surface-variant">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-xs font-medium" id="sendSampleBtn">
+<span class="material-symbols-outlined text-[16px]">send_to_mobile</span>
+              Send Sample to E-Reader (Kindle / Kobo)
+            </button>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06),inset_-1px_-1px_3px_rgba(255,255,255,0.6)]">FREE PREVIEW</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Metadata, Editorial, Specs, TOC (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Header & Core Identity -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-lg bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-[11px] font-semibold text-primary">Contemporary Architecture • Solitude</span>
+<span class="text-xs text-on-surface-variant font-mono">1st Library Edition</span>
+</div>
+<h1 class="text-3xl sm:text-4xl xl:text-5xl font-headline font-semibold tracking-tight text-on-surface leading-[1.15]">
+            The Architecture of Silence
+          </h1>
+<p class="text-base sm:text-lg text-on-surface-variant font-normal leading-relaxed">
+            A Meditation on Space, Solitude, and Human Memory
+          </p>
+<!-- Author Micro-Profile Card -->
+<div class="mt-2 p-3.5 rounded-xl bg-surface shadow-[inset_3px_3px_7px_rgba(0,0,0,0.06),inset_-3px_-3px_7px_rgba(255,255,255,0.6)] flex items-center justify-between flex-wrap gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.08),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden p-0.5 shrink-0">
+<img class="w-full h-full object-cover rounded-full" data-alt="Quiet thoughtful portrait of female author Helena Vance wearing minimalist wool rollneck against soft architectural concrete studio backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTGTVI7u_33hmak2iTPBb_Hn_pMW7Q2ftL457_aSm5crIDYxhzUHOt_DqqP467TCfbcvefFs9H_ghlCqZ0gHV_s1DkFm00-fR2nrfPWuYRq4OgYnn3vkL0eCYLywTMhXZxPi_TYFp_LgiAT9kwiVSnvz_9jMQYINX3WEh2AQ2MW5QVBnYyspn81b8FqouLqo85FObvCuGhscPLYdx8N_5IALMBWZs0m7nO-mnNydWO9iLiRnSnPE-jNA"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-sm font-semibold text-on-surface">Helena Vance</span>
+<span class="material-symbols-outlined text-primary text-[15px]" title="BookSphere Featured Author">verified</span>
+</div>
+<span class="text-[11px] text-on-surface-variant">Winner of the 2023 Folio Prize • Architectural Historian</span>
+</div>
+</div>
+<a class="px-3.5 py-1.5 rounded-lg bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-xs font-semibold text-primary transition-all flex items-center gap-1.5" href="#">
+<span>Author Catalog</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Rating & Library Circulation Stats Bar -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<!-- Rating Stat -->
+<div class="p-4 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center text-center">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-base font-semibold text-on-surface font-headline">4.9</span>
+</div>
+<span class="text-[11px] text-on-surface-variant mt-0.5">1,840 patron reviews</span>
+</div>
+<!-- Page Count Stat -->
+<div class="p-4 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center text-center">
+<span class="text-base font-semibold text-on-surface font-headline">412</span>
+<span class="text-[11px] text-on-surface-variant mt-0.5">Printed pages</span>
+</div>
+<!-- Avg Read Time -->
+<div class="p-4 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center text-center">
+<span class="text-base font-semibold text-on-surface font-headline">6h 30m</span>
+<span class="text-[11px] text-on-surface-variant mt-0.5">Avg patron speed</span>
+</div>
+<!-- Completion Rate -->
+<div class="p-4 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center text-center">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="text-base font-semibold text-on-surface font-headline">99.4%</span>
+</div>
+<span class="text-[11px] text-on-surface-variant mt-0.5">Completion rate</span>
+</div>
+</div>
+<!-- Synopsis / Editorial Review -->
+<div class="p-6 sm:p-7 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h2 class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Editorial Synopsis &amp; Critiques</h2>
+<span class="text-xs text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+              BookSphere Selection
+            </span>
+</div>
+<div class="flex flex-col gap-3.5 text-xs sm:text-sm text-on-surface leading-relaxed">
+<p>
+              Set across the desolate basalt cliffs of northern Scandinavia and the forgotten archives of post-war Milan, <em>The Architecture of Silence</em> chronicles the quiet journey of Elias Thornton, a restoration architect tasked with documenting an abandoned brutalist monastery scheduled for demolition. What begins as an austere commission turns into an intimate archaeology of human grief and unvoiced reconciliation.
+            </p>
+<p>
+              Vance deploys an intoxicatingly precise prose style, treating the acoustic properties of vaulted concrete and the fading resonance of chapel spaces as living characters. The narrative moves back and forth through Elias’s private journals, deciphering not merely the blueprints of sacred stone, but the fragile emotional scaffolding left behind by its cloistered occupants.
+            </p>
+<p class="text-on-surface-variant italic pl-3 border-l-0 rounded bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] py-2.5 px-3">
+              “A masterclass in restraint. Helena Vance has produced an architectural cathedral of a novel—stately, piercingly quiet, and unforgettable in its profound respect for human inwardness.” 
+              <span class="block not-italic text-[11px] font-semibold text-on-surface mt-1">— The International Folio Review</span>
+</p>
+</div>
+</div>
+<!-- Specification / Archival Metadata Bento Grid -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col gap-4">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant">Archival Specifications</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold block">ISBN-13</span>
+<span class="font-mono text-on-surface font-medium text-xs mt-0.5 block">978-0-99214-412-8</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold block">Publisher</span>
+<span class="text-on-surface font-medium text-xs mt-0.5 block truncate">Atelier Folio Editions</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold block">Publication Date</span>
+<span class="text-on-surface font-medium text-xs mt-0.5 block">October 14, 2023</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold block">Edition Language</span>
+<span class="text-on-surface font-medium text-xs mt-0.5 block">English (British Standard)</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold block">Dewey Decimal</span>
+<span class="font-mono text-on-surface font-medium text-xs mt-0.5 block">823.92 V222a</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<span class="text-[10px] text-on-surface-variant uppercase font-semibold block">Digital File Size</span>
+<span class="font-mono text-on-surface font-medium text-xs mt-0.5 block">4.2 MB (Enhanced EPUB)</span>
+</div>
+</div>
+<!-- Metadata Tags -->
+<div class="pt-2 flex items-center flex-wrap gap-2">
+<span class="text-xs font-semibold text-on-surface-variant mr-1">Patron Subject Tags:</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.05),-2px_-2px_5px_rgba(255,255,255,0.6)] text-[11px] font-medium text-primary cursor-pointer hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] transition-all">#ArchitecturalFiction</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.05),-2px_-2px_5px_rgba(255,255,255,0.6)] text-[11px] font-medium text-primary cursor-pointer hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] transition-all">#Memory</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.05),-2px_-2px_5px_rgba(255,255,255,0.6)] text-[11px] font-medium text-primary cursor-pointer hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] transition-all">#ModernClassics</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.05),-2px_-2px_5px_rgba(255,255,255,0.6)] text-[11px] font-medium text-on-surface-variant cursor-pointer hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] transition-all">#ScandinavianSetting</span>
+</div>
+</div>
+<!-- Table of Contents Preview Accordion -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col gap-4">
+<div class="flex items-center justify-between cursor-pointer select-none" id="tocToggle">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">list_alt</span>
+<h3 class="text-sm font-semibold text-on-surface">Chapter Index &amp; Structure Preview (12 Chapters)</h3>
+</div>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] transition-transform duration-300" id="tocChevron">expand_more</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 pt-2 transition-all duration-300" id="tocContent">
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center justify-between text-xs">
+<div class="flex items-center gap-3">
+<span class="font-mono text-outline font-semibold">01</span>
+<span class="font-medium text-on-surface">Prelude: The Weight of Heavy Timber</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">pp. 9–42</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center justify-between text-xs">
+<div class="flex items-center gap-3">
+<span class="font-mono text-outline font-semibold">02</span>
+<span class="font-medium text-on-surface">Acoustics of the North Nave</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">pp. 43–86</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center justify-between text-xs">
+<div class="flex items-center gap-3">
+<span class="font-mono text-outline font-semibold">03</span>
+<span class="font-medium text-on-surface">The Milan Folios (1954–1958)</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">pp. 87–134</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center justify-between text-xs">
+<div class="flex items-center gap-3">
+<span class="font-mono text-outline font-semibold">04</span>
+<span class="font-medium text-on-surface">Resonance and Fracture</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">pp. 135–182</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center justify-between text-xs">
+<div class="flex items-center gap-3">
+<span class="font-mono text-outline font-semibold">05</span>
+<span class="font-medium text-on-surface">The Final Vault</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">pp. 183–230</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BELOW THE FOLD SECTION 1: Patron Critiques & Discussion Notes -->
+<section class="mt-4 flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-primary">Patron Community Feedback</span>
+<h2 class="text-2xl font-headline font-semibold text-on-surface tracking-tight mt-1">Patron Critiques &amp; Discussion Notes</h2>
+</div>
+<button class="self-start sm:self-auto px-4 py-2 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-xs font-semibold text-primary transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">rate_review</span>
+<span>Submit Patron Critique</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Review Card 1 -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col justify-between gap-5">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] flex items-center justify-center text-xs font-semibold text-primary">
+                  MR
+                </div>
+<div>
+<h4 class="text-xs font-semibold text-on-surface">Marcus R.</h4>
+<span class="text-[10px] text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Verified Patron Borrower
+                  </span>
+</div>
+</div>
+<div class="flex text-primary text-[14px]">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-xs text-on-surface leading-relaxed">
+              “Read this in two sittings during a snowstorm. The way Vance describes light refracting across bare concrete gives you chills. It feels less like a book and more like entering an echo chamber of memory.”
+            </p>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-2 border-t-0">
+<span>Loaned 2 weeks ago</span>
+<button class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]">thumb_up</span>
+<span>42 found helpful</span>
+</button>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col justify-between gap-5">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] flex items-center justify-center text-xs font-semibold text-tertiary">
+                  SL
+                </div>
+<div>
+<h4 class="text-xs font-semibold text-on-surface">Dr. Sofia Lin</h4>
+<span class="text-[10px] text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Library Archival Fellow
+                  </span>
+</div>
+</div>
+<div class="flex text-primary text-[14px]">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-xs text-on-surface leading-relaxed">
+              “As someone who studies Scandinavian modernism, Vance’s architectural rigor is astonishing. The technical details regarding acoustic balance amplify the philosophical tension without ever becoming dry.”
+            </p>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-2 border-t-0">
+<span>Loaned 1 month ago</span>
+<button class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]">thumb_up</span>
+<span>89 found helpful</span>
+</button>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col justify-between gap-5">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] flex items-center justify-center text-xs font-semibold text-secondary">
+                  KA
+                </div>
+<div>
+<h4 class="text-xs font-semibold text-on-surface">Kareem Al-Sayed</h4>
+<span class="text-[10px] text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Verified Patron Borrower
+                  </span>
+</div>
+</div>
+<div class="flex text-primary text-[14px]">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]">star_half</span>
+</div>
+</div>
+<p class="text-xs text-on-surface leading-relaxed">
+              “Deliberate pacing that demands your complete presence. The audiobook narration by Simon Vance in particular elevates the interior monologues into pure poetry. Essential reading.”
+            </p>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-2 border-t-0">
+<span>Loaned 3 days ago</span>
+<button class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]">thumb_up</span>
+<span>17 found helpful</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- BELOW THE FOLD SECTION 2: Frequently Borrowed Together / Related Volumes -->
+<section class="mt-4 flex flex-col gap-6 mb-8">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-xs font-semibold uppercase tracking-wider text-primary">Algorithmic &amp; Curated Synergy</span>
+<h2 class="text-2xl font-headline font-semibold text-on-surface tracking-tight mt-1">Frequently Borrowed Together</h2>
+</div>
+<a class="text-xs font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>View Related Collection (14)</span>
+<span class="material-symbols-outlined text-[15px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Related Book 1 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col justify-between gap-4 transition-all duration-300 hover:-translate-y-1">
+<div class="flex flex-col gap-3">
+<div class="relative w-full h-44 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] overflow-hidden flex items-center justify-center p-2">
+<img class="w-28 h-40 object-cover rounded shadow-[4px_4px_10px_rgba(0,0,0,0.15)]" data-alt="Monochrome architectural photograph of an endless spiral staircase made of dark textured travertine marble descending into subterranean shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABDaE00fvRmPlQ8GvC7mY1QZIqaJCfORnEdCKTjoneirWmIepUwhxj4brYRlS4LQSRrQAEIyX-ERxBkzqD1sPoZ2DizEof_BNnN_jjUbE4Jw7XhV1_RTgdz9sOL3k5wMpSS-6QY89DJmaYVXhH0wnKQ5eMGQy96RTNTLXT9WGARnN7rjIbuPpxVoaGGrwqN8lX_t1aPjZCItoR-T2xdZrTpDM3I-TQqLSPQFzJ9_6KCznzUd-e__gisw"/>
+<span class="absolute top-3 right-3 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] text-primary">
+                EPUB
+              </span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-on-surface line-clamp-1">The Monolith Inhabitants</h4>
+<p class="text-[11px] text-on-surface-variant">Julian Sterling • 2021</p>
+<div class="flex items-center gap-1 mt-1 text-[11px] text-primary">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">4.8</span>
+<span class="text-on-surface-variant font-mono text-[10px]">(920)</span>
+</div>
+</div>
+</div>
+<button class="quick-borrow-btn w-full py-2 px-3 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-primary text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[15px]">add_circle</span>
+            Quick Borrow
+          </button>
+</div>
+<!-- Related Book 2 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col justify-between gap-4 transition-all duration-300 hover:-translate-y-1">
+<div class="flex flex-col gap-3">
+<div class="relative w-full h-44 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] overflow-hidden flex items-center justify-center p-2">
+<img class="w-28 h-40 object-cover rounded shadow-[4px_4px_10px_rgba(0,0,0,0.15)]" data-alt="Minimalist abstract architectural composition of geometric shadows and warm timber beams against muted sand-colored plaster" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv92aMJUxiObk--_k0v-DurV-EIQJkJuQKewIGuPX0baC6FfR-Ma9N0RrEBpRP8Ciuwwj5pj1VcwFVTfPkpCX82Bd8b4jLsHKRdyAlefquD3kZZcQRBlmjylHDOtcsaZwbrAL06ay68PxzgNnUN3rf0p6qH9uSZBdapE6oEHPUl1GKzH2HYorMKYJjkLRZL9-R0er06Nu64uRpPxK4X9HqkOyf8hrXpvYIKJokOhZdqzlWezUIxVTOaw"/>
+<span class="absolute top-3 right-3 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] text-on-surface-variant">
+                Audio
+              </span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-on-surface line-clamp-1">Structures of Solitude</h4>
+<p class="text-[11px] text-on-surface-variant">Claire Moreau • 2022</p>
+<div class="flex items-center gap-1 mt-1 text-[11px] text-primary">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">4.7</span>
+<span class="text-on-surface-variant font-mono text-[10px]">(640)</span>
+</div>
+</div>
+</div>
+<button class="quick-borrow-btn w-full py-2 px-3 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-primary text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[15px]">add_circle</span>
+            Quick Borrow
+          </button>
+</div>
+<!-- Related Book 3 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col justify-between gap-4 transition-all duration-300 hover:-translate-y-1">
+<div class="flex flex-col gap-3">
+<div class="relative w-full h-44 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] overflow-hidden flex items-center justify-center p-2">
+<img class="w-28 h-40 object-cover rounded shadow-[4px_4px_10px_rgba(0,0,0,0.15)]" data-alt="Subtle foggy lake landscape in Finnish wilderness with modern timber cabin edge framed by Nordic pine needles and soft morning mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjJwAVjAWtNMSg4dasLaSKg7XSK4cb7hsMlkorZIddwxszTIMugO167ekiQbXn0h7X0osTQwLgXk1P_D8GLbDep--R7FkDCBQ1J4keeGByovzXYpgFRBIHFXFhztz6mv3CvyeT6o_UQEOkrQR-XYhjaqSlmecWB1lPUz5wz4hS8L50G4k2Vtwc1XYFE-NtJgWdevFhir4RIWG7fGpb49HnwQIwbtI0Hd5F_aXVUBx0mXQbEArz574RZg"/>
+<span class="absolute top-3 right-3 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] text-primary">
+                EPUB
+              </span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-on-surface line-clamp-1">Echoes in Pale Stone</h4>
+<p class="text-[11px] text-on-surface-variant">Arto Nieminen • 2020</p>
+<div class="flex items-center gap-1 mt-1 text-[11px] text-primary">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">4.9</span>
+<span class="text-on-surface-variant font-mono text-[10px]">(1,112)</span>
+</div>
+</div>
+</div>
+<button class="quick-borrow-btn w-full py-2 px-3 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-primary text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[15px]">add_circle</span>
+            Quick Borrow
+          </button>
+</div>
+<!-- Related Book 4 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.7)] flex flex-col justify-between gap-4 transition-all duration-300 hover:-translate-y-1">
+<div class="flex flex-col gap-3">
+<div class="relative w-full h-44 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] overflow-hidden flex items-center justify-center p-2">
+<img class="w-28 h-40 object-cover rounded shadow-[4px_4px_10px_rgba(0,0,0,0.15)]" data-alt="Editorial book cover art showing an aerial view of an ancient forgotten stone labyrinth carved into a windswept Scottish cliff face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9q8STzhlrj2W_LunEZhvZCf7DbU5fLX_0rj_M4daWguprUsSkeM5UfOTidMVB7HHzS0MHj_TOaq4He7-yG5VOWq7uwsd72euQyY24c2w6kkmiG6bCg6B0066KnwzSMqZYpaFNuHlhopeEOuO4VIvM_og1uod_LXUaQNLRp0xTFBgkjM9uwg2kwoy5KRF3Ek1I3jDzJkwSmTAgTBwXnP3X6K2p-FOnoDUfyRzN_x6h9H7rszul1igzww"/>
+<span class="absolute top-3 right-3 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] text-on-surface-variant">
+                Central Branch
+              </span>
+</div>
+<div>
+<h4 class="text-xs font-semibold text-on-surface line-clamp-1">The Memory of Vaults</h4>
+<p class="text-[11px] text-on-surface-variant">Elisabeth Brandt • 2023</p>
+<div class="flex items-center gap-1 mt-1 text-[11px] text-primary">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">4.6</span>
+<span class="text-on-surface-variant font-mono text-[10px]">(488)</span>
+</div>
+</div>
+</div>
+<button class="quick-borrow-btn w-full py-2 px-3 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-primary text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[15px]">add_circle</span>
+            Quick Borrow
+          </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Inline Script for Neomorphic Micro-interactions -->
+<script>
+    (function initBookSphereDetails() {
+      // Elements
+      const openModalBtn = document.getElementById('openBorrowModalBtn');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const cancelModalBtn = document.getElementById('cancelModalBtn');
+      const confirmLoanBtn = document.getElementById('confirmLoanBtn');
+      const modal = document.getElementById('borrowModal');
+      const favoriteBtn = document.getElementById('favoriteBtn');
+      const heartIcon = document.getElementById('heartIcon');
+      const sendSampleBtn = document.getElementById('sendSampleBtn');
+      const toast = document.getElementById('actionToast');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastMessage = document.getElementById('toastMessage');
+      const toastIcon = document.getElementById('toastIcon');
+      const tocToggle = document.getElementById('tocToggle');
+      const tocContent = document.getElementById('tocContent');
+      const tocChevron = document.getElementById('tocChevron');
+      const formatPills = document.querySelectorAll('.format-pill');
+      const quickBorrowBtns = document.querySelectorAll('.quick-borrow-btn');
+
+      let isFavorited = false;
+      let toastTimeout = null;
+
+      function showToast(title, message, iconName = 'check_circle') {
+        if (!toast) return;
+        toastTitle.textContent = title;
+        toastMessage.textContent = message;
+        toastIcon.textContent = iconName;
+
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.add('translate-y-24', 'opacity-0');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        }, 3600);
+      }
+
+      function openModal() {
+        if (!modal) return;
+        modal.classList.remove('pointer-events-none', 'opacity-0');
+        modal.classList.add('opacity-100');
+      }
+
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.add('pointer-events-none', 'opacity-0');
+        modal.classList.remove('opacity-100');
+      }
+
+      if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+      if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeModal);
+
+      if (confirmLoanBtn) {
+        confirmLoanBtn.addEventListener('click', () => {
+          closeModal();
+          showToast('Loan Confirmed', 'The Architecture of Silence has been added to My Books.', 'auto_stories');
+        });
+      }
+
+      // Format Pill Selection
+      formatPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          formatPills.forEach(p => {
+            p.classList.remove('shadow-[inset_3px_3px_6px_rgba(0,0,0,0.07),inset_-3px_-3px_6px_rgba(255,255,255,0.7)]');
+            p.classList.add('shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)]');
+          });
+          pill.classList.remove('shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)]');
+          pill.classList.add('shadow-[inset_3px_3px_6px_rgba(0,0,0,0.07),inset_-3px_-3px_6px_rgba(255,255,255,0.7)]');
+          showToast('Format Switched', 'Selected circulation edition updated.', 'swap_horiz');
+        });
+      });
+
+      // Wishlist toggle
+      if (favoriteBtn) {
+        favoriteBtn.addEventListener('click', () => {
+          isFavorited = !isFavorited;
+          if (isFavorited) {
+            heartIcon.style.fontVariationSettings = "'FILL' 1";
+            favoriteBtn.classList.add('text-error');
+            showToast('Added to Wishlist', 'Saved to your personal Patron reading queue.', 'favorite');
+          } else {
+            heartIcon.style.fontVariationSettings = "'FILL' 0";
+            favoriteBtn.classList.remove('text-error');
+            showToast('Removed from Wishlist', 'Book removed from your saved list.', 'heart_minus');
+          }
+        });
+      }
+
+      // Send Sample
+      if (sendSampleBtn) {
+        sendSampleBtn.addEventListener('click', () => {
+          showToast('Sample Dispatched', 'Sample Chapter 1 sent wirelessly to registered e-reader.', 'send_to_mobile');
+        });
+      }
+
+      // Quick Borrow related items
+      quickBorrowBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          showToast('Loan Added', 'Volume reserved and placed into your digital active bookshelf.', 'bookmark_check');
+        });
+      });
+
+      // Table of Contents Toggle
+      if (tocToggle && tocContent && tocChevron) {
+        let isOpen = true;
+        tocToggle.addEventListener('click', () => {
+          isOpen = !isOpen;
+          if (isOpen) {
+            tocContent.classList.remove('hidden');
+            tocChevron.classList.remove('-rotate-90');
+          } else {
+            tocContent.classList.add('hidden');
+            tocChevron.classList.add('-rotate-90');
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-12 mt-16 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b-0"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-xl bg-surface flex items-center justify-center shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.6)] text-primary"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><span class="text-base font-headline font-semibold text-on-surface">BookSphere Public Library System</span></div><div class="flex items-center gap-6 text-xs text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>System Online</span><span>•</span><span>142,500+ Items Cataloged</span><span>•</span><span>Library Card Active</span></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-on-surface-variant"><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" href="#">Borrowing Rules</a><a class="hover:text-on-surface transition-colors" href="#">Digital Archives</a><a class="hover:text-on-surface transition-colors" href="#">Branch Locations</a><a class="hover:text-on-surface transition-colors" href="#">Help &amp; Patron Support</a></div><p>© 2024 BookSphere Municipal Library Network. All rights reserved.</p></div></div></footer></body></html>

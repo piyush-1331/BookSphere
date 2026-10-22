@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface": "#e8eaf0", "primary": "#6366f1", "outline-variant": "#d0d2dc", "on-error-container": "#991b1b", "on-primary": "#ffffff", "error-container": "#fee2e2", "secondary-container": "#d8dae6", "tertiary-container": "#a78bfa", "surface-bright": "#edeef4", "on-primary-fixed-variant": "#4338ca", "tertiary": "#7c3aed", "inverse-on-surface": "#e8eaf0", "inverse-surface": "#2e3040", "surface-variant": "#dcdee4", "on-secondary-fixed-variant": "#404252", "error": "#dc2626", "surface-container": "#e2e4ea", "secondary-fixed": "#d8dae6", "surface-container-low": "#e5e7ed", "tertiary-fixed": "#ede9fe", "primary-fixed-dim": "#a5b4fc", "surface-container-highest": "#d6d8de", "on-tertiary-fixed-variant": "#5b21b6", "on-tertiary-fixed": "#2e1065", "on-tertiary": "#ffffff", "background": "#e8eaf0", "on-secondary": "#ffffff", "on-surface-variant": "#585a68", "secondary": "#6c6e7e", "surface-container-high": "#dcdee4", "on-background": "#2e3040", "on-error": "#ffffff", "primary-fixed": "#e0e2ff", "on-tertiary-container": "#3b1f63", "outline": "#8a8c9a", "on-surface": "#2e3040", "on-primary-container": "#e0e2ff", "tertiary-fixed-dim": "#c4b5fd", "secondary-fixed-dim": "#b8baca", "on-secondary-container": "#585a68", "primary-container": "#818cf8", "surface-dim": "#d4d6dc", "on-secondary-fixed": "#1a1b26", "surface-container-lowest": "#f0f2f8", "on-primary-fixed": "#1e1b4b", "inverse-primary": "#a5b4fc", "surface-tint": "#6366f1" }, "borderRadius": { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" }, "spacing": {}, "fontFamily": { "headline": [ "Plus Jakarta Sans" ], "display": [ "Plus Jakarta Sans" ], "body": [ "Plus Jakarta Sans" ], "label": [ "Plus Jakarta Sans" ] }, "fontSize": {} } } }</script></head><body class="bg-surface font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface z-50 flex flex-col justify-between shadow-[6px_0_16px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-20 px-6 flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center shadow-[4px_4px_8px_rgba(0,0,0,0.08),-4px_-4px_8px_rgba(255,255,255,0.7)] text-primary"><span class="material-symbols-outlined text-2xl">auto_stories</span></div><div><span class="text-base font-headline font-bold tracking-tight text-on-surface block leading-tight">BookSphere</span><span class="text-[10px] font-semibold tracking-wider text-primary uppercase">Institutional Admin</span></div></div></div><div class="px-5 py-2"><div class="px-3.5 py-2.5 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center justify-between text-xs"><div class="flex items-center gap-2 overflow-hidden"><span class="material-symbols-outlined text-on-surface-variant text-[18px]">apartment</span><span class="font-medium text-on-surface truncate">Central Metropolitan</span></div><span class="material-symbols-outlined text-on-surface-variant text-base cursor-pointer">unfold_more</span></div></div><div class="px-6 pt-5 pb-2"><span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Console Navigation</span></div><nav class="px-4 flex flex-col gap-1.5" data-active-classes="shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-primary font-semibold"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:text-on-surface transition-all" data-path="admin-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Admin Dashboard</a><a aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-primary font-semibold" data-path="book-management" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span>Catalog Inventory</a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:text-on-surface transition-all" data-path="user-management" href="#"><span class="material-symbols-outlined text-[20px]">group</span>Patrons Directory</a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:text-on-surface transition-all" data-path="circulation-and-borrows" href="#"><span class="material-symbols-outlined text-[20px]">sync_alt</span>Circulation &amp; Borrows</a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:text-on-surface transition-all" data-path="reports-and-analytics" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span>Reports &amp; Analytics</a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:text-on-surface transition-all" data-path="system-settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>System Settings</a></nav></div><div class="p-5"><div class="p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.5)] flex flex-col gap-2.5"><div class="flex items-center justify-between text-xs"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="text-[11px] font-medium text-on-surface">Catalog Sync</span></div><span class="text-[10px] text-on-surface-variant">Active</span></div><div class="flex items-center justify-between text-xs"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="text-[11px] font-medium text-on-surface">RFID Scanners</span></div><span class="text-[10px] text-on-surface-variant">Connected</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-8 shadow-[0_2px_12px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-4 flex-1 max-w-xl"><div class="w-full flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-sm text-on-surface-variant"><span class="material-symbols-outlined text-[20px]">search</span><span class="text-xs text-on-surface-variant/80 font-normal">Search ISBN, patrons, call numbers, barcodes...</span></div></div><div class="flex items-center gap-5"><div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)]"><span class="material-symbols-outlined text-primary text-[18px]">verified_user</span><div class="text-left"><span class="text-xs font-semibold text-on-surface block leading-tight">Dr. Julian Thorne</span><span class="text-[10px] text-on-surface-variant block">Chief Registrar</span></div></div><div class="w-9 h-9 rounded-xl bg-surface shadow-[4px_4px_8px_rgba(0,0,0,0.08),-4px_-4px_8px_rgba(255,255,255,0.7)] flex items-center justify-center text-on-surface-variant relative cursor-pointer"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-primary"></span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-20 w-full min-h-[calc(100vh-4rem)] px-8"><div class="flex flex-col w-full pb-16">
+<!-- Top Header Block -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 py-6">
+<div class="flex flex-col gap-1.5 max-w-2xl">
+<div class="flex items-center gap-2 text-primary font-semibold text-xs tracking-wider uppercase">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+        Bibliographic Record Engine
+      </div>
+<h1 class="text-2xl lg:text-3xl font-headline font-semibold text-on-surface tracking-tight">
+        Book Inventory &amp; Archival Registry
+      </h1>
+<p class="text-xs lg:text-sm text-on-surface-variant font-normal leading-relaxed">
+        Search, catalog, edit, and audit print volumes, digital EPUB folios, audiobooks, and rare manuscript archives across all campus depository branches.
+      </p>
+</div>
+<!-- Header Action Controls -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="px-4 py-2.5 rounded-xl bg-surface text-on-surface text-xs font-semibold shadow-[5px_5px_10px_rgba(0,0,0,0.07),-5px_-5px_10px_rgba(255,255,255,0.7)] hover:text-primary active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">file_upload</span>
+        Import MARC21 / CSV
+      </button>
+<button class="px-4 py-2.5 rounded-xl bg-surface text-on-surface text-xs font-semibold shadow-[5px_5px_10px_rgba(0,0,0,0.07),-5px_-5px_10px_rgba(255,255,255,0.7)] hover:text-primary active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">barcode_scanner</span>
+        Batch Barcodes
+      </button>
+<button class="px-5 py-2.5 rounded-xl bg-surface text-primary font-semibold text-xs shadow-[5px_5px_11px_rgba(99,102,241,0.22),-5px_-5px_11px_rgba(255,255,255,0.85)] hover:shadow-[3px_3px_6px_rgba(99,102,241,0.25),-3px_-3px_6px_rgba(255,255,255,0.8)] active:shadow-[inset_3px_3px_6px_rgba(99,102,241,0.35),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+        + Register New Book Volume
+      </button>
+</div>
+</div>
+<!-- Summary Metrics Ribbon (Extruded Tactile 4-Pill Array) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<!-- Pill 1 -->
+<div class="p-4 rounded-xl bg-surface shadow-[6px_6px_12px_rgba(0,0,0,0.07),-6px_-6px_12px_rgba(255,255,255,0.65)] flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">library_books</span>
+</div>
+<div class="min-w-0">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant block truncate">Total Cataloged Titles</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="text-lg font-headline font-semibold text-on-surface">28,410</span>
+<span class="text-[10px] text-on-surface-variant font-medium">unique editions</span>
+</div>
+</div>
+</div>
+<!-- Pill 2 -->
+<div class="p-4 rounded-xl bg-surface shadow-[6px_6px_12px_rgba(0,0,0,0.07),-6px_-6px_12px_rgba(255,255,255,0.65)] flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">shelves</span>
+</div>
+<div class="min-w-0">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant block truncate">Physical Copies in Stacks</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="text-lg font-headline font-semibold text-on-surface">112,500</span>
+<span class="text-[10px] text-on-surface-variant font-medium">print copies</span>
+</div>
+</div>
+</div>
+<!-- Pill 3 -->
+<div class="p-4 rounded-xl bg-surface shadow-[6px_6px_12px_rgba(0,0,0,0.07),-6px_-6px_12px_rgba(255,255,255,0.65)] flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">cloud_sync</span>
+</div>
+<div class="min-w-0">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant block truncate">Active Digital Licences</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="text-lg font-headline font-semibold text-on-surface">36,420</span>
+<span class="text-[10px] text-on-surface-variant font-medium">multi-seat</span>
+</div>
+</div>
+</div>
+<!-- Pill 4 -->
+<div class="p-4 rounded-xl bg-surface shadow-[6px_6px_12px_rgba(0,0,0,0.07),-6px_-6px_12px_rgba(255,255,255,0.65)] flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center justify-center text-amber-600 flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">handyman</span>
+</div>
+<div class="min-w-0">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant block truncate">Binding &amp; Conservation</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="text-lg font-headline font-semibold text-amber-700">18</span>
+<span class="text-[10px] text-amber-700/80 font-medium">urgent repairs</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tactile Soft-UI Filter & Command Console -->
+<div class="p-5 rounded-2xl bg-surface shadow-[7px_7px_14px_rgba(0,0,0,0.07),-7px_-7px_14px_rgba(255,255,255,0.65)] mb-6 flex flex-col gap-4">
+<!-- Search Row -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center gap-3.5">
+<div class="flex-1 px-4 py-3 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">search</span>
+<input class="w-full bg-transparent border-0 outline-none text-xs text-on-surface placeholder:text-on-surface-variant/70 font-medium focus:ring-0 p-0" placeholder="Search by title, author, ISBN-13, Dewey Decimal, or RFID barcode..." type="text"/>
+<div class="hidden sm:flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] text-on-surface-variant font-mono">
+          ⌘K
+        </div>
+</div>
+<!-- Quick Action / Barcode trigger -->
+<button class="px-4 py-3 rounded-xl bg-surface text-on-surface text-xs font-semibold shadow-[4px_4px_8px_rgba(0,0,0,0.07),-4px_-4px_8px_rgba(255,255,255,0.6)] active:shadow-[inset_3px_3px_5px_rgba(0,0,0,0.07),inset_-3px_-3px_5px_rgba(255,255,255,0.6)] flex items-center justify-center gap-2 hover:text-primary transition-all flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+        Scan Optical Spine
+      </button>
+</div>
+<!-- Filter Dropdown Matrix -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Genre Filter -->
+<div class="px-3 py-2 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.5)] flex items-center gap-2 text-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">category</span>
+<select class="bg-transparent border-0 outline-none text-on-surface text-xs font-medium cursor-pointer pr-1">
+<option>All Categories (Arch, Tech, Sci-Fi)</option>
+<option>Architecture &amp; Design</option>
+<option>Hard Science &amp; Computing</option>
+<option>Literary Fiction &amp; Folios</option>
+<option>Rare Manuscripts</option>
+</select>
+</div>
+<!-- Format Filter -->
+<div class="px-3 py-2 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.5)] flex items-center gap-2 text-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">collections_bookmark</span>
+<select class="bg-transparent border-0 outline-none text-on-surface text-xs font-medium cursor-pointer pr-1">
+<option>All Formats (Hardcover, EPUB, Vault)</option>
+<option>Hardcover Edition</option>
+<option>Paperback Standard</option>
+<option>EPUB Folio (Digital)</option>
+<option>Lossless Audio Master</option>
+<option>Vault Archival</option>
+</select>
+</div>
+<!-- Availability Filter -->
+<div class="px-3 py-2 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.5)] flex items-center gap-2 text-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">check_circle</span>
+<select class="bg-transparent border-0 outline-none text-on-surface text-xs font-medium cursor-pointer pr-1">
+<option>All Availability Statuses</option>
+<option>Available on Shelf</option>
+<option>In Circulation</option>
+<option>Full Waitlist / Reserved</option>
+<option>Preservation Review</option>
+</select>
+</div>
+<!-- Branch Depository -->
+<div class="px-3 py-2 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.5)] flex items-center gap-2 text-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">domain</span>
+<select class="bg-transparent border-0 outline-none text-on-surface text-xs font-medium cursor-pointer pr-1">
+<option>Central Stacks (Curators Hall)</option>
+<option>North Campus Science Vault</option>
+<option>West Annex Rare Repositories</option>
+<option>Digital Distribution Node</option>
+</select>
+</div>
+</div>
+<!-- View Selector & Records Counter -->
+<div class="flex items-center gap-4">
+<span class="text-[11px] text-on-surface-variant font-medium">
+          Showing <span class="font-semibold text-on-surface">1–8</span> of <span class="font-semibold text-on-surface">28,410</span> records
+        </span>
+<div class="p-1 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.08),-2px_-2px_4px_rgba(255,255,255,0.7)] text-primary flex items-center justify-center" title="Table View">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" title="Grid Gallery View">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Body: Master Catalog Table & Side Inspector -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+<!-- Left Table Container (Master Catalog) -->
+<div class="xl:col-span-8 2xl:col-span-9 flex flex-col gap-4">
+<div class="rounded-2xl bg-surface shadow-[7px_7px_14px_rgba(0,0,0,0.06),-7px_-7px_14px_rgba(255,255,255,0.65)] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs">
+<!-- Table Header -->
+<thead>
+<tr class="bg-surface shadow-[inset_0_-2px_4px_rgba(0,0,0,0.04)] text-on-surface-variant font-semibold uppercase tracking-wider text-[10px]">
+<th class="py-3.5 px-4 w-10 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-[14px] text-transparent select-none">check</span>
+</div>
+</th>
+<th class="py-3.5 px-3">Volume &amp; Edition</th>
+<th class="py-3.5 px-3">Identifiers / Dewey</th>
+<th class="py-3.5 px-3">Format &amp; Category</th>
+<th class="py-3.5 px-3">Inventory / Stock</th>
+<th class="py-3.5 px-3">Shelf Code</th>
+<th class="py-3.5 px-3">Availability</th>
+<th class="py-3.5 px-4 text-right">Registry Operations</th>
+</tr>
+</thead>
+<!-- Table Rows -->
+<tbody class="divide-y-0">
+<!-- Row 1: Selected / Helena Vance -->
+<tr class="bg-surface/80 hover:bg-surface shadow-[inset_2px_2px_4px_rgba(99,102,241,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] transition-all">
+<td class="py-3.5 px-4 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-primary flex items-center justify-center shadow-[inset_1px_1px_2px_rgba(0,0,0,0.2)] text-on-primary cursor-pointer">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.1),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cover of The Architecture of Silence showing clean minimalist architectural concrete lines and soft brutalist shadows in monochrome and indigo palette" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzGY8vcF0Ex1iOy-3C1urxP6-fqZ7kn8Zwx8_sCFkdHNs-B_BmxF0EaGayBenItR3kuC1XxAtC5aZYF4mJN1XPtK1PWPAnyRzZeEWjWGh5lebC92nh896vzWrwOu1JEGVcDxM9BhNXc1aiEAwqnMg4wK2CvhmvPkM7IK1D0WavIcUBxQLLVNYAzHlZdid1Ff87qOldAeO3Sbw0qbC7uuLADraBvYeTsxUDNPIit63rF_zQag33udSi4w')"></div>
+</div>
+<div class="min-w-0">
+<span class="font-headline font-semibold text-on-surface text-xs block leading-snug truncate">The Architecture of Silence</span>
+<span class="text-[11px] text-on-surface-variant block">Helena Vance • 2023, 1st Archival Ed.</span>
+<span class="inline-block mt-0.5 text-[9px] font-semibold text-primary px-1.5 py-0.2 rounded bg-surface shadow-[inset_1px_1px_2px_rgba(0,0,0,0.08),inset_-1px_-1px_2px_rgba(255,255,255,0.7)]">Curators Pick</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface block font-medium">978-0-99214-412-8</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Dewey: 720.1 V222a</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-medium text-on-surface">Hardcover + EPUB</span>
+<span class="text-[10px] text-on-surface-variant">Arch &amp; Solitude</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-1.5">
+<div class="px-2 py-1 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] font-semibold text-xs text-emerald-600">
+                      6 / 8
+                    </div>
+<span class="text-[10px] text-on-surface-variant">available</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface font-medium block">STK-04-B3</span>
+<span class="text-[9px] text-on-surface-variant">Curators Hall</span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-emerald-700 bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    Available Now
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Edit Metadata">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Manage Barcodes">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="More Operations">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Andy Weir -->
+<tr class="bg-surface hover:bg-surface-bright transition-all">
+<td class="py-3.5 px-4 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center cursor-pointer"></div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.1),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cover illustration of Project Hail Mary featuring an astronaut floating near an interstellar scientific ship in deep space with amber star glow" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwLb_pJi2JVFTC3_08ENkIS-dBOc8P032GXvzO0BiKQRxNVcKz2Ulgl8GBOtKwgOendhjd_svKLK_-ci2afz0dw8pZXx2rVtKRAC5x_c3CG_jT81YqE2SHI3d3ibsPx-dD7zaUxnaqwekGXc_xwSt2cDR_31jHJSZl9OCKPQ6FI0jLVDStw_RlIOjdPaeUPWJOA1E7cX6Ao7JXMhYRzfbQBZ2Z62qELgNNLCn_Emury71Iu5Ha763mKQ')"></div>
+</div>
+<div class="min-w-0">
+<span class="font-headline font-semibold text-on-surface text-xs block leading-snug truncate">Project Hail Mary</span>
+<span class="text-[11px] text-on-surface-variant block">Andy Weir • 2021, Mass Market</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface block font-medium">978-0-59313-520-4</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Dewey: 813.6 W425p</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-medium text-on-surface">Paperback + Audio</span>
+<span class="text-[10px] text-on-surface-variant">Hard Sci-Fi</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-1.5">
+<div class="px-2 py-1 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] font-semibold text-xs text-primary">
+                      3 / 10
+                    </div>
+<span class="text-[10px] text-on-surface-variant">circulating</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface font-medium block">STK-09-E1</span>
+<span class="text-[9px] text-on-surface-variant">North Stacks</span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-primary bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    In Circulation
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Edit Metadata">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Manage Barcodes">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="More Operations">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Martin Kleppmann -->
+<tr class="bg-surface hover:bg-surface-bright transition-all">
+<td class="py-3.5 px-4 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-primary flex items-center justify-center shadow-[inset_1px_1px_2px_rgba(0,0,0,0.2)] text-on-primary cursor-pointer">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.1),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cover of Designing Data-Intensive Applications technical book with a detailed vintage woodcut animal illustration on clean beige background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4XTpzBYa2OW9Q0piYjeYAVNQUFMv4PHIUsuhJXvqzMOnbB-1Vv_aF1vRz3UjtTc6FScfzGugjiNONrCTGy8IQBNCoJM-CxzQKsq14zBdRV8pGB9K2A1oerPm3kuaMpMk-iK-oDohZC83scC9yuQkQ_eGXUTEtXqiaLAbOuNuEOcLpgqHx7H6Eer7g98dO1o6AhNRARnFbxVuptifImQKRlcgTAKEzem0V4cJR0-tpbdtXb7JdL_Tygg')"></div>
+</div>
+<div class="min-w-0">
+<span class="font-headline font-semibold text-on-surface text-xs block leading-snug truncate">Designing Data-Intensive Applications</span>
+<span class="text-[11px] text-on-surface-variant block">Martin Kleppmann • 2017, O'Reilly</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface block font-medium">978-1-44937-332-0</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Dewey: 005.74 K64d</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-medium text-on-surface">Paperback + EPUB</span>
+<span class="text-[10px] text-on-surface-variant">Distributed Systems</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-1.5">
+<div class="px-2 py-1 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] font-semibold text-xs text-rose-600">
+                      0 / 5
+                    </div>
+<span class="text-[10px] text-rose-600 font-medium">8 on waitlist</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface font-medium block">CS-22-L4</span>
+<span class="text-[9px] text-on-surface-variant">Tech Reserve</span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-rose-700 bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
+                    Checked Out
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Edit Metadata">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Manage Barcodes">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="More Operations">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Juhani Pallasmaa -->
+<tr class="bg-surface hover:bg-surface-bright transition-all">
+<td class="py-3.5 px-4 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center cursor-pointer"></div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.1),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cover of The Eyes of the Skin by Juhani Pallasmaa with tactile architectural textures, macro plaster and sensory typography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBjQ-CX0zCgCid8sFXoaNHL0wF8lXUiGvp02ZIPEwB35wk7Gso9zw9lQ8C8xG1qsP6G-5Pe1I_k2wJPQkflliwu8NI64SLrU6MTMt5ov-ErWpuYaWq9ai901kBC_7Cco6lXaVRIzKQnKazvyeBl9GNCqj4SiYJqv3kPFjQvzp5tdqALp_mIkGTRwaikmlL867JPTKUcK-iKPTDIwYJ5F2GuESNrtxEWKVHbcxgYqQkaFqnUpATbFM4BA')"></div>
+</div>
+<div class="min-w-0">
+<span class="font-headline font-semibold text-on-surface text-xs block leading-snug truncate">The Eyes of the Skin</span>
+<span class="text-[11px] text-on-surface-variant block">Juhani Pallasmaa • 2012, 3rd Ed.</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface block font-medium">978-0-47001-578-0</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Dewey: 720.1 P164e</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-medium text-on-surface">Clothbound Hardcover</span>
+<span class="text-[10px] text-on-surface-variant">Phenomenology</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-1.5">
+<div class="px-2 py-1 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] font-semibold text-xs text-emerald-600">
+                      2 / 4
+                    </div>
+<span class="text-[10px] text-on-surface-variant">copies</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface font-medium block">ARC-01-A9</span>
+<span class="text-[9px] text-on-surface-variant">Fine Arts Annex</span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-primary bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    In Circulation
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Edit Metadata">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Manage Barcodes">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="More Operations">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Dr. Julian Croft (Vault Archival) -->
+<tr class="bg-surface hover:bg-surface-bright transition-all">
+<td class="py-3.5 px-4 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-primary flex items-center justify-center shadow-[inset_1px_1px_2px_rgba(0,0,0,0.2)] text-on-primary cursor-pointer">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.1),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cover of Cartography of the Cosmos showing vintage celestial astrolabe engravings with gold-leaf accents on dark charcoal leather binding" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxyKJxjamMnI389ZjUoWadHSGG_dapzrwXhzSYkuDnrIGO8zyZYkbVMD_PJnug6-d3WO-wKmkodoEWkSU8Ol5QUDuZDa08ePAdCaAC_NvjM8UcoW1Tjxr1_XchXc0a8DMtRpzW2ClO1mE_QtStgPLImULkexsYqhlRCY7EJ27nTXPBcS_LBK2xS9439TYVci8VWAOrvzlU8dP5wisil-fsZLgQ5dTVoRPgNyv-aGv1i6TpR0h8mKyEiA')"></div>
+</div>
+<div class="min-w-0">
+<span class="font-headline font-semibold text-on-surface text-xs block leading-snug truncate">Cartography of the Cosmos</span>
+<span class="text-[11px] text-on-surface-variant block">Dr. Julian Croft • 1904, Master Edition</span>
+<span class="inline-block mt-0.5 text-[9px] font-semibold text-tertiary px-1.5 py-0.2 rounded bg-surface shadow-[inset_1px_1px_2px_rgba(0,0,0,0.08),inset_-1px_-1px_2px_rgba(255,255,255,0.7)]">Rare Folio</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface block font-medium">978-0-19280-411-2</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Vault: MS-092-B</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-medium text-tertiary">Vault Archival</span>
+<span class="text-[10px] text-on-surface-variant">Celestial Atlas</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-1.5">
+<div class="px-2 py-1 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] font-semibold text-xs text-tertiary">
+                      1 / 1
+                    </div>
+<span class="text-[10px] text-tertiary font-medium">restricted</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-tertiary font-medium block">VLT-ALPHA-02</span>
+<span class="text-[9px] text-on-surface-variant">Climate Sealed</span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-purple-700 bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                    Supervision Req.
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-tertiary flex items-center justify-center text-on-surface-variant transition-colors" title="Archival Logs">
+<span class="material-symbols-outlined text-[16px]">security</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Manage Barcodes">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="More Operations">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: James Clear -->
+<tr class="bg-surface hover:bg-surface-bright transition-all">
+<td class="py-3.5 px-4 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center cursor-pointer"></div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.1),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cover of Atomic Habits by James Clear featuring clean typographic hierarchy and minimal dot matrix orbital illustrations in soft monochrome" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCX0JpxndJgrGp60ZCNGI46Tyw981eQgmD3eUMEqNIBqJ53YswcqW8EUPq8PRheSJxt_qwreV8sTaJ_2OdJHM4Qx-itmwmWC6eXftVFI5OXt05Ok67LqNp53V89nkOlzerBOTAw4scOJkDe6kuMVFWF0N19HNyRoj0-QFTeb8td-nw9pT6DhBIHrAQO-HQx0Yq344DDwitx6EIxls1t77Tyz9j00tn1EJcK1nZv6kt2773d6k8kl3BHtg')"></div>
+</div>
+<div class="min-w-0">
+<span class="font-headline font-semibold text-on-surface text-xs block leading-snug truncate">Atomic Habits</span>
+<span class="text-[11px] text-on-surface-variant block">James Clear • 2018, Trade Edition</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface block font-medium">978-0-73521-129-2</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Dewey: 158.1 C623a</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-medium text-on-surface">Hardcover • 12 copies</span>
+<span class="text-[10px] text-on-surface-variant">Behavioral Science</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-1.5">
+<div class="px-2 py-1 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] font-semibold text-xs text-emerald-600">
+                      8 / 12
+                    </div>
+<span class="text-[10px] text-on-surface-variant">on shelf</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface font-medium block">SOC-02-C1</span>
+<span class="text-[9px] text-on-surface-variant">General Stacks</span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-emerald-700 bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    Available Now
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Edit Metadata">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Manage Barcodes">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="More Operations">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Kazuo Ishiguro -->
+<tr class="bg-surface hover:bg-surface-bright transition-all">
+<td class="py-3.5 px-4 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center cursor-pointer"></div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.1),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cover of Klara and the Sun by Kazuo Ishiguro depicting a solar disc abstracted through modern soft pastel geometric reflections" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQDjUfGKiM9VhqEM38ZLSeeUpPooLA7Rb8Z305QdEOy66-cNK6ZyWJ7_WKWQCRXBhR9Uc3qb_3AdouCwGHCFxKKWqlvvEnvxMulUSZDu-rQGRo5E5oc9m9UdZVk4Li2tkYrnXj44Eiiy-FAi-CQoqzWTxKjKupdUhu2RwLKUoA4iBbYOnMQ5DO82o2Zwt0kfQ9sS1RgaW36zWPFzjSrSKohfRgs9z1INsnyqGsOWcb94yjlCrjtW0tNA')"></div>
+</div>
+<div class="min-w-0">
+<span class="font-headline font-semibold text-on-surface text-xs block leading-snug truncate">Klara and the Sun</span>
+<span class="text-[11px] text-on-surface-variant block">Kazuo Ishiguro • 2021, Knopf</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface block font-medium">978-0-59331-817-1</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Dewey: 823.92 I79k</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-medium text-on-surface">Hardcover</span>
+<span class="text-[10px] text-on-surface-variant">Contemporary Fiction</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-1.5">
+<div class="px-2 py-1 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] font-semibold text-xs text-emerald-600">
+                      5 / 6
+                    </div>
+<span class="text-[10px] text-on-surface-variant">on shelf</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface font-medium block">FIC-11-F2</span>
+<span class="text-[9px] text-on-surface-variant">East Wing</span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-emerald-700 bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    Available Now
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Edit Metadata">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Manage Barcodes">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="More Operations">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 8: Gabrielle Zevin -->
+<tr class="bg-surface hover:bg-surface-bright transition-all">
+<td class="py-3.5 px-4 text-center">
+<div class="w-4 h-4 mx-auto rounded bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center cursor-pointer"></div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.1),-3px_-3px_6px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="Cover of Tomorrow and Tomorrow and Tomorrow with woodblock wave print illustration in vivid cool tones and elegant editorial typography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMZBtd5SCt1LHOsNLvxv-1tHUSuXqLqxVOzBZkTH1-Htcq-uKP9kYu5JA1DmsX53m7rpsCTwjhrcBDnA32zj1MYfiLB2E8ttZdFGq0sEyiZzHqPD9gq0xcf9uTnRyU1_2BnrSnz9KaFlWN-dPqAbrhgeSPjBs-AzDS7cLFeZ0PvB-rgRTQNgSh545LA8WwtaEJ_xryi9FCv5uFN2QAaEJifTlUcoWrgx48TQES1ZBbMJUGassyJtbyrQ')"></div>
+</div>
+<div class="min-w-0">
+<span class="font-headline font-semibold text-on-surface text-xs block leading-snug truncate">Tomorrow, and Tomorrow, and Tomorrow</span>
+<span class="text-[11px] text-on-surface-variant block">Gabrielle Zevin • 2022, Knopf</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface block font-medium">978-0-59332-120-1</span>
+<span class="text-[10px] text-on-surface-variant font-mono">Dewey: 813.6 Z63t</span>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-1 items-start">
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.05),-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-medium text-on-surface">Hardcover + Lossless</span>
+<span class="text-[10px] text-on-surface-variant">Modern Literature</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-1.5">
+<div class="px-2 py-1 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] font-semibold text-xs text-primary">
+                      1 / 7
+                    </div>
+<span class="text-[10px] text-on-surface-variant">circulating</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="font-mono text-[11px] text-on-surface font-medium block">FIC-14-D4</span>
+<span class="text-[9px] text-on-surface-variant">Main Floor</span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-primary bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)]">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    In Circulation
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Edit Metadata">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="Manage Barcodes">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] hover:text-primary flex items-center justify-center text-on-surface-variant transition-colors" title="More Operations">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Integrated Batch Actions & Pagination Bar -->
+<div class="p-4 bg-surface shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] flex flex-wrap items-center justify-between gap-4">
+<!-- Batch Operation Tray -->
+<div class="flex items-center gap-3">
+<div class="px-2.5 py-1 rounded-lg bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-[11px] font-semibold text-primary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              3 titles selected
+            </div>
+<div class="flex items-center gap-1.5">
+<button class="px-3 py-1.5 rounded-xl bg-surface text-[11px] font-semibold text-on-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] hover:text-primary active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.07),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">print</span>
+                Print Spine Labels
+              </button>
+<button class="px-3 py-1.5 rounded-xl bg-surface text-[11px] font-semibold text-on-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] hover:text-primary active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.07),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">swap_horiz</span>
+                Transfer Branch
+              </button>
+<button class="px-3 py-1.5 rounded-xl bg-surface text-[11px] font-semibold text-on-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] hover:text-primary active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.07),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">tune</span>
+                Quotas
+              </button>
+</div>
+</div>
+<!-- Pagination Matrix -->
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-on-surface-variant hover:text-on-surface active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<div class="px-3 py-1.5 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-[11px] font-medium text-on-surface">
+              Page <span class="font-semibold text-primary">1</span> of <span class="font-semibold">2,841</span>
+</div>
+<button class="w-8 h-8 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-on-surface-variant hover:text-on-surface active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Quick Inspector Panel (Detail Preview) -->
+<div class="xl:col-span-4 2xl:col-span-3 flex flex-col gap-4">
+<div class="p-5 rounded-2xl bg-surface shadow-[7px_7px_14px_rgba(0,0,0,0.07),-7px_-7px_14px_rgba(255,255,255,0.65)] flex flex-col gap-5 sticky top-28">
+<!-- Inspector Header -->
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+<span class="text-xs font-semibold text-on-surface uppercase tracking-wider">Active Inspector</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] text-[10px] font-mono text-on-surface-variant">#REC-8842</span>
+</div>
+<!-- Cover & Quick Meta Hero -->
+<div class="p-3.5 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex gap-4 items-start">
+<div class="w-16 h-24 rounded-lg bg-surface shadow-[4px_4px_8px_rgba(0,0,0,0.12),-4px_-4px_8px_rgba(255,255,255,0.7)] overflow-hidden flex-shrink-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up archival high-resolution cover photo of The Architecture of Silence showing raw stone grain and silver foil hot stamp lettering" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDj5ktQUDpuAsWrJDEeIvK334nE5zawIWhTuOBWbHostNA9Wk48DwehE6SEtDTuZeeMvTO1m-Zx_26nyJYYGnzUIS3zF6jUUF_9yBlCHIAdrgg1ukeM2qJxKhqFP1K_UEjIW5lnpXwV8weCIsz3BuDQNXVBcj_Q-oM41LgaVOjjBqHJrb0xA4YsYEjx8iA2POCU4TYTXR3Yl64zIdNd9S_urQTn6KZ3P-q6uI_3AgLVKxPs4d2P9PJCdw')"></div>
+</div>
+<div class="flex-1 min-w-0">
+<span class="text-[10px] font-semibold text-primary uppercase tracking-wider block">First Edition Archival</span>
+<h3 class="font-headline font-semibold text-on-surface text-sm leading-snug truncate mt-0.5">The Architecture of Silence</h3>
+<p class="text-[11px] text-on-surface-variant font-medium mt-0.5">Helena Vance</p>
+<div class="mt-2 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] text-[10px] text-on-surface font-mono font-medium">STK-04-B3</span>
+</div>
+</div>
+</div>
+<!-- Interactive Barcode & RFID Matrix Block -->
+<div class="p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.5)] flex flex-col gap-2.5">
+<div class="flex items-center justify-between text-[11px]">
+<span class="font-semibold text-on-surface">Optical Barcode &amp; RFID UID</span>
+<span class="font-mono text-[10px] text-primary">ISO-28560-2</span>
+</div>
+<!-- SVG Barcode Simulation -->
+<div class="w-full h-12 bg-surface rounded-lg p-2 shadow-[2px_2px_5px_rgba(0,0,0,0.04),-2px_-2px_5px_rgba(255,255,255,0.7)] flex flex-col justify-center items-center overflow-hidden">
+<svg class="w-full h-7 text-on-surface" fill="currentColor" viewbox="0 0 280 28">
+<!-- Barcode vertical stripes -->
+<rect height="28" width="3" x="0" y="0"></rect>
+<rect height="28" width="2" x="5" y="0"></rect>
+<rect height="28" width="4" x="10" y="0"></rect>
+<rect height="28" width="1" x="16" y="0"></rect>
+<rect height="28" width="5" x="20" y="0"></rect>
+<rect height="28" width="2" x="28" y="0"></rect>
+<rect height="28" width="3" x="33" y="0"></rect>
+<rect height="28" width="6" x="38" y="0"></rect>
+<rect height="28" width="2" x="47" y="0"></rect>
+<rect height="28" width="4" x="52" y="0"></rect>
+<rect height="28" width="1" x="59" y="0"></rect>
+<rect height="28" width="5" x="64" y="0"></rect>
+<rect height="28" width="3" x="72" y="0"></rect>
+<rect height="28" width="2" x="78" y="0"></rect>
+<rect height="28" width="4" x="83" y="0"></rect>
+<rect height="28" width="1" x="90" y="0"></rect>
+<rect height="28" width="5" x="94" y="0"></rect>
+<rect height="28" width="3" x="102" y="0"></rect>
+<rect height="28" width="2" x="108" y="0"></rect>
+<rect height="28" width="4" x="113" y="0"></rect>
+<rect height="28" width="2" x="120" y="0"></rect>
+<rect height="28" width="5" x="125" y="0"></rect>
+<rect height="28" width="1" x="133" y="0"></rect>
+<rect height="28" width="4" x="137" y="0"></rect>
+<rect height="28" width="3" x="144" y="0"></rect>
+<rect height="28" width="2" x="150" y="0"></rect>
+<rect height="28" width="5" x="155" y="0"></rect>
+<rect height="28" width="2" x="163" y="0"></rect>
+<rect height="28" width="3" x="168" y="0"></rect>
+<rect height="28" width="4" x="174" y="0"></rect>
+<rect height="28" width="1" x="181" y="0"></rect>
+<rect height="28" width="5" x="185" y="0"></rect>
+<rect height="28" width="3" x="193" y="0"></rect>
+<rect height="28" width="2" x="199" y="0"></rect>
+<rect height="28" width="6" x="204" y="0"></rect>
+<rect height="28" width="2" x="213" y="0"></rect>
+<rect height="28" width="3" x="218" y="0"></rect>
+<rect height="28" width="4" x="224" y="0"></rect>
+<rect height="28" width="1" x="231" y="0"></rect>
+<rect height="28" width="5" x="235" y="0"></rect>
+<rect height="28" width="3" x="243" y="0"></rect>
+<rect height="28" width="2" x="249" y="0"></rect>
+<rect height="28" width="4" x="254" y="0"></rect>
+<rect height="28" width="3" x="261" y="0"></rect>
+<rect height="28" width="5" x="267" y="0"></rect>
+<rect height="28" width="2" x="275" y="0"></rect>
+</svg>
+<span class="text-[9px] font-mono tracking-widest text-on-surface-variant mt-0.5">*9780992144128*</span>
+</div>
+</div>
+<!-- Multi-Depository Holdings Breakdown -->
+<div class="flex flex-col gap-2.5">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Holdings Distribution (8 Total)</span>
+<div class="flex flex-col gap-2">
+<!-- Central Branch -->
+<div class="p-2.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[17px]">apartment</span>
+<div>
+<span class="font-medium text-on-surface block leading-tight">Central Curators Stacks</span>
+<span class="text-[10px] text-on-surface-variant">Shelf 04-B3 (RFID Tagged)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.07),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] font-semibold text-on-surface text-[11px]">
+                4 Copies
+              </span>
+</div>
+<!-- Annex Vault -->
+<div class="p-2.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[17px]">lock</span>
+<div>
+<span class="font-medium text-on-surface block leading-tight">West Annex Rare Vault</span>
+<span class="text-[10px] text-on-surface-variant">Secured Climatized Bay</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.07),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] font-semibold text-on-surface text-[11px]">
+                2 Copies
+              </span>
+</div>
+<!-- Digital Distribution -->
+<div class="p-2.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-[17px]">cloud_done</span>
+<div>
+<span class="font-medium text-on-surface block leading-tight">BookSphere Digital Cloud</span>
+<span class="text-[10px] text-on-surface-variant">EPUB Fixed-Layout Seats</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.07),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] font-semibold text-emerald-700 text-[11px]">
+                2 Seats
+              </span>
+</div>
+</div>
+</div>
+<!-- Circulation History Spark / Last Loan Stamp -->
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.5)] flex flex-col gap-2">
+<div class="flex items-center justify-between text-[11px]">
+<span class="text-on-surface-variant font-medium">Last Borrowed Loan</span>
+<span class="text-on-surface font-semibold">Today • 09:14 AM</span>
+</div>
+<div class="flex items-center justify-between text-[11px]">
+<span class="text-on-surface-variant font-medium">Patron Borrower</span>
+<span class="text-primary font-medium">Eleanor Caldwell (#8819)</span>
+</div>
+<div class="flex items-center justify-between text-[11px]">
+<span class="text-on-surface-variant font-medium">Expected Return Due</span>
+<span class="text-on-surface font-semibold">Nov 28, 2025</span>
+</div>
+</div>
+<!-- Quick Action Trigger Buttons -->
+<div class="grid grid-cols-2 gap-2.5 pt-1">
+<button class="px-3 py-2.5 rounded-xl bg-surface shadow-[4px_4px_8px_rgba(0,0,0,0.07),-4px_-4px_8px_rgba(255,255,255,0.7)] text-xs font-semibold text-on-surface hover:text-primary active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center justify-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[17px]">chevron_forward</span>
+            Reassign Shelf
+          </button>
+<button class="px-3 py-2.5 rounded-xl bg-surface shadow-[4px_4px_8px_rgba(0,0,0,0.07),-4px_-4px_8px_rgba(255,255,255,0.7)] text-xs font-semibold text-primary hover:text-on-primary-fixed-variant active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] flex items-center justify-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+            Full Edit
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface px-8 py-4 shadow-[0_-2px_10px_rgba(0,0,0,0.02)] flex flex-wrap items-center justify-between text-xs text-on-surface-variant gap-3"><div class="flex items-center gap-4"><span class="font-medium text-on-surface">Session Audit: #REG-7882-JTH</span><span class="text-outline">|</span><span>Node: Metropolitan Hub Alpha</span></div><div class="flex items-center gap-4"><a class="inline-flex items-center gap-1.5 font-medium text-primary hover:text-on-primary-fixed-variant transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">open_in_new</span>Switch to Patron Portal</a><span>© 2025 BookSphere Library Services</span></div></footer></div></body></html>

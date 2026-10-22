@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error-container": "#991b1b",
+          "secondary-fixed-dim": "#b8baca",
+          "surface-container": "#e2e4ea",
+          "on-secondary-fixed": "#1a1b26",
+          "secondary-fixed": "#d8dae6",
+          "surface-bright": "#edeef4",
+          "on-primary-fixed-variant": "#4338ca",
+          "surface-container-high": "#dcdee4",
+          "surface-container-lowest": "#f0f2f8",
+          "tertiary-fixed": "#ede9fe",
+          "background": "#e8eaf0",
+          "on-primary-container": "#e0e2ff",
+          "on-primary": "#ffffff",
+          "tertiary": "#7c3aed",
+          "outline": "#8a8c9a",
+          "on-tertiary-fixed": "#2e1065",
+          "tertiary-container": "#a78bfa",
+          "error": "#dc2626",
+          "surface-tint": "#6366f1",
+          "on-tertiary": "#ffffff",
+          "on-surface-variant": "#585a68",
+          "surface-container-highest": "#d6d8de",
+          "secondary": "#6c6e7e",
+          "surface-container-low": "#e5e7ed",
+          "inverse-primary": "#a5b4fc",
+          "on-tertiary-container": "#3b1f63",
+          "on-secondary-container": "#585a68",
+          "error-container": "#fee2e2",
+          "on-secondary-fixed-variant": "#404252",
+          "inverse-on-surface": "#e8eaf0",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#1e1b4b",
+          "on-error": "#ffffff",
+          "primary-fixed": "#e0e2ff",
+          "tertiary-fixed-dim": "#c4b5fd",
+          "on-background": "#2e3040",
+          "primary-container": "#818cf8",
+          "outline-variant": "#d0d2dc",
+          "surface": "#e8eaf0",
+          "inverse-surface": "#2e3040",
+          "secondary-container": "#d8dae6",
+          "primary-fixed-dim": "#a5b4fc",
+          "primary": "#6366f1",
+          "surface-variant": "#dcdee4",
+          "on-tertiary-fixed-variant": "#5b21b6",
+          "surface-dim": "#d4d6dc",
+          "on-surface": "#2e3040"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.5rem",
+          "lg": "1rem",
+          "xl": "1.5rem",
+          "full": "9999px"
+        },
+        "spacing": {},
+        "fontFamily": {
+          "headline": [
+            "Plus Jakarta Sans"
+          ],
+          "display": [
+            "Plus Jakarta Sans"
+          ],
+          "body": [
+            "Plus Jakarta Sans"
+          ],
+          "label": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {}
+      },
+    },
+  }</script></head><body class="bg-background font-body text-on-surface min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface z-50 flex flex-col justify-between shadow-[6px_0_16px_rgba(0,0,0,0.04),-2px_0_8px_rgba(255,255,255,0.7)] px-5 py-6"><div class="flex flex-col gap-6"><div class="flex items-center gap-3 px-2"><div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center shadow-[4px_4px_8px_rgba(0,0,0,0.08),-4px_-4px_8px_rgba(255,255,255,0.7)] text-primary"><span class="material-symbols-outlined text-[24px]">menu_book</span></div><div class="flex flex-col"><span class="text-base font-headline font-semibold text-on-surface tracking-tight">BookSphere</span><span class="text-[10px] tracking-wider font-semibold text-primary bg-primary-fixed px-2 py-0.5 rounded-full w-fit shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">INSTITUTIONAL ADMIN</span></div></div><div class="relative"><div class="flex items-center justify-between px-3 py-2.5 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs text-on-surface font-medium cursor-pointer"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">apartment</span><span>Central Metropolitan</span></div><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div></div><nav class="flex flex-col gap-1.5" data-active-classes="shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.8)] text-primary font-semibold bg-surface"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs text-on-surface-variant hover:text-on-surface transition-all shadow-[2px_2px_5px_rgba(0,0,0,0.03),-2px_-2px_5px_rgba(255,255,255,0.5)]" data-path="admin-dashboard" href="#"><span class="material-symbols-outlined text-[19px]">space_dashboard</span><span>Admin Dashboard</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs text-on-surface-variant hover:text-on-surface transition-all shadow-[2px_2px_5px_rgba(0,0,0,0.03),-2px_-2px_5px_rgba(255,255,255,0.5)]" data-path="catalog-inventory" href="#"><span class="material-symbols-outlined text-[19px]">auto_stories</span><span>Catalog Inventory</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs text-on-surface-variant hover:text-on-surface transition-all shadow-[2px_2px_5px_rgba(0,0,0,0.03),-2px_-2px_5px_rgba(255,255,255,0.5)]" data-path="patrons-directory" href="#"><span class="material-symbols-outlined text-[19px]">badge</span><span>Patrons Directory</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs text-on-surface-variant hover:text-on-surface transition-all shadow-[2px_2px_5px_rgba(0,0,0,0.03),-2px_-2px_5px_rgba(255,255,255,0.5)]" data-path="circulation-and-borrows" href="#"><span class="material-symbols-outlined text-[19px]">sync_alt</span><span>Circulation &amp; Borrows</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs text-on-surface-variant hover:text-on-surface transition-all shadow-[2px_2px_5px_rgba(0,0,0,0.03),-2px_-2px_5px_rgba(255,255,255,0.5)]" data-path="reports-and-analytics" href="#"><span class="material-symbols-outlined text-[19px]">monitoring</span><span>Reports &amp; Analytics</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs text-on-surface-variant hover:text-on-surface transition-all shadow-[2px_2px_5px_rgba(0,0,0,0.03),-2px_-2px_5px_rgba(255,255,255,0.5)]" data-path="system-settings" href="#"><span class="material-symbols-outlined text-[19px]">tune</span><span>System Settings</span></a></nav></div><div class="p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] flex flex-col gap-2.5"><div class="flex items-center justify-between text-[11px]"><span class="text-on-surface-variant font-medium">Catalog Sync</span><div class="flex items-center gap-1.5 font-semibold text-on-surface"><span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.5)]"></span><span>Active</span></div></div><div class="flex items-center justify-between text-[11px]"><span class="text-on-surface-variant font-medium">RFID Scanners</span><div class="flex items-center gap-1.5 font-semibold text-on-surface"><span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_6px_rgba(99,102,241,0.5)]"></span><span>Connected</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-md shadow-[0_4px_12px_rgba(0,0,0,0.03)] z-40 px-8 flex items-center justify-between"><div class="w-96 flex items-center px-4 py-2 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px] mr-2 text-on-surface-variant">search</span><span class="flex-1 select-none text-on-surface-variant">Search ISBN, patrons, call numbers, barcodes...</span><span class="px-1.5 py-0.5 rounded-md bg-surface text-[10px] font-semibold text-on-surface-variant shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)]">⌘K</span></div><div class="flex items-center gap-4"><div class="relative w-9 h-9 rounded-xl bg-surface flex items-center justify-center cursor-pointer shadow-[4px_4px_8px_rgba(0,0,0,0.06),-4px_-4px_8px_rgba(255,255,255,0.7)] text-on-surface-variant"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></div><div class="flex items-center gap-3 pl-2 py-1 pr-1.5 rounded-xl bg-surface shadow-[4px_4px_8px_rgba(0,0,0,0.06),-4px_-4px_8px_rgba(255,255,255,0.7)]"><div class="flex flex-col text-right"><span class="text-xs font-semibold text-on-surface leading-tight">Dr. Julian Thorne</span><span class="text-[10px] text-on-surface-variant leading-tight">Chief Registrar</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 min-h-[calc(100vh-3.5rem)] px-8"><div class="flex flex-col w-full pb-12 gap-8">
+<!-- Top Command & Breadcrumb Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pt-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] text-[11px] font-semibold text-primary uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px] text-primary">sync_alt</span>
+<span>Circulation Engine &amp; Loan Ledger</span>
+</div>
+<div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.04),-2px_-2px_5px_rgba(255,255,255,0.7)] text-[11px] text-on-surface-variant font-medium">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span>Live Desk Feed • Counter #04</span>
+</div>
+</div>
+<h1 class="text-2xl lg:text-3xl font-headline font-semibold text-on-surface tracking-tight">Circulation &amp; Borrow Management</h1>
+<p class="text-xs lg:text-sm text-on-surface-variant max-w-3xl leading-relaxed">
+        Real-time loan authorization, automated return intake, hold queue fulfillment, and inter-branch transit tracking across metropolitan stacks.
+      </p>
+</div>
+<!-- Quick Operations CTAs -->
+<div class="flex items-center gap-3 self-start lg:self-center flex-wrap">
+<button class="group flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface text-xs font-semibold text-on-surface shadow-[4px_4px_8px_rgba(0,0,0,0.06),-4px_-4px_8px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:scale-105 transition-transform">barcode_scanner</span>
+<span>Batch Check-In (RFID)</span>
+</button>
+<button class="group flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface text-xs font-semibold text-on-surface shadow-[4px_4px_8px_rgba(0,0,0,0.06),-4px_-4px_8px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+<span>Export Ledger (CSV)</span>
+</button>
+<button class="group flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-surface text-xs font-semibold text-primary shadow-[6px_6px_12px_rgba(99,102,241,0.22),-4px_-4px_10px_rgba(255,255,255,0.85)] hover:shadow-[inset_2px_2px_5px_rgba(99,102,241,0.2),inset_-2px_-2px_5px_rgba(255,255,255,0.8)] active:shadow-[inset_3px_3px_6px_rgba(99,102,241,0.3)] transition-all" type="button">
+<div class="w-5 h-5 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</div>
+<span>Quick Checkout / Loan</span>
+</button>
+</div>
+</div>
+<!-- KPI Stats Row (Neomorphic Extruded Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+<!-- Card 1 -->
+<div class="relative p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-[11px] font-semibold text-on-surface-variant tracking-wider uppercase">Active On Loan</span>
+<span class="text-3xl font-headline font-semibold text-on-surface mt-1">34,610</span>
+</div>
+<div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)]">
+<span class="material-symbols-outlined text-[22px]">import_contacts</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span class="flex items-center gap-1.5 font-medium text-emerald-600">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+          94.2% return cadence
+        </span>
+<span class="px-2 py-0.5 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] font-semibold text-on-surface">+312 today</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-[11px] font-semibold text-on-surface-variant tracking-wider uppercase">Pending Holds Queue</span>
+<span class="text-3xl font-headline font-semibold text-on-surface mt-1">1,412</span>
+</div>
+<div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center text-tertiary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)]">
+<span class="material-symbols-outlined text-[22px]">bookmarks</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span class="flex items-center gap-1.5 font-medium text-primary">
+<span class="material-symbols-outlined text-[14px]">fact_check</span>
+          284 ready for collection
+        </span>
+<span class="px-2 py-0.5 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] font-semibold text-on-surface">Shelf A-E</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-[11px] font-semibold text-on-surface-variant tracking-wider uppercase">Overdue &amp; Grace Review</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-3xl font-headline font-semibold text-error">42</span>
+<span class="text-[11px] font-semibold text-amber-700 bg-amber-100/70 px-2 py-0.5 rounded-md shadow-sm">Audit Active</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center text-amber-600 shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)]">
+<span class="material-symbols-outlined text-[22px]">notification_important</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span class="font-medium text-amber-700">Zero-fee restorative policy</span>
+<span class="px-2 py-0.5 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] font-semibold text-error">Stage 1-3</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-[11px] font-semibold text-on-surface-variant tracking-wider uppercase">Transit Conduit</span>
+<span class="text-3xl font-headline font-semibold text-on-surface mt-1">186</span>
+</div>
+<div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)]">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span class="font-medium text-on-surface-variant truncate">Metro • West Annex</span>
+<span class="px-2 py-0.5 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06),inset_-1px_-1px_3px_rgba(255,255,255,0.6)] font-semibold text-primary">Van #4 active</span>
+</div>
+</div>
+</div>
+<!-- Filter & Circulation State Navigation Ribbon -->
+<div class="p-4 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.05),-6px_-6px_14px_rgba(255,255,255,0.75)] flex flex-col gap-4">
+<!-- Top Pill Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+<button class="px-4 py-2 rounded-xl text-xs font-semibold text-primary bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.8)] whitespace-nowrap flex items-center gap-2" type="button">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>All Active Loans</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded-full bg-primary/10 text-primary">34,610</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant hover:text-on-surface bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.04),-2px_-2px_5px_rgba(255,255,255,0.6)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] whitespace-nowrap transition-all flex items-center gap-2" type="button">
+<span>Check-Out Queue</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)]">18</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant hover:text-on-surface bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.04),-2px_-2px_5px_rgba(255,255,255,0.6)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] whitespace-nowrap transition-all flex items-center gap-2" type="button">
+<span>Drop Chute &amp; Returns</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)]">46</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant hover:text-on-surface bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.04),-2px_-2px_5px_rgba(255,255,255,0.6)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] whitespace-nowrap transition-all flex items-center gap-2" type="button">
+<span>Reserved Holds</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)]">1,412</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant hover:text-on-surface bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.04),-2px_-2px_5px_rgba(255,255,255,0.6)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] whitespace-nowrap transition-all flex items-center gap-2" type="button">
+<span>Inter-Library Transit</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)]">186</span>
+</button>
+</div>
+<!-- Bottom Controls: Search & Inset Pickers -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+<!-- Search Field Inset -->
+<div class="flex-1 flex items-center px-3.5 py-2 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.07),inset_-3px_-3px_6px_rgba(255,255,255,0.75)] text-xs text-on-surface">
+<span class="material-symbols-outlined text-[19px] text-on-surface-variant mr-2.5">search</span>
+<input class="w-full bg-transparent border-0 outline-none placeholder:text-on-surface-variant text-xs font-medium" placeholder="Filter by Loan ID, Patron name, ISBN, or RFID token..." type="text"/>
+<span class="px-1.5 py-0.5 rounded-md bg-surface text-[10px] font-semibold text-on-surface-variant shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] ml-2">⌘F</span>
+</div>
+<!-- Inset Selectors -->
+<div class="flex items-center gap-2 flex-wrap">
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] text-xs font-medium text-on-surface cursor-pointer">
+<span class="text-on-surface-variant">Format:</span>
+<span>All Media</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] text-xs font-medium text-on-surface cursor-pointer">
+<span class="text-on-surface-variant">Status:</span>
+<span class="text-amber-700 font-semibold">Due Soon / Grace</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] text-xs font-medium text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+<span>Central Metro</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface text-xs font-semibold text-primary shadow-[3px_3px_7px_rgba(0,0,0,0.05),-3px_-3px_7px_rgba(255,255,255,0.75)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] transition-all" type="button">
+<span class="material-symbols-outlined text-[17px]">filter_alt</span>
+<span>Reset</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Workspace Grid: Two Columns (Ledger Table vs. Right Inspection Terminal) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT 8 COLS: Circulation Ledger & Batch Control Table -->
+<div class="lg:col-span-8 flex flex-col gap-4">
+<!-- Batch Action Status Bar -->
+<div class="px-4 py-2.5 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] flex flex-wrap items-center justify-between gap-3 text-xs">
+<div class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-md bg-primary text-on-primary flex items-center justify-center text-[11px] font-semibold">2</span>
+<span class="font-semibold text-on-surface">Loans selected across desks</span>
+<span class="text-on-surface-variant">• 1 Physical, 1 DRM Folio</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface text-xs font-medium text-on-surface shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)] flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">event_repeat</span>
+<span>Extend 14 Days</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface text-xs font-medium text-on-surface shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)] flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">print</span>
+<span>Print Slip</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface text-xs font-medium text-emerald-700 shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)] flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[15px]">assignment_turned_in</span>
+<span>Mark Returned</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface text-xs font-medium text-primary shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)] flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[15px]">outgoing_mail</span>
+<span>Gentle Nudge</span>
+</button>
+</div>
+</div>
+<!-- Tactile Card Container for Table -->
+<div class="rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.8)] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface shadow-[inset_0_-2px_4px_rgba(0,0,0,0.04)] text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">
+<th class="py-4 pl-5 pr-3 w-10">
+<div class="w-4 h-4 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-[12px] text-primary">check</span>
+</div>
+</th>
+<th class="py-4 px-3">Loan ID &amp; Asset</th>
+<th class="py-4 px-3">Patron Details</th>
+<th class="py-4 px-3">Checkout Date</th>
+<th class="py-4 px-3">Due Date &amp; Status</th>
+<th class="py-4 px-3">Format / Medium</th>
+<th class="py-4 pr-5 pl-3 text-right">Quick Desk Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-xs">
+<!-- Row 1: Selected / Inspected -->
+<tr class="group bg-surface shadow-[inset_2px_2px_4px_rgba(99,102,241,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.6)] transition-all">
+<td class="py-4 pl-5 pr-3">
+<div class="w-4 h-4 rounded bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[12px]">check</span>
+</div>
+</td>
+<td class="py-4 px-3 min-w-[240px]">
+<div class="flex items-center gap-3">
+<img class="w-10 h-14 object-cover rounded-lg shadow-[2px_2px_5px_rgba(0,0,0,0.1),-1px_-1px_3px_rgba(255,255,255,0.8)] flex-shrink-0" data-alt="Monochrome architectural study book cover design, elegant minimalist typography, soft indigo accent tone, professional institutional library archive style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmB8gNdeefM9FdvjScPXuo7iTe2Fo0D9B9azBnlO9skR-_SBWtxgJPXnEz_5keahqVlq8iXgs5wAf_ZTMz4zcYm_9ADI3SlMgDHj16UPmCDpBBuwhz6Q9_VcEo9VT9Rgdg0epMO76bWyxGmCJGbe_4iXmgw-e52TBEAoXDaq33xH_NxcnluizasosFh_y7plM_JE6_ZZHdoIXcWw04hb9W6m5KqXDCtuP_XTohdNZF95RzTGFCvgwW5w"/>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-on-surface leading-snug group-hover:text-primary transition-colors">The Architecture of Silence</span>
+<span class="text-[11px] text-on-surface-variant">1st Archival Ed. • ISBN 978-0-99214-412-8</span>
+<span class="text-[10px] font-mono text-primary mt-0.5">#LN-2025-99214X</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 min-w-[170px]">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Eleanor Vance</span>
+<span class="text-[11px] text-on-surface-variant font-mono">#BKSP-8820-A</span>
+<span class="text-[10px] text-primary font-medium mt-0.5">Senior Research Fellow</span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-on-surface-variant font-medium">
+<div>Oct 29, 2025</div>
+<div class="text-[10px] text-on-surface-variant/75">10:14 AM • Desk 2</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-on-surface">Nov 12, 2025</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100/60 text-amber-800 text-[10px] font-semibold w-fit shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                      Due in 4 days
+                    </span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">devices</span>
+<span class="font-medium">DRM Digital Folio</span>
+</div>
+<span class="text-[10px] text-on-surface-variant block">Whispernet Sync</span>
+</td>
+<td class="py-4 pr-5 pl-3 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface text-primary font-semibold text-xs shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08)]" type="button">
+                      Inspecting
+                    </button>
+<button class="w-7 h-7 rounded-lg bg-surface text-on-surface-variant flex items-center justify-center shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Overdue / Grace -->
+<tr class="group hover:bg-surface-bright/50 transition-colors">
+<td class="py-4 pl-5 pr-3">
+<div class="w-4 h-4 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] cursor-pointer"></div>
+</td>
+<td class="py-4 px-3 min-w-[240px]">
+<div class="flex items-center gap-3">
+<img class="w-10 h-14 object-cover rounded-lg shadow-[2px_2px_5px_rgba(0,0,0,0.1),-1px_-1px_3px_rgba(255,255,255,0.8)] flex-shrink-0" data-alt="Technical data architecture textbook cover, modern computer science reference design, crisp layout with subtle indigo and slate tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqhDJsyqKXjVe3wmPoD8hsSD9otIxZNqmP9QOoLqvCmLDYur8Ux3hz5PbGiZwofVpvp4RBheAx2_G8cK-OGJNu1I7krrz_WuYX7P1_yXLkt_9MHWrg_Ej4GoeFZKCxklHjq_9ETV4EfiuOM13TSbP1YIkWngP2D3KnrAZJse0RtzD7n9uVrKHK7UWLdctrqY6dNbcoUm35csyyGnvdXdmFmwqn_TDGF-jKyE6n4xPviqIngwogBh0RgQ"/>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-on-surface leading-snug group-hover:text-primary transition-colors">Designing Data-Intensive Applications</span>
+<span class="text-[11px] text-on-surface-variant">O'Reilly • ISBN 978-1-44937-332-0</span>
+<span class="text-[10px] font-mono text-on-surface-variant mt-0.5">#LN-2025-44937A</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 min-w-[170px]">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Marcus Brody</span>
+<span class="text-[11px] text-on-surface-variant font-mono">#BKSP-9081-C</span>
+<span class="text-[10px] text-on-surface-variant font-medium mt-0.5">Postgraduate Scholar</span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-on-surface-variant font-medium">
+<div>Oct 18, 2025</div>
+<div class="text-[10px] text-on-surface-variant/75">04:22 PM • Kiosk #1</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-error">Nov 01, 2025</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container text-[10px] font-semibold w-fit shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+                      +5 Days • Grace Period
+                    </span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">book</span>
+<span class="font-medium">Physical Hardcover</span>
+</div>
+<span class="text-[10px] text-on-surface-variant block">Curator Stacks B3 • RFID</span>
+</td>
+<td class="py-4 pr-5 pl-3 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface text-amber-800 font-semibold text-xs shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08)] flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[13px]">notification_add</span>
+<span>Dispatch</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface text-on-surface-variant flex items-center justify-center shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: On-Time Audio -->
+<tr class="group hover:bg-surface-bright/50 transition-colors">
+<td class="py-4 pl-5 pr-3">
+<div class="w-4 h-4 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] cursor-pointer"></div>
+</td>
+<td class="py-4 px-3 min-w-[240px]">
+<div class="flex items-center gap-3">
+<img class="w-10 h-14 object-cover rounded-lg shadow-[2px_2px_5px_rgba(0,0,0,0.1),-1px_-1px_3px_rgba(255,255,255,0.8)] flex-shrink-0" data-alt="Science fiction novel cover design featuring cosmic silhouettes, interstellar exploration theme, sleek modern typography in cool muted violet and navy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQqa9VhMgNRJuDLd0NEy3BL5EnIGRMXcDjCFdEfouu_RvB5lSldhbb8mnh-XKnAN4JNTGomlgg8In1CS64nL-7nbQBbwiw_Uh1vAzqHElkbxkJPOyqK3bhSja6ZWMhBNZ3vm5a6XE9qOOt0-ld6se9O_zju7yH0XwmQJZ9Bspa5rZrI4BULoZaE45Mlcu6v4-yTZ3_OwnMS-maTyEXaJv5NxBHJT8futiLJwLaBqdvOluXdpl_Nu5aUg"/>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-on-surface leading-snug group-hover:text-primary transition-colors">Project Hail Mary</span>
+<span class="text-[11px] text-on-surface-variant">Andy Weir • ISBN 978-0-59313-520-4</span>
+<span class="text-[10px] font-mono text-on-surface-variant mt-0.5">#LN-2025-59313P</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 min-w-[170px]">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Dr. Julian Croft</span>
+<span class="text-[11px] text-on-surface-variant font-mono">#BKSP-4491-B</span>
+<span class="text-[10px] text-on-surface-variant font-medium mt-0.5">Faculty Chair Physics</span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-on-surface-variant font-medium">
+<div>Oct 22, 2025</div>
+<div class="text-[10px] text-on-surface-variant/75">09:05 AM • Web Loan</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-on-surface">Nov 19, 2025</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100/70 text-emerald-800 text-[10px] font-semibold w-fit shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                      11 Days Left
+                    </span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">headphones</span>
+<span class="font-medium">Lossless Audio</span>
+</div>
+<span class="text-[10px] text-on-surface-variant block">Unabridged • Digital</span>
+</td>
+<td class="py-4 pr-5 pl-3 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface text-on-surface-variant font-semibold text-xs shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08)]" type="button">
+                      Inspect
+                    </button>
+<button class="w-7 h-7 rounded-lg bg-surface text-on-surface-variant flex items-center justify-center shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Stage 2 Outreach Overdue -->
+<tr class="group hover:bg-surface-bright/50 transition-colors">
+<td class="py-4 pl-5 pr-3">
+<div class="w-4 h-4 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] cursor-pointer"></div>
+</td>
+<td class="py-4 px-3 min-w-[240px]">
+<div class="flex items-center gap-3">
+<img class="w-10 h-14 object-cover rounded-lg shadow-[2px_2px_5px_rgba(0,0,0,0.1),-1px_-1px_3px_rgba(255,255,255,0.8)] flex-shrink-0" data-alt="Architecture theory monograph cover, tactile textured paper graphic with refined embossing style, calm neutral colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLooufUtJNtFZI9eUOaPAnm_npC4yTIJuI3p1D_HjMv3tFqXl5mzvAa73iwXduKxrXcmEp62rtx6NpHswB-70h8snWNQyFmXDKzHhrmj6B2xZsuF5GjiMWGC-x0-M_sjf_gRGDdRJjASBOEykRSW04iDklK8l9vfrSDV5L9kO0eRM0OA-axn0M42jUicKoBHnz9ZYIIAhmW4noAcwys5FjdYu4UCZaH_5f5Be8jqOT_-j7rwhgg35NCw"/>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-on-surface leading-snug group-hover:text-primary transition-colors">The Eyes of the Skin</span>
+<span class="text-[11px] text-on-surface-variant">Juhani Pallasmaa • ISBN 978-0-47001-578-0</span>
+<span class="text-[10px] font-mono text-on-surface-variant mt-0.5">#LN-2025-47001E</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 min-w-[170px]">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Clara Jensen</span>
+<span class="text-[11px] text-on-surface-variant font-mono">#BKSP-4412-D</span>
+<span class="text-[10px] text-on-surface-variant font-medium mt-0.5">Community Resident</span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-on-surface-variant font-medium">
+<div>Oct 14, 2025</div>
+<div class="text-[10px] text-on-surface-variant/75">11:50 AM • Desk 1</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-error">Oct 28, 2025</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container text-[10px] font-semibold w-fit shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                      +8 Days • Outreach 2
+                    </span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">auto_stories</span>
+<span class="font-medium">Cloth Hardcover</span>
+</div>
+<span class="text-[10px] text-on-surface-variant block">Alpha Vault • Special Loan</span>
+</td>
+<td class="py-4 pr-5 pl-3 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface text-error font-semibold text-xs shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08)] flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[13px]">mail</span>
+<span>Contact</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface text-on-surface-variant flex items-center justify-center shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Eleanor Vance E-Book -->
+<tr class="group hover:bg-surface-bright/50 transition-colors">
+<td class="py-4 pl-5 pr-3">
+<div class="w-4 h-4 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] cursor-pointer"></div>
+</td>
+<td class="py-4 px-3 min-w-[240px]">
+<div class="flex items-center gap-3">
+<img class="w-10 h-14 object-cover rounded-lg shadow-[2px_2px_5px_rgba(0,0,0,0.1),-1px_-1px_3px_rgba(255,255,255,0.8)] flex-shrink-0" data-alt="Literary speculative novel book cover, soft solar yellow and ambient warm light aesthetic, modern award winning publication cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzYenOHT8Q7FvJCIh4ruo2xVZ4oYlPh6A0N6uXHXeRNgQqsY-CovmJxUwCEGnaIN44JhhXXbvxjP2qikM6JpSJDHYPBfPLaVYStsrgWPfY7nv-wl7YD00g_sml99K3QlejRxEGdKnSLqkaP_QXcMV9wh97A9DrQJa3YoQULWQtle9GqSouFlIvf_Y1YRSxM90B0nRVkxVmd0lSC4u7EkEOJgc6dpTx5nvPH_Jrei_fODv6-AtWkHwioA"/>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-on-surface leading-snug group-hover:text-primary transition-colors">Klara and the Sun</span>
+<span class="text-[11px] text-on-surface-variant">Kazuo Ishiguro • ISBN 978-0-59331-817-1</span>
+<span class="text-[10px] font-mono text-on-surface-variant mt-0.5">#LN-2025-59331K</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 min-w-[170px]">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Eleanor Vance</span>
+<span class="text-[11px] text-on-surface-variant font-mono">#BKSP-8820-A</span>
+<span class="text-[10px] text-primary font-medium mt-0.5">Senior Research Fellow</span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-on-surface-variant font-medium">
+<div>Nov 01, 2025</div>
+<div class="text-[10px] text-on-surface-variant/75">08:11 AM • Auto-Sync</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-on-surface">Nov 22, 2025</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100/70 text-emerald-800 text-[10px] font-semibold w-fit shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                      14 Days Left
+                    </span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">tablet_mac</span>
+<span class="font-medium">Whispernet E-Book</span>
+</div>
+<span class="text-[10px] text-on-surface-variant block">Syncing • 4 Devices</span>
+</td>
+<td class="py-4 pr-5 pl-3 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface text-on-surface-variant font-semibold text-xs shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08)]" type="button">
+                      Inspect
+                    </button>
+<button class="w-7 h-7 rounded-lg bg-surface text-on-surface-variant flex items-center justify-center shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Hold Shelf Fulfillment Ready -->
+<tr class="group hover:bg-surface-bright/50 transition-colors">
+<td class="py-4 pl-5 pr-3">
+<div class="w-4 h-4 rounded bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] cursor-pointer"></div>
+</td>
+<td class="py-4 px-3 min-w-[240px]">
+<div class="flex items-center gap-3">
+<img class="w-10 h-14 object-cover rounded-lg shadow-[2px_2px_5px_rgba(0,0,0,0.1),-1px_-1px_3px_rgba(255,255,255,0.8)] flex-shrink-0" data-alt="Creative literature novel cover design inspired by vintage arcade artwork and modern contemporary book aesthetics with deep cobalt and cream accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnpDp-HLovXCLeEl6iPabFpQWdZ8dVuXzU8r4KdZdjkpjKEcsPLTPkIU1Lt1Tjq1bwHRNvFqaslbUoj9fRsxyB0y52NvyPgUjyr5K9E3XNPj8N6S1m9qMPJH6FUxVUXw_9pH5yHto1_OlcjinklP9DsPR5Z9u9jcGm2ajKc1IRoffForXTrtXuqbHINFxvZ4PmtR1KDx13HR5Ggr3bCsGeCr3_ovLFO9PYvbeCuQQA-oEV0kkoUriDCg"/>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-on-surface leading-snug group-hover:text-primary transition-colors">Tomorrow, and Tomorrow, and Tomorrow</span>
+<span class="text-[11px] text-on-surface-variant">Gabrielle Zevin • ISBN 978-0-59332-120-1</span>
+<span class="text-[10px] font-mono text-on-surface-variant mt-0.5">#LN-2025-59332T</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 min-w-[170px]">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Kareem Al-Sayed</span>
+<span class="text-[11px] text-on-surface-variant font-mono">#BKSP-3190-E</span>
+<span class="text-[10px] text-on-surface-variant font-medium mt-0.5">Undergraduate Engineering</span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-on-surface-variant font-medium">
+<div>Nov 04, 2025</div>
+<div class="text-[10px] text-on-surface-variant/75">01:45 PM • Transit In</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-primary">Hold Shelf B-12</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-semibold w-fit shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                      Claim Window: 3 Days
+                    </span>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">library_books</span>
+<span class="font-medium">Hardcover + Folio</span>
+</div>
+<span class="text-[10px] text-on-surface-variant block">Includes CD Companion</span>
+</td>
+<td class="py-4 pr-5 pl-3 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1 rounded-lg bg-surface text-primary font-semibold text-xs shadow-[2px_2px_4px_rgba(99,102,241,0.25),-2px_-2px_4px_rgba(255,255,255,0.8)] hover:shadow-[inset_1px_1px_3px_rgba(99,102,241,0.2)] flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">how_to_reg</span>
+<span>Checkout</span>
+</button>
+<button class="w-7 h-7 rounded-lg bg-surface text-on-surface-variant flex items-center justify-center shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Controls Footnote -->
+<div class="px-5 py-3.5 bg-surface shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span>Showing <strong class="text-on-surface font-semibold">1 – 6</strong> of 34,610 active transactions</span>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium text-on-surface cursor-pointer">
+<span>Show 25 rows</span>
+<span class="material-symbols-outlined text-[14px]">unfold_more</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px]">Page 1 of 1,731</span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-on-surface-variant shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-primary font-semibold shadow-[inset_2px_2px_4px_rgba(0,0,0,0.07),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] cursor-pointer" type="button">
+                1
+              </button>
+<button class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-on-surface shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-primary cursor-pointer" type="button">
+                2
+              </button>
+<button class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-on-surface shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-primary cursor-pointer" type="button">
+                3
+              </button>
+<button class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-on-surface-variant shadow-[2px_2px_4px_rgba(0,0,0,0.04),-2px_-2px_4px_rgba(255,255,255,0.7)] hover:text-on-surface cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Shelf Load Visualization (Micro SVG Bar Spark) -->
+<div class="p-4 rounded-2xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.04),-4px_-4px_10px_rgba(255,255,255,0.7)] flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface flex items-center justify-center text-primary shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.7)]">
+<span class="material-symbols-outlined text-[19px]">density_medium</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Return Drop-Chute Buffer Capacity</div>
+<div class="text-[11px] text-on-surface-variant">Conveyor auto-sorter running at 72% optimal intake volume</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<!-- Inline Spark SVG -->
+<div class="w-48 h-5 flex items-center">
+<svg class="w-full h-full" fill="none" viewbox="0 0 180 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="fill-surface-container" height="8" rx="4" width="180" x="0" y="3"></rect>
+<rect class="fill-primary" height="8" rx="4" width="130" x="0" y="3"></rect>
+</svg>
+</div>
+<span class="text-xs font-mono font-semibold text-primary">130 / 180 Units</span>
+</div>
+</div>
+</div>
+<!-- RIGHT 4 COLS: Active Inspector Drawer & Rapid Intake Station -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Card 1: Active Loan Inspector -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.8)] flex flex-col gap-5">
+<div class="flex items-center justify-between pb-3 shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">manage_search</span>
+<span class="font-headline font-semibold text-xs tracking-wider uppercase text-on-surface">Circulation Inspector</span>
+</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.08),inset_-1px_-1px_3px_rgba(255,255,255,0.7)] text-primary font-semibold">
+            #LN-2025-99214X
+          </span>
+</div>
+<!-- Book & Borrower Header Snippet -->
+<div class="flex items-start gap-3.5">
+<img class="w-14 h-20 object-cover rounded-xl shadow-[3px_3px_7px_rgba(0,0,0,0.12),-2px_-2px_5px_rgba(255,255,255,0.85)] flex-shrink-0" data-alt="Monochrome book cover art with architectural geometric line drawings on a minimal stone gray surface, studio library lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEy3CB0Urmv2K1a8ZPq-MBnYIQ3PyMHf-bRHZvXqTw9P9h93L_PDSYuwJI2bKY5-DgcK_hteo-IY9dDwiXSP_JzWUDuKIxr-LWFZgMXwz5vBDv7wd5QaUtywYwWZ94JHOMS-tnkgooCXD60Hxb1xFgCi8MfWdIQUhgasIxhI7Br1gZzcXz5DyU57nRdiCcwFi011exDsPznvW9DQfktdFnWejQynjhhwkjFCrXtpMqD-sQlT8pXyBYyw"/>
+<div class="flex flex-col gap-1 min-w-0">
+<span class="text-sm font-headline font-semibold text-on-surface truncate">The Architecture of Silence</span>
+<span class="text-xs text-on-surface-variant">by Helena Vance (1st Ed.)</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary text-[10px] font-bold">EV</span>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-on-surface leading-tight">Eleanor Vance</span>
+<span class="text-[10px] text-on-surface-variant font-mono leading-tight">Card #BKSP-8820-A</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Inset Matrix -->
+<div class="p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_6px_rgba(0,0,0,0.06),inset_-2px_-2px_6px_rgba(255,255,255,0.7)] flex flex-col gap-2.5 text-xs">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Borrow Channel:</span>
+<span class="font-medium text-on-surface">Web Folio + E-Reader</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Patron Quota Impact:</span>
+<span class="font-semibold text-on-surface">3 of 10 items active</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Renewal Lifecycle:</span>
+<span class="font-medium text-primary">0 of 2 used (Eligible)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">RFID / DRM Key:</span>
+<span class="font-mono text-[11px] text-on-surface">RFID-8820-VNC-992</span>
+</div>
+<div class="flex items-center justify-between pt-1 border-t-0 shadow-[0_-1px_0_rgba(0,0,0,0.04)]">
+<span class="text-on-surface-variant">Digital License Integrity:</span>
+<span class="flex items-center gap-1 text-emerald-700 font-semibold text-[11px]">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+              100% Intact
+            </span>
+</div>
+</div>
+<!-- Inspector Actions -->
+<div class="flex flex-col gap-2.5">
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface text-xs font-semibold text-primary shadow-[4px_4px_8px_rgba(99,102,241,0.22),-3px_-3px_6px_rgba(255,255,255,0.8)] hover:shadow-[inset_2px_2px_4px_rgba(99,102,241,0.2)] active:shadow-[inset_3px_3px_5px_rgba(99,102,241,0.3)] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">more_time</span>
+<span>Grant 14-Day Extension</span>
+</button>
+<button class="w-full py-2 px-4 rounded-xl bg-surface text-xs font-semibold text-on-surface shadow-[3px_3px_6px_rgba(0,0,0,0.05),-3px_-3px_6px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05)] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">assignment_turned_in</span>
+<span>Process Early Return</span>
+</button>
+<button class="w-full py-2 px-4 rounded-xl bg-surface text-xs font-semibold text-on-surface-variant shadow-[2px_2px_5px_rgba(0,0,0,0.04),-2px_-2px_5px_rgba(255,255,255,0.6)] hover:text-on-surface hover:shadow-[inset_1px_1px_3px_rgba(0,0,0,0.06)] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+<span>Reassign Loan / Branch Transfer</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Smart Drop Chute & Rapid Intake Station -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.8)] flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+<span class="font-headline font-semibold text-xs tracking-wider uppercase text-on-surface">Smart Chute Intake Alpha</span>
+</div>
+<span class="text-[10px] text-on-surface-variant">Last 10 mins</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Item 1 -->
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.04),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-start justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-on-surface leading-tight">The Poetics of Space</span>
+<span class="text-[10px] text-on-surface-variant">Returned by Maya Lin-Soto • 10:48 AM</span>
+</div>
+<div class="flex items-center gap-1 text-emerald-700 text-[10px] font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Sanitized</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.04),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-start justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-on-surface leading-tight">Quantum Foundations (Lease)</span>
+<span class="text-[10px] text-on-surface-variant">Auto-expired DRM Return • 10:30 AM</span>
+</div>
+<div class="flex items-center gap-1 text-primary text-[10px] font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">cloud_sync</span>
+<span>Re-pooled</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.04),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-start justify-between gap-3">
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-on-surface leading-tight">Principles of Distributed Systems</span>
+<span class="text-[10px] text-on-surface-variant">Drop Chute Slot 2 • 10:18 AM</span>
+</div>
+<div class="flex items-center gap-1 text-amber-700 text-[10px] font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">help</span>
+<span>Needs Review</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 px-3 rounded-xl bg-surface text-xs font-semibold text-on-surface shadow-[3px_3px_6px_rgba(0,0,0,0.05),-3px_-3px_6px_rgba(255,255,255,0.7)] hover:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05)] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">move_to_inbox</span>
+<span>Open Rapid Intake Terminal</span>
+</button>
+</div>
+<!-- Card 3: Inter-Branch Transit Telemetry -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.06),-6px_-6px_16px_rgba(255,255,255,0.8)] flex flex-col gap-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[19px]">route</span>
+<span class="font-headline font-semibold text-xs tracking-wider uppercase text-on-surface">Inter-Branch Courier Status</span>
+</div>
+<span class="text-[10px] font-semibold text-emerald-700 bg-emerald-100/70 px-2 py-0.5 rounded-full">On Route</span>
+</div>
+<div class="p-3 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] flex flex-col gap-2">
+<div class="flex items-center justify-between text-xs">
+<span class="font-semibold text-on-surface">Courier Shuttle #04</span>
+<span class="text-[11px] font-mono text-primary font-medium">ETA 11:30 AM</span>
+</div>
+<div class="flex items-center gap-2 text-[11px] text-on-surface-variant">
+<span>Metropolitan Central</span>
+<span class="material-symbols-outlined text-[14px] text-primary">arrow_forward</span>
+<span>West Annex Rare Vault</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-2/3"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] text-on-surface-variant pt-1">
+<span>14 archival volumes in transit</span>
+<span>Checkpoint 2 of 3</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initCirculationDesk() {
+    // Interactive feedback for table rows and buttons
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('mousedown', () => {
+        btn.classList.add('scale-[0.98]');
+      });
+      btn.addEventListener('mouseup', () => {
+        btn.classList.remove('scale-[0.98]');
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.classList.remove('scale-[0.98]');
+      });
+    });
+  })();
+</script></main><footer class="w-full h-14 bg-surface px-8 flex items-center justify-between text-[11px] text-on-surface-variant shadow-[0_-2px_8px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-4"><span>Audit: <strong class="text-on-surface font-semibold">#CIRC-9042-JTH</strong></span><span>Node: <strong class="text-on-surface font-semibold">Metropolitan Hub Alpha</strong></span></div><div class="flex items-center gap-6"><a class="font-medium text-primary hover:underline flex items-center gap-1" href="#"><span class="material-symbols-outlined text-[14px]">launch</span>Switch to Patron Portal</a><span>© 2025 BookSphere Library Systems. All rights reserved.</span></div></footer></div></body></html>

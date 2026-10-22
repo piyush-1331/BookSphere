@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>BookSphere Patron Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#d6d8de", "tertiary-fixed-dim": "#c4b5fd", "surface-container": "#e2e4ea", "on-primary-container": "#e0e2ff", "primary-container": "#818cf8", "surface-variant": "#dcdee4", "on-tertiary-fixed-variant": "#5b21b6", "on-background": "#2e3040", "background": "#e8eaf0", "tertiary-container": "#a78bfa", "surface-container-high": "#dcdee4", "surface-tint": "#6366f1", "surface-container-low": "#e5e7ed", "primary-fixed": "#e0e2ff", "secondary-container": "#d8dae6", "surface-container-lowest": "#f0f2f8", "on-error-container": "#991b1b", "secondary-fixed-dim": "#b8baca", "error": "#dc2626", "on-surface": "#2e3040", "surface-bright": "#edeef4", "on-secondary-container": "#585a68", "secondary-fixed": "#d8dae6", "surface": "#e8eaf0", "tertiary": "#7c3aed", "tertiary-fixed": "#ede9fe", "on-tertiary-fixed": "#2e1065", "on-secondary-fixed-variant": "#404252", "on-secondary-fixed": "#1a1b26", "primary-fixed-dim": "#a5b4fc", "on-primary-fixed-variant": "#4338ca", "inverse-surface": "#2e3040", "on-surface-variant": "#585a68", "inverse-primary": "#a5b4fc", "primary": "#6366f1", "inverse-on-surface": "#e8eaf0", "on-tertiary": "#ffffff", "on-error": "#ffffff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "outline-variant": "#d0d2dc", "error-container": "#fee2e2", "outline": "#8a8c9a", "on-primary-fixed": "#1e1b4b", "secondary": "#6c6e7e", "on-tertiary-container": "#3b1f63", "surface-dim": "#d4d6dc" }, "borderRadius": { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" }, "spacing": {}, "fontFamily": { "headline": [ "Plus Jakarta Sans" ], "display": [ "Plus Jakarta Sans" ], "body": [ "Plus Jakarta Sans" ], "label": [ "Plus Jakarta Sans" ] }, "fontSize": {} } } }</script></head><body class="bg-background font-body text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><div class="flex items-center gap-3 cursor-pointer"><div class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center shadow-[4px_4px_10px_rgba(0,0,0,0.08),-4px_-4px_10px_rgba(255,255,255,0.7)] text-primary"><span class="material-symbols-outlined text-[22px]">auto_stories</span></div><span class="text-lg font-headline font-semibold tracking-tight text-on-surface">BookSphere</span></div><nav class="hidden xl:flex items-center gap-1.5" data-active-classes="bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] font-semibold"><a aria-current="page" class="px-3.5 py-2 rounded-xl transition-all bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] font-semibold" data-path="dashboard" href="#">Dashboard</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="explore-directory" href="#">Explore Directory</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="my-books" href="#">My Books</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="favorites" href="#">Favorites</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="recommendations" href="#">Recommendations</a></nav></div><div class="hidden md:flex items-center flex-1 max-w-xs mx-4"><div class="w-full flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)]"><span class="material-symbols-outlined text-outline text-[20px]">search</span><input class="w-full bg-transparent border-0 outline-none text-xs text-on-surface placeholder:text-outline font-medium" placeholder="Search catalog..." type="text"/><kbd class="px-1.5 py-0.5 text-[10px] rounded bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.6)] text-on-surface-variant font-mono">⌘K</kbd></div></div><div class="flex items-center gap-3.5"><div class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.6)] cursor-pointer"><span class="material-symbols-outlined text-primary text-[18px]">book</span><span class="text-xs font-semibold text-on-surface">3 Active Loans</span></div><button class="relative w-9 h-9 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.6)] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-2.5 pl-1 cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="text-xs font-semibold text-on-surface leading-tight">Eleanor Vance</span><span class="text-[11px] text-on-surface-variant leading-tight">Patron</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full pb-20">
+<!-- Subtle ambient glow background element contained strictly -->
+<div class="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-12 pt-8">
+<!-- Top Identity Card: Neomorphic Extruded Slab -->
+<div class="relative w-full rounded-2xl bg-surface p-6 sm:p-8 lg:p-10 shadow-[8px_8px_20px_rgba(0,0,0,0.07),-8px_-8px_20px_rgba(255,255,255,0.7)] transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+<!-- Patron Bio Segment -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+<div class="relative">
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl p-1 bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.08),-6px_-6px_14px_rgba(255,255,255,0.7)] flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover rounded-xl" data-alt="Close-up portrait photograph of Eleanor Vance, an intellectual woman in her early thirties with thoughtful brown eyes and subtle horn-rimmed glasses, soft studio lighting with muted cool gray and slate tones, gentle depth of field, high editorial photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhM49zdcVQk6jafToqrRl7z1GUmIi9qZhpuJyz3L0A-jUbc2C7yF7TqvI9Zbpsbv3YGl0WEunAqHdRc1fyNk1MaJjYfiFUxhw6cUpkM3aZMah66vd0BDFAcTTVQ-e9lnrktzTT7Xn0pN9ewFAInF6av0euaodgYuzHUQiIp4UkpoUw4HEbirFfIcBUdtdM8Lw8nzGKDwEEIF0eTS47PY4UfBepikSN1Mni7Z33qXE35mfm_iUZTpSgmQ"/>
+</div>
+<div class="absolute -bottom-2 -right-2 px-2.5 py-1 rounded-lg bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.08),-3px_-3px_6px_rgba(255,255,255,0.8)] text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-semibold tracking-wider uppercase text-on-surface">Fellow</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-3">
+<h1 class="text-2xl sm:text-3xl font-headline font-semibold text-on-surface tracking-tight">Eleanor Vance</h1>
+<span class="px-3 py-1 rounded-full text-xs font-medium text-primary bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+                Card: BKSP-8820-A
+              </span>
+</div>
+<p class="text-sm text-on-surface-variant font-medium mt-1">Senior Patron &amp; Literary Fellow • Home: Metropolitan Central Flagship</p>
+<div class="flex flex-wrap items-center gap-2 mt-3 text-xs text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.04),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] text-secondary">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Good Standing
+              </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.04),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">credit_card_off</span>
+                Zero Overdue Fees
+              </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.04),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] text-secondary">
+<span class="material-symbols-outlined text-[14px] text-tertiary">star</span>
+                Tier: 10/10 Borrow Cap
+              </span>
+<span class="text-outline text-xs hidden md:inline">• Member since Sept 2021</span>
+</div>
+</div>
+</div>
+<!-- Quick Access Physical Card Button -->
+<div class="flex items-center self-start lg:self-center gap-3">
+<button class="px-5 py-3 rounded-xl bg-surface shadow-[5px_5px_12px_rgba(0,0,0,0.08),-5px_-5px_12px_rgba(255,255,255,0.7)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] text-primary hover:text-on-primary-fixed-variant transition-all flex items-center gap-2 text-sm font-semibold" onclick="document.getElementById('barcode-modal').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+<span>Digital Kiosk Pass</span>
+</button>
+</div>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t-0">
+<div class="p-4 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.04),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">book_online</span>
+</div>
+<div>
+<div class="text-xl font-headline font-semibold text-on-surface">48</div>
+<div class="text-xs text-on-surface-variant font-medium">Books Read</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.04),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">sticky_note_2</span>
+</div>
+<div>
+<div class="text-xl font-headline font-semibold text-on-surface">18,420</div>
+<div class="text-xs text-on-surface-variant font-medium">Pages Logged</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.04),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+</div>
+<div>
+<div class="text-xl font-headline font-semibold text-on-surface">18 Days</div>
+<div class="text-xs text-on-surface-variant font-medium">Reading Streak</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.04),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">bookmark_heart</span>
+</div>
+<div>
+<div class="text-xl font-headline font-semibold text-on-surface">19 Saved</div>
+<div class="text-xs text-on-surface-variant font-medium">Wishlist Items</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Soft Horizontal Tab Nav Bar -->
+<div class="mt-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+<button class="px-5 py-2.5 rounded-xl bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold whitespace-nowrap flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+        Account &amp; Library Card
+      </button>
+<button class="px-5 py-2.5 rounded-xl bg-surface text-on-surface-variant hover:text-on-surface shadow-[4px_4px_8px_rgba(0,0,0,0.05),-4px_-4px_8px_rgba(255,255,255,0.6)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-medium whitespace-nowrap flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+        Reading Analytics &amp; Goals
+      </button>
+<button class="px-5 py-2.5 rounded-xl bg-surface text-on-surface-variant hover:text-on-surface shadow-[4px_4px_8px_rgba(0,0,0,0.05),-4px_-4px_8px_rgba(255,255,255,0.6)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-medium whitespace-nowrap flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">devices</span>
+        Preferences &amp; Devices
+      </button>
+<button class="px-5 py-2.5 rounded-xl bg-surface text-on-surface-variant hover:text-on-surface shadow-[4px_4px_8px_rgba(0,0,0,0.05),-4px_-4px_8px_rgba(255,255,255,0.6)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-medium whitespace-nowrap flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+        Security &amp; Password
+      </button>
+<button class="px-5 py-2.5 rounded-xl bg-surface text-on-surface-variant hover:text-on-surface shadow-[4px_4px_8px_rgba(0,0,0,0.05),-4px_-4px_8px_rgba(255,255,255,0.6)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-medium whitespace-nowrap flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+        Borrowing Quotas &amp; Fines
+      </button>
+</div>
+<!-- Main Configuration Grid -->
+<div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Personal Information & Preferences (7 Cols) -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Section: Patron Personal Info -->
+<div class="p-6 sm:p-8 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.7)]">
+<div class="flex items-center justify-between pb-6">
+<div>
+<h2 class="text-lg font-headline font-semibold text-on-surface">Patron Profile Record</h2>
+<p class="text-xs text-on-surface-variant mt-0.5">Contact details associated with interlibrary loans and circulation notifications.</p>
+</div>
+<div class="w-8 h-8 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</div>
+</div>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface tracking-wide uppercase">Legal Patron Name</label>
+<div class="px-4 py-3 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-[18px]">person</span>
+<input class="bg-transparent border-0 outline-none w-full text-xs font-medium text-on-surface focus:text-primary transition-colors" type="text" value="Eleanor Vance"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface tracking-wide uppercase">Phone Number</label>
+<div class="px-4 py-3 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-[18px]">phone</span>
+<input class="bg-transparent border-0 outline-none w-full text-xs font-medium text-on-surface focus:text-primary transition-colors" type="text" value="+1 (555) 234-8901"/>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface tracking-wide uppercase">Institutional &amp; Loan Email</label>
+<div class="px-4 py-3 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-[18px]">mail</span>
+<input class="bg-transparent border-0 outline-none w-full text-xs font-medium text-on-surface focus:text-primary transition-colors" type="email" value="eleanor.vance@library.org"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface tracking-wide uppercase">Designated Home Branch</label>
+<div class="relative px-4 py-3 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)] flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-[18px]">account_balance</span>
+<select class="bg-transparent border-0 outline-none w-full text-xs font-medium text-on-surface appearance-none cursor-pointer pr-8">
+<option selected="">Metropolitan Central Flagship (Curators Hall)</option>
+<option>North District Branch &amp; Archives</option>
+<option>University Annex &amp; Rare Book Vault</option>
+</select>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px] pointer-events-none">unfold_more</span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-medium">Physical hold items are routed to this hub by default.</span>
+</div>
+</form>
+</div>
+<!-- Section: Connected Devices & E-Reader Sync -->
+<div class="p-6 sm:p-8 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.7)]">
+<div class="flex items-center justify-between pb-5">
+<div>
+<h2 class="text-lg font-headline font-semibold text-on-surface">E-Reader &amp; Terminal Synchronizations</h2>
+<p class="text-xs text-on-surface-variant mt-0.5">Automatic Adobe DRM folio keys and OverDrive/Whispernet delivery.</p>
+</div>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_7px_rgba(0,0,0,0.07),-3px_-3px_7px_rgba(255,255,255,0.7)] text-xs font-semibold text-primary hover:text-on-primary-fixed-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">add</span>
+              Add Device
+            </button>
+</div>
+<div class="space-y-3.5 mt-3">
+<!-- Kindle Device Item -->
+<div class="p-4 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.04),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">tablet_mac</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface flex items-center gap-2">
+                    Kindle Paperwhite (11th Gen)
+                    <span class="px-2 py-0.5 rounded-full text-[10px] bg-surface shadow-[inset_1px_1px_2px_rgba(0,0,0,0.06)] text-emerald-600 font-semibold">Active</span>
+</div>
+<div class="text-[11px] text-on-surface-variant font-mono mt-0.5">eleanor@kindle.com • Whispernet Direct</div>
+</div>
+</div>
+<button class="w-8 h-8 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] flex items-center justify-center text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+</button>
+</div>
+<!-- Kobo Device Item -->
+<div class="p-4 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.04),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface flex items-center gap-2">
+                    Kobo Clara 2E
+                    <span class="px-2 py-0.5 rounded-full text-[10px] bg-surface shadow-[inset_1px_1px_2px_rgba(0,0,0,0.06)] text-secondary font-medium">Authorized</span>
+</div>
+<div class="text-[11px] text-on-surface-variant font-mono mt-0.5">Adobe DRM ID #9931-E • Local WiFi</div>
+</div>
+</div>
+<button class="w-8 h-8 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] flex items-center justify-center text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[16px]">link</span>
+</button>
+</div>
+<!-- Web & iPad App -->
+<div class="p-4 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.04),inset_-2px_-2px_5px_rgba(255,255,255,0.6)] flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">laptop_chromebook</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface flex items-center gap-2">
+                    BookSphere Native Reader (iPad Pro &amp; Web)
+                    <span class="px-2 py-0.5 rounded-full text-[10px] bg-surface shadow-[inset_1px_1px_2px_rgba(0,0,0,0.06)] text-primary font-semibold">Active Now</span>
+</div>
+<div class="text-[11px] text-on-surface-variant font-mono mt-0.5">Continuous sync • Position: Page 312 of Dune</div>
+</div>
+</div>
+<button class="w-8 h-8 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[16px]">devices_other</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section: Notification & Circulation Alerts -->
+<div class="p-6 sm:p-8 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.7)]">
+<h2 class="text-lg font-headline font-semibold text-on-surface">Circulation Alerts &amp; Digest</h2>
+<p class="text-xs text-on-surface-variant mt-0.5 mb-6">Manage autonomous reminder hooks to prevent late renewals.</p>
+<div class="space-y-4">
+<!-- Toggle Item 1 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.03),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">alarm</span>
+<div>
+<div class="text-xs font-semibold text-on-surface">Due Date Alerts (48h Prior)</div>
+<div class="text-[11px] text-on-surface-variant">Sends SMS and push ping before automated auto-renew attempt.</div>
+</div>
+</div>
+<!-- Neomorphic Toggle ON -->
+<button class="w-12 h-7 rounded-full bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.8)] p-1 flex items-center transition-colors" onclick="this.classList.toggle('bg-primary'); this.firstElementChild.classList.toggle('translate-x-5');">
+<div class="w-5 h-5 rounded-full bg-primary shadow-[2px_2px_4px_rgba(0,0,0,0.12)] translate-x-5 transition-transform"></div>
+</button>
+</div>
+<!-- Toggle Item 2 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.03),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">notifications_active</span>
+<div>
+<div class="text-xs font-semibold text-on-surface">Hold Availability Notifications</div>
+<div class="text-[11px] text-on-surface-variant">Immediate alert when reserve shelf items arrive at Central.</div>
+</div>
+</div>
+<button class="w-12 h-7 rounded-full bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.8)] p-1 flex items-center transition-colors" onclick="this.firstElementChild.classList.toggle('translate-x-5');">
+<div class="w-5 h-5 rounded-full bg-primary shadow-[2px_2px_4px_rgba(0,0,0,0.12)] translate-x-5 transition-transform"></div>
+</button>
+</div>
+<!-- Toggle Item 3 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.03),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">mail</span>
+<div>
+<div class="text-xs font-semibold text-on-surface">Weekly Reading Summary Digest</div>
+<div class="text-[11px] text-on-surface-variant">Sent every Sunday morning with speed metrics and pages logged.</div>
+</div>
+</div>
+<button class="w-12 h-7 rounded-full bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.8)] p-1 flex items-center transition-colors" onclick="this.firstElementChild.classList.toggle('translate-x-5');">
+<div class="w-5 h-5 rounded-full bg-surface-container-highest shadow-[2px_2px_4px_rgba(0,0,0,0.12)] translate-x-0 transition-transform"></div>
+</button>
+</div>
+<!-- Toggle Item 4 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.03),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">groups</span>
+<div>
+<div class="text-xs font-semibold text-on-surface">Book Club Circle Invites</div>
+<div class="text-[11px] text-on-surface-variant">Allows local patrons to invite Eleanor to monthly discussions.</div>
+</div>
+</div>
+<button class="w-12 h-7 rounded-full bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.8)] p-1 flex items-center transition-colors" onclick="this.firstElementChild.classList.toggle('translate-x-5');">
+<div class="w-5 h-5 rounded-full bg-primary shadow-[2px_2px_4px_rgba(0,0,0,0.12)] translate-x-5 transition-transform"></div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Digital Pass Barcode & Security Settings (5 Cols) -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Section: Printable/Scannable Patron Card -->
+<div class="p-6 sm:p-8 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.7)] text-center relative overflow-hidden" id="barcode-modal">
+<div class="flex items-center justify-between mb-4 text-left">
+<div>
+<span class="text-[10px] tracking-widest font-mono uppercase text-primary font-semibold">BookSphere Municipal Library</span>
+<h2 class="text-base font-headline font-semibold text-on-surface">Digital Patron Pass</h2>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">contactless</span>
+</div>
+<!-- Physical Card Simulator -->
+<div class="mt-4 p-5 rounded-xl bg-surface shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.6)] flex flex-col items-center">
+<!-- Emulated SVG Barcode -->
+<div class="w-full py-4 flex flex-col items-center justify-center">
+<svg class="w-full max-w-[260px] h-16 text-on-surface" fill="currentColor" viewbox="0 0 260 64">
+<!-- Standard Code 128 Emulated Pattern -->
+<rect height="52" width="4" x="0" y="0"></rect>
+<rect height="52" width="2" x="8" y="0"></rect>
+<rect height="52" width="6" x="14" y="0"></rect>
+<rect height="52" width="3" x="24" y="0"></rect>
+<rect height="52" width="2" x="30" y="0"></rect>
+<rect height="52" width="7" x="36" y="0"></rect>
+<rect height="52" width="3" x="47" y="0"></rect>
+<rect height="52" width="5" x="54" y="0"></rect>
+<rect height="52" width="2" x="62" y="0"></rect>
+<rect height="52" width="4" x="68" y="0"></rect>
+<rect height="52" width="6" x="76" y="0"></rect>
+<rect height="52" width="2" x="86" y="0"></rect>
+<rect height="52" width="8" x="92" y="0"></rect>
+<rect height="52" width="3" x="104" y="0"></rect>
+<rect height="52" width="5" x="110" y="0"></rect>
+<rect height="52" width="2" x="119" y="0"></rect>
+<rect height="52" width="4" x="125" y="0"></rect>
+<rect height="52" width="7" x="133" y="0"></rect>
+<rect height="52" width="2" x="144" y="0"></rect>
+<rect height="52" width="5" x="150" y="0"></rect>
+<rect height="52" width="3" x="159" y="0"></rect>
+<rect height="52" width="6" x="166" y="0"></rect>
+<rect height="52" width="2" x="176" y="0"></rect>
+<rect height="52" width="7" x="182" y="0"></rect>
+<rect height="52" width="3" x="193" y="0"></rect>
+<rect height="52" width="4" x="200" y="0"></rect>
+<rect height="52" width="6" x="208" y="0"></rect>
+<rect height="52" width="2" x="218" y="0"></rect>
+<rect height="52" width="8" x="224" y="0"></rect>
+<rect height="52" width="3" x="236" y="0"></rect>
+<rect height="52" width="5" x="243" y="0"></rect>
+<rect height="52" width="4" x="252" y="0"></rect>
+</svg>
+<span class="text-xs font-mono font-semibold tracking-widest text-on-surface mt-2">BKSP-8820-A</span>
+</div>
+<!-- Additional QR Code Module for Fast Self-Checkout -->
+<div class="mt-2 pt-3 border-t-0 flex items-center justify-between w-full px-2 text-left">
+<div>
+<div class="text-[11px] font-semibold text-on-surface">Self-Checkout NFC/QR</div>
+<div class="text-[10px] text-on-surface-variant font-mono">Dynamic Token: 994-01-VNC</div>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.08),-2px_-2px_5px_rgba(255,255,255,0.7)] p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px] text-on-surface">qr_code_2</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-center gap-3">
+<button class="px-4 py-2 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-semibold text-on-surface hover:text-primary transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">print</span>
+              Print Card
+            </button>
+<button class="px-4 py-2 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-semibold text-on-surface hover:text-primary transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">phone_iphone</span>
+              Apple / Google Wallet
+            </button>
+</div>
+</div>
+<!-- Section: Security & Session Status -->
+<div class="p-6 sm:p-8 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.7)]">
+<h2 class="text-lg font-headline font-semibold text-on-surface">Security &amp; Active Logins</h2>
+<p class="text-xs text-on-surface-variant mt-0.5 mb-5">Patron record protection and multi-factor authorization.</p>
+<div class="space-y-4">
+<!-- Password row -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.04),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<div>
+<div class="text-xs font-semibold text-on-surface">Password</div>
+<div class="text-[11px] text-on-surface-variant font-mono">Last changed 42 days ago</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-semibold text-primary">
+                Update
+              </button>
+</div>
+<!-- 2FA row -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.04),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">verified_user</span>
+<div>
+<div class="text-xs font-semibold text-on-surface">Two-Factor Authentication</div>
+<div class="text-[11px] text-on-surface-variant">Authenticator App (TOTP) Active</div>
+</div>
+</div>
+<span class="text-[11px] font-semibold text-emerald-600">Enabled</span>
+</div>
+<!-- Active Session Details -->
+<div class="p-4 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.04),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-xs font-semibold text-on-surface">Current Active Session</span>
+</div>
+<span class="text-[10px] font-mono text-outline">192.88.99.12</span>
+</div>
+<div class="text-[11px] text-on-surface-variant mt-2 font-medium">
+                MacBook Pro • San Francisco, CA, USA
+              </div>
+<div class="text-[10px] text-outline mt-0.5">
+                Chrome Browser 124.0.2 • Started 35 mins ago
+              </div>
+</div>
+</div>
+</div>
+<!-- Section: Dangerous Actions & Data Portability -->
+<div class="p-6 sm:p-8 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.06),-6px_-6px_14px_rgba(255,255,255,0.7)] space-y-4">
+<h2 class="text-sm font-headline font-semibold text-on-surface">Data Rights &amp; Library Governance</h2>
+<div class="flex flex-col gap-3">
+<button class="w-full px-4 py-3 rounded-xl bg-surface shadow-[4px_4px_8px_rgba(0,0,0,0.06),-4px_-4px_8px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-semibold text-on-surface hover:text-primary transition-colors flex items-center justify-between">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+                Export Reading Archive (JSON/CSV)
+              </span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+</button>
+<button class="w-full px-4 py-3 rounded-xl bg-surface shadow-[4px_4px_8px_rgba(0,0,0,0.06),-4px_-4px_8px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-semibold text-error hover:opacity-80 transition-opacity flex items-center justify-between">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">credit_card_off</span>
+                Deactivate Patron Library Card
+              </span>
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Floating Action Footer for Persistent Confirmation -->
+<div class="mt-12 p-4 sm:p-5 rounded-2xl bg-surface shadow-[8px_8px_20px_rgba(0,0,0,0.08),-8px_-8px_20px_rgba(255,255,255,0.7)] flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium">Unsaved modifications are cached locally on this device.</p>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="w-1/2 sm:w-auto px-6 py-2.5 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.06),-4px_-4px_10px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-all">
+          Discard
+        </button>
+<button class="w-1/2 sm:w-auto px-7 py-2.5 rounded-xl bg-surface shadow-[5px_5px_12px_rgba(0,0,0,0.08),-5px_-5px_12px_rgba(255,255,255,0.7)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.09),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-primary hover:text-on-primary-fixed-variant text-xs font-semibold transition-all flex items-center justify-center gap-2" onclick="this.innerHTML='Changes Saved!'; setTimeout(() =&gt; { this.innerHTML='Save Profile Changes'; }, 2000);">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Save Profile Changes</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low py-12 mt-16 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b-0"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-xl bg-surface flex items-center justify-center shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.6)] text-primary"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><span class="text-base font-headline font-semibold text-on-surface">BookSphere Public Library System</span></div><div class="flex items-center gap-6 text-xs text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>System Online</span><span>•</span><span>142,500+ Items Cataloged</span><span>•</span><span>Library Card Active</span></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-on-surface-variant"><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" href="#">Borrowing Rules</a><a class="hover:text-on-surface transition-colors" href="#">Digital Archives</a><a class="hover:text-on-surface transition-colors" href="#">Branch Locations</a><a class="hover:text-on-surface transition-colors" href="#">Help &amp; Patron Support</a></div><p>© 2024 BookSphere Municipal Library Network. All rights reserved.</p></div></div></footer></body></html>

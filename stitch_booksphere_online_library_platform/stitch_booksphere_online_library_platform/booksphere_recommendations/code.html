@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>BookSphere Patron Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#d6d8de", "tertiary-fixed-dim": "#c4b5fd", "surface-container": "#e2e4ea", "on-primary-container": "#e0e2ff", "primary-container": "#818cf8", "surface-variant": "#dcdee4", "on-tertiary-fixed-variant": "#5b21b6", "on-background": "#2e3040", "background": "#e8eaf0", "tertiary-container": "#a78bfa", "surface-container-high": "#dcdee4", "surface-tint": "#6366f1", "surface-container-low": "#e5e7ed", "primary-fixed": "#e0e2ff", "secondary-container": "#d8dae6", "surface-container-lowest": "#f0f2f8", "on-error-container": "#991b1b", "secondary-fixed-dim": "#b8baca", "error": "#dc2626", "on-surface": "#2e3040", "surface-bright": "#edeef4", "on-secondary-container": "#585a68", "secondary-fixed": "#d8dae6", "surface": "#e8eaf0", "tertiary": "#7c3aed", "tertiary-fixed": "#ede9fe", "on-tertiary-fixed": "#2e1065", "on-secondary-fixed-variant": "#404252", "on-secondary-fixed": "#1a1b26", "primary-fixed-dim": "#a5b4fc", "on-primary-fixed-variant": "#4338ca", "inverse-surface": "#2e3040", "on-surface-variant": "#585a68", "inverse-primary": "#a5b4fc", "primary": "#6366f1", "inverse-on-surface": "#e8eaf0", "on-tertiary": "#ffffff", "on-error": "#ffffff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "outline-variant": "#d0d2dc", "error-container": "#fee2e2", "outline": "#8a8c9a", "on-primary-fixed": "#1e1b4b", "secondary": "#6c6e7e", "on-tertiary-container": "#3b1f63", "surface-dim": "#d4d6dc" }, "borderRadius": { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" }, "spacing": {}, "fontFamily": { "headline": [ "Plus Jakarta Sans" ], "display": [ "Plus Jakarta Sans" ], "body": [ "Plus Jakarta Sans" ], "label": [ "Plus Jakarta Sans" ] }, "fontSize": {} } } }</script></head><body class="bg-background font-body text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><div class="flex items-center gap-3 cursor-pointer"><div class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center shadow-[4px_4px_10px_rgba(0,0,0,0.08),-4px_-4px_10px_rgba(255,255,255,0.7)] text-primary"><span class="material-symbols-outlined text-[22px]">auto_stories</span></div><span class="text-lg font-headline font-semibold tracking-tight text-on-surface">BookSphere</span></div><nav class="hidden xl:flex items-center gap-1.5" data-active-classes="bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] font-semibold"><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="dashboard" href="#">Dashboard</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="explore-directory" href="#">Explore Directory</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="my-books" href="#">My Books</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="favorites" href="#">Favorites</a><a aria-current="page" class="px-3.5 py-2 rounded-xl transition-all bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] font-semibold" data-path="recommendations" href="#">Recommendations</a></nav></div><div class="hidden md:flex items-center flex-1 max-w-xs mx-4"><div class="w-full flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)]"><span class="material-symbols-outlined text-outline text-[20px]">search</span><input class="w-full bg-transparent border-0 outline-none text-xs text-on-surface placeholder:text-outline font-medium" placeholder="Search catalog..." type="text"/><kbd class="px-1.5 py-0.5 text-[10px] rounded bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.6)] text-on-surface-variant font-mono">⌘K</kbd></div></div><div class="flex items-center gap-3.5"><div class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.6)] cursor-pointer"><span class="material-symbols-outlined text-primary text-[18px]">book</span><span class="text-xs font-semibold text-on-surface">3 Active Loans</span></div><button class="relative w-9 h-9 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.6)] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-2.5 pl-1 cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="text-xs font-semibold text-on-surface leading-tight">Eleanor Vance</span><span class="text-[11px] text-on-surface-variant leading-tight">Patron</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Content Canvas Container -->
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-10 w-full space-y-12">
+<!-- Section 1: Header & AI Discovery Engine Status Banner -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-3 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] text-xs text-primary font-medium tracking-wide">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Algorithmic Neural Synapse v4.2 • Active
+        </div>
+<h1 class="text-3xl lg:text-4xl font-headline font-semibold tracking-tight text-on-surface">
+          Curated Recommendations &amp; Algorithmic Discovery
+        </h1>
+<p class="text-sm md:text-base text-on-surface-variant font-normal leading-relaxed">
+          Personalized literary matches calculated from your reading velocity, favorite genres, and annotated quotes.
+        </p>
+</div>
+<!-- Affinity Pill & Action -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+<div class="px-4 py-2.5 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.05),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tune</span>
+<span>Tuned to: <strong class="text-on-surface font-semibold">Architecture, Speculative Fiction, Modernist Philosophy</strong></span>
+</div>
+<button class="px-4 py-2.5 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.08),-4px_-4px_10px_rgba(255,255,255,0.8)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold text-primary flex items-center justify-center gap-2 transition-all" id="tuneProfileBtn">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+          Adjust Reading Taste Profile
+        </button>
+</div>
+</section>
+<!-- Section 2: Hero Recommendation Spotlight -->
+<section class="relative rounded-2xl bg-surface shadow-[8px_8px_20px_rgba(0,0,0,0.07),-8px_-8px_20px_rgba(255,255,255,0.85)] p-6 lg:p-10 overflow-hidden">
+<!-- Ambient subtle background depth light -->
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<!-- Top Rationale Header -->
+<div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b-0">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</div>
+<span class="text-xs uppercase tracking-wider font-semibold text-on-surface-variant">
+            Because You Loved <em class="text-on-surface font-medium not-italic">"The Architecture of Silence"</em> &amp; read 68% in 3 days
+          </span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          99% Reading Affinity Match
+        </div>
+</div>
+<!-- Grid Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-2">
+<!-- Book Cover Visual -->
+<div class="lg:col-span-4 flex justify-center">
+<div class="relative group p-3 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.08),-6px_-6px_14px_rgba(255,255,255,0.8)] w-full max-w-[270px] aspect-[2/3]">
+<img class="w-full h-full object-cover rounded-xl shadow-inner" data-alt="Editorial book cover of 'Echoes in Pale Stone' by Arto Nieminen, featuring minimalist Scandinavian modernist monolithic concrete architecture shrouded in early dawn fog, quiet indigo and cool ash color palette, muted tactile typography, museum publication quality" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOHHrE56cUJDtiG-vnobfqpbDX0PbalWQMcbjuikaK3AWjQ1M94LwSLpcEzxPCpYqcIenRBW0UoSal3F-owNUpnttCgx3wuNCwxxZc5PpaRthk-4_7UKhV3_XUj0LUIFsWIov6EWF5IfXEX2Wjk4DpwWqAWcnddmKZWyfaEe6GVGNLMSUV5geWFWFnqP-zg14pf5s2LQSu8LXBwUYRQarjrxcJZfpiBOSQQaaCiW24zZY6lKWvkUZ5RQ"/>
+<div class="absolute bottom-5 left-5 right-5 flex justify-between items-center px-3 py-1.5 rounded-lg bg-surface/90 backdrop-blur-md shadow-[2px_2px_6px_rgba(0,0,0,0.1)]">
+<span class="text-[11px] font-mono font-medium text-on-surface">ISBN: 978-0-4821</span>
+<span class="text-[11px] text-tertiary font-semibold">Rare First Folio</span>
+</div>
+</div>
+</div>
+<!-- Book Details & Metadata -->
+<div class="lg:col-span-8 space-y-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium text-primary">Nordic Speculative Fiction</span>
+<span class="px-2.5 py-0.5 rounded-md bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium text-on-surface-variant">Architectural Monograph</span>
+</div>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-headline font-semibold text-on-surface tracking-tight">
+              Echoes in Pale Stone
+            </h2>
+<p class="text-sm sm:text-base font-medium text-on-surface-variant">
+              By <span class="text-on-surface font-semibold">Arto Nieminen</span> • Translated from the Finnish by Sophia Lindqvist (2023)
+            </p>
+</div>
+<!-- Rationale Quote Block -->
+<div class="p-4 rounded-xl bg-surface shadow-[inset_3px_3px_7px_rgba(0,0,0,0.05),inset_-3px_-3px_7px_rgba(255,255,255,0.7)] space-y-2">
+<div class="flex items-center gap-2 text-xs font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">psychology_alt</span>
+              Discovery Rationale
+            </div>
+<p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              "Matches your preference for Nordic brutalism, quiet pacing, and solitary contemplative prose. This work mirrors the spatial stillness you heavily highlighted in Chapter 4 of <em>The Architecture of Silence</em>."
+            </p>
+</div>
+<!-- Sample Excerpt Quote -->
+<div class="pl-4 italic text-xs sm:text-sm text-on-surface-variant/90 relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-primary/40"></div>
+            “The granite remembers cold longer than any man. You enter the nave not to pray, but to measure the quiet geometry of what remains.”
+          </div>
+<!-- Formats & Availability -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<span class="text-xs font-medium text-on-surface-variant">Available Formats:</span>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] text-xs text-on-surface font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">menu_book</span>
+                Digital Folio (ePub)
+              </span>
+<span class="px-3 py-1 rounded-lg bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.7)] text-xs text-on-surface font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">headphones</span>
+                Lossless Audio (8h 42m)
+              </span>
+</div>
+</div>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<button class="px-6 py-3 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.08),-4px_-4px_10px_rgba(255,255,255,0.8)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-sm font-semibold text-primary flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+              Instant Borrow to My Books
+            </button>
+<button class="px-5 py-3 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-sm font-semibold text-on-surface-variant hover:text-on-surface flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+              Preview First Chapter
+            </button>
+<button class="w-11 h-11 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.7)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] flex items-center justify-center text-on-surface-variant hover:text-error transition-all" title="Save to Reading Wishlist">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Curated Recommendation Carousels -->
+<div class="space-y-12">
+<!-- Carousel 1: Sci-Fi / Project Hail Mary Rationale -->
+<section class="space-y-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">rocket_launch</span>
+<h3 class="text-xl font-headline font-semibold text-on-surface">Because You Borrowed "Project Hail Mary"</h3>
+</div>
+<p class="text-xs text-on-surface-variant mt-0.5 font-medium">Hard Sci-Fi, Ingenious Problem-Solving &amp; Optimistic Survival</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-9 h-9 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.07),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between space-y-4 hover:translate-y-[-2px] transition-all">
+<div class="space-y-4">
+<div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface shadow-[inset_2px_2px_6px_rgba(0,0,0,0.08),inset_-2px_-2px_6px_rgba(255,255,255,0.7)]">
+<img class="w-full h-full object-cover" data-alt="Modern sci-fi book cover for 'Children of Time' with a macro photographic perspective of an intricate orbital bio-habitat surrounded by star dust and iridescent spider web strands in deep cosmic indigo and lavender tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZvkR0qRmlQiUevPI7WqH4Ck10TKtqvgNi2uBD5I6wldxsOYhuu8zUe0GFTK0HWXaDhij4nBQQk81K2_Phly_KC_pPEwnMy6qAD6Bbz-l8MabBLE-xrlLupOte7UlB1SWr0gmoDLNxeHXkiXCrTumoR4Pw363lBRmYJY2du-s9TG_D1K8XYnxm7hS0wUOS12ytHQL0H3SE0nsPpd9dUQqocu1dS5IOMb9c5xc8urrbPVqPC3j3WJ4c_w"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-md shadow-[2px_2px_4px_rgba(0,0,0,0.15)] text-[11px] font-semibold text-primary">
+                  96% Match
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface text-base">Children of Time</h4>
+<p class="text-xs text-on-surface-variant">Adrian Tchaikovsky • 2015</p>
+</div>
+<p class="text-xs text-on-surface-variant/90 line-clamp-2">
+                Accelerated evolutionary biology on a terraformed planet. Echoes your high ratings for Weir's scientific rigor.
+              </p>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-[11px] font-medium text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+                Digital Folio Ready
+              </span>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] text-xs font-semibold text-primary transition-all">
+                Borrow
+              </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.07),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between space-y-4 hover:translate-y-[-2px] transition-all">
+<div class="space-y-4">
+<div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface shadow-[inset_2px_2px_6px_rgba(0,0,0,0.08),inset_-2px_-2px_6px_rgba(255,255,255,0.7)]">
+<img class="w-full h-full object-cover" data-alt="Book cover for 'Seveneves' by Neal Stephenson, showing the Moon split into seven glowing fragments orbiting an atmospheric cloud-covered Earth, hard sci-fi minimalist layout with high contrast typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqSaS_Yb6rpD8bHKzC0qJNmoA43mgSmzjeQmtWc66lPC69EmN7BsYAOnyD2ExmH9sxH-hWmzDIQRm4aZOus7xu3PIwC-Gix0Wg84ssZDIxp2fIwOs2Dg7JKI5IZk_MoH4MLh_H8_zKVAXuyg5NF2gEyCjcRfl1KBPT6QiysEQJQfvV4QZZsuLMQOtZ0BxvPTIxgTflr82fUkUCueLeqsPCB6hQdWdzVGlFXn_cs5rhs7vAACuwdcp8Lw"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-md shadow-[2px_2px_4px_rgba(0,0,0,0.15)] text-[11px] font-semibold text-primary">
+                  92% Match
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface text-base">Seveneves</h4>
+<p class="text-xs text-on-surface-variant">Neal Stephenson • 2015</p>
+</div>
+<p class="text-xs text-on-surface-variant/90 line-clamp-2">
+                A catastrophic planetary event triggers extreme orbital mechanics and generational grit.
+              </p>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-[11px] font-medium text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">headphones</span>
+                Audio + Folio
+              </span>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] text-xs font-semibold text-primary transition-all">
+                Borrow
+              </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.07),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between space-y-4 hover:translate-y-[-2px] transition-all">
+<div class="space-y-4">
+<div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface shadow-[inset_2px_2px_6px_rgba(0,0,0,0.08),inset_-2px_-2px_6px_rgba(255,255,255,0.7)]">
+<img class="w-full h-full object-cover" data-alt="Book cover for 'The Three-Body Problem' by Cixin Liu, featuring three blazing suns aligned in chaotic gravitational dance over an arid metallic desert horizon, cool geometric aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgFuDiuPcdNwZDX1mcuLjG_PEWOw6DlXmrNExUkJVTL1RfEexrUSNfVZjwG0mWcdHMIngyQElRZGio2LkIekW0x4hRLnbTI7NCLpG2nExzs1ijKZaVK8BNCqNU-LsC33zDX5HqVM6hRWNRb1S6Y1gJniZK0aRnlFOh2MBOUufSLxmOROBvIlO7AaUA1SQErklOMDFH99dTEDez58fxMJWdD_WJ8TTmk7kKSP8x2TmLwLDIWWm7Ui9m7A"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-md shadow-[2px_2px_4px_rgba(0,0,0,0.15)] text-[11px] font-semibold text-primary">
+                  91% Match
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface text-base">The Three-Body Problem</h4>
+<p class="text-xs text-on-surface-variant">Cixin Liu • 2014</p>
+</div>
+<p class="text-xs text-on-surface-variant/90 line-clamp-2">
+                A monumental astrophysical puzzle unfolding against military history and orbital physics.
+              </p>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-[11px] font-medium text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-outline">schedule</span>
+                1 Copy on Hold
+              </span>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] text-xs font-semibold text-on-surface-variant hover:text-primary transition-all">
+                Place Hold
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Carousel 2: Architecture & Spatial Poetics -->
+<section class="space-y-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">domain</span>
+<h3 class="text-xl font-headline font-semibold text-on-surface">Deep Dive: Modern Architectural Theory &amp; Spatial Poetics</h3>
+</div>
+<p class="text-xs text-on-surface-variant mt-0.5 font-medium">Phenomenology, Tactile Architecture, and Environmental Aesthetics</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-9 h-9 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.07),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between space-y-4 hover:translate-y-[-2px] transition-all">
+<div class="space-y-4">
+<div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface shadow-[inset_2px_2px_6px_rgba(0,0,0,0.08),inset_-2px_-2px_6px_rgba(255,255,255,0.7)]">
+<img class="w-full h-full object-cover" data-alt="Book cover for 'The Eyes of the Skin: Architecture and the Senses' by Juhani Pallasmaa, showing textured raw tactile limestone and chiaroscuro light cast over a smooth entryway, architectural monograph style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4oOFxdA25s068Gf8-q6Ocm0E1KlX6A1tqXOiuSULL-xut_g8gMgyqH1fOVMuV7ywiIDMTRm7PRNMbe8JtNV-myq-oP407fI8ixtCmFq4Utjkg-BNa8a07Ep44kMRTm1J1Ffl7qCICqA3elzKdl0B-gQXNNzeWT2PAmAAEOKL9xYw9HvGueNrypdkIGR4xz0A9ul0_k9FreMyB9I0AU0wZnIoJhFMkDWfioGsZgPollfaSdqd7XyiXFw"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-md shadow-[2px_2px_4px_rgba(0,0,0,0.15)] text-[11px] font-semibold text-primary">
+                  98% Match
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface text-base">The Eyes of the Skin</h4>
+<p class="text-xs text-on-surface-variant">Juhani Pallasmaa • 1996</p>
+</div>
+<p class="text-xs text-on-surface-variant/90 line-clamp-2">
+                A seminal critique of ocularcentrism in building design, emphasizing touch, sound, and intimacy in space.
+              </p>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-[11px] font-medium text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+                Available in Main Stacks
+              </span>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] text-xs font-semibold text-primary transition-all">
+                Reserve Copy
+              </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.07),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between space-y-4 hover:translate-y-[-2px] transition-all">
+<div class="space-y-4">
+<div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface shadow-[inset_2px_2px_6px_rgba(0,0,0,0.08),inset_-2px_-2px_6px_rgba(255,255,255,0.7)]">
+<img class="w-full h-full object-cover" data-alt="Book cover for 'Atmospheres' by Peter Zumthor, exhibiting an exquisite composition of dark timber beams meeting Swiss alpine thermal bath waters with misty natural luminescence and subtle embossed silver title" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBScn63tUz2q_sVPlTaKe5hE5HYb9KCpMsEOxD2_R9DR8Bk2GJyAYOsjmRZCHkLvFLhTbtW4IXLTcYnUKa9-tWFcS8qnCOO8Gfy6FA1wk_1Vu-1j1yPP7HgTyM-kM6hpY5gVv9l8e6y3fg8u89dsn-N7Rsj1ISX8AzYx8KIFjv8DohweqfYAApid23ve3iPJXhQrQwGB1t7r73w4O0u-MIRYp5xfbKtTfS2yDT4VPMH8uNzH5VMuuV6ng"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-md shadow-[2px_2px_4px_rgba(0,0,0,0.15)] text-[11px] font-semibold text-primary">
+                  95% Match
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface text-base">Atmospheres</h4>
+<p class="text-xs text-on-surface-variant">Peter Zumthor • 2006</p>
+</div>
+<p class="text-xs text-on-surface-variant/90 line-clamp-2">
+                Nine poetic philosophical reflections on architectural quality, material resonance, and the temperature of rooms.
+              </p>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-[11px] font-medium text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">diamond</span>
+                Special Collections
+              </span>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] text-xs font-semibold text-primary transition-all">
+                Request View
+              </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-5 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.07),-6px_-6px_14px_rgba(255,255,255,0.8)] flex flex-col justify-between space-y-4 hover:translate-y-[-2px] transition-all">
+<div class="space-y-4">
+<div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface shadow-[inset_2px_2px_6px_rgba(0,0,0,0.08),inset_-2px_-2px_6px_rgba(255,255,255,0.7)]">
+<img class="w-full h-full object-cover" data-alt="Book cover for 'Species of Spaces and Other Pieces' by Georges Perec, conceptual minimalist layout with grids, isometric room blueprints, and French typographical elegance in slate and muted indigo tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeGowmfoqs4fD-O3IrnVo3-DMOEfUV4G4Y2Xxj1E1uYhUZKe3XnZXQ8z5KvScpUupjZ1lEmW00CxVzbwH2k-j4vUcGh12y_xbvr82ha1Nd7eFhWMuLuzI5osaW53BaccJ_T30-dNmtLBnFO8P0cw8zXA-bIKbtNrI742bpdNc3lgQRfAajDhhJUDwOsVEAWQYpGYRjOmuXuzcs2ICPY0DYBWh3sU8MzRTiFuidfQZgePjU7flexjegNw"/>
+<span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-md shadow-[2px_2px_4px_rgba(0,0,0,0.15)] text-[11px] font-semibold text-primary">
+                  94% Match
+                </span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface text-base">Species of Spaces</h4>
+<p class="text-xs text-on-surface-variant">Georges Perec • 1974</p>
+</div>
+<p class="text-xs text-on-surface-variant/90 line-clamp-2">
+                An inventory of everyday geography from the blank page to the bedroom, the apartment house, and the town.
+              </p>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-[11px] font-medium text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+                Digital Folio Ready
+              </span>
+<button class="px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] text-xs font-semibold text-primary transition-all">
+                Borrow
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Carousel 3: Community Circle Trending -->
+<section class="space-y-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">groups</span>
+<h3 class="text-xl font-headline font-semibold text-on-surface">Community Circle Trending</h3>
+</div>
+<p class="text-xs text-on-surface-variant mt-0.5 font-medium">What Fellows and Researchers at Central Branch Are Actively Debating</p>
+</div>
+<div class="inline-flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+            Central Branch Reading Circle
+          </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Community Card 1 -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.07),-6px_-6px_14px_rgba(255,255,255,0.8)] space-y-4">
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="text-[11px] font-semibold text-tertiary uppercase tracking-wider">Weekly Discourse Topic</span>
+<h4 class="text-lg font-headline font-semibold text-on-surface mt-0.5">The City &amp; The City</h4>
+<p class="text-xs text-on-surface-variant">China Miéville • Fiction Colloquium</p>
+</div>
+<div class="px-2.5 py-1 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">forum</span>
+                34 Comments
+              </div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] text-xs text-on-surface-variant italic">
+              "Patron Julian K.: 'The concept of ‘unseeing’ adjacent urban inhabitants is both a poignant metaphor for gentrification and an uncanny spatial riddle.'"
+            </div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-[10px] font-semibold text-primary shadow-sm">JK</div>
+<div class="w-7 h-7 rounded-full bg-tertiary/20 flex items-center justify-center text-[10px] font-semibold text-tertiary shadow-sm">MR</div>
+<div class="w-7 h-7 rounded-full bg-surface shadow-[1px_1px_3px_rgba(0,0,0,0.1)] flex items-center justify-center text-[10px] font-medium text-on-surface-variant">+19</div>
+</div>
+<span class="text-[11px] text-on-surface-variant">21 members joined</span>
+</div>
+<button class="px-4 py-2 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] text-xs font-semibold text-primary transition-all">
+                Join Discussion
+              </button>
+</div>
+</div>
+<!-- Community Card 2 -->
+<div class="p-6 rounded-2xl bg-surface shadow-[6px_6px_14px_rgba(0,0,0,0.07),-6px_-6px_14px_rgba(255,255,255,0.8)] space-y-4">
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="text-[11px] font-semibold text-primary uppercase tracking-wider">Historical Monograph Group</span>
+<h4 class="text-lg font-headline font-semibold text-on-surface mt-0.5">The Poetics of Space</h4>
+<p class="text-xs text-on-surface-variant">Gaston Bachelard • Architecture Circle</p>
+</div>
+<div class="px-2.5 py-1 rounded-xl bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">forum</span>
+                52 Comments
+              </div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] text-xs text-on-surface-variant italic">
+              "Patron Clara S.: 'The cellar as unconscious dread, the garret as conscious serenity. Every floor is a neurological stratum.'"
+            </div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full bg-secondary/20 flex items-center justify-center text-[10px] font-semibold text-on-secondary-container shadow-sm">CS</div>
+<div class="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-[10px] font-semibold text-primary shadow-sm">EV</div>
+<div class="w-7 h-7 rounded-full bg-surface shadow-[1px_1px_3px_rgba(0,0,0,0.1)] flex items-center justify-center text-[10px] font-medium text-on-surface-variant">+28</div>
+</div>
+<span class="text-[11px] text-on-surface-variant">30 members joined</span>
+</div>
+<button class="px-4 py-2 rounded-xl bg-surface shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.7)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] text-xs font-semibold text-primary transition-all">
+                Join Discussion
+              </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Section 4: "Why Was This Recommended?" Transparency Widget -->
+<section class="rounded-2xl bg-surface shadow-[6px_6px_16px_rgba(0,0,0,0.07),-6px_-6px_16px_rgba(255,255,255,0.85)] p-6 lg:p-8">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">troubleshoot</span>
+<h3 class="text-xl font-headline font-semibold text-on-surface">Why Was This Recommended? (Algorithmic Transparency)</h3>
+</div>
+<p class="text-xs md:text-sm text-on-surface-variant">
+            Eleanor, your suggestions are synthesized directly from your verified reading telemetry, annotation patterns, and borrow history.
+          </p>
+</div>
+<button class="px-5 py-2.5 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.08),-4px_-4px_10px_rgba(255,255,255,0.8)] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold text-primary flex items-center gap-2 transition-all shrink-0" id="refreshEngineBtn">
+<span class="material-symbols-outlined text-[18px]" id="refreshIcon">autorenew</span>
+          Refresh Recommendations
+        </button>
+</div>
+<!-- Breakdown Bars and Data Visualizations -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+<!-- Factor 1: Prose Tone -->
+<div class="p-5 rounded-xl bg-surface shadow-[inset_3px_3px_7px_rgba(0,0,0,0.05),inset_-3px_-3px_7px_rgba(255,255,255,0.7)] space-y-3">
+<div class="flex justify-between items-center text-xs">
+<span class="font-semibold text-on-surface">Prose Tone &amp; Syntactic Flow</span>
+<span class="font-mono font-bold text-primary">60%</span>
+</div>
+<!-- Inset progress bar track -->
+<div class="w-full h-2.5 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 60%"></div>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+            Identifies rhythmic pacing, Scandinavian phrasing cadence, and reflective interior monologues.
+          </p>
+</div>
+<!-- Factor 2: Subject Matter -->
+<div class="p-5 rounded-xl bg-surface shadow-[inset_3px_3px_7px_rgba(0,0,0,0.05),inset_-3px_-3px_7px_rgba(255,255,255,0.7)] space-y-3">
+<div class="flex justify-between items-center text-xs">
+<span class="font-semibold text-on-surface">Subject Matter &amp; Motifs</span>
+<span class="font-mono font-bold text-tertiary">25%</span>
+</div>
+<!-- Inset progress bar track -->
+<div class="w-full h-2.5 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 25%"></div>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+            Correlates structural engineering, spatial geometry, and speculative worldbuilding taxonomies.
+          </p>
+</div>
+<!-- Factor 3: Peer Network -->
+<div class="p-5 rounded-xl bg-surface shadow-[inset_3px_3px_7px_rgba(0,0,0,0.05),inset_-3px_-3px_7px_rgba(255,255,255,0.7)] space-y-3">
+<div class="flex justify-between items-center text-xs">
+<span class="font-semibold text-on-surface">Patron Peer Network</span>
+<span class="font-mono font-bold text-on-surface-variant">15%</span>
+</div>
+<!-- Inset progress bar track -->
+<div class="w-full h-2.5 rounded-full bg-surface shadow-[inset_1px_1px_3px_rgba(0,0,0,0.1),inset_-1px_-1px_3px_rgba(255,255,255,0.8)] overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 15%"></div>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+            Weighted by readers in the Central Branch circle with over 80% reading history overlap.
+          </p>
+</div>
+</div>
+<div class="mt-6 pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-on-surface-variant gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span>Zero third-party advertising tracking. Your library telemetry is protected by patron privacy protocols.</span>
+</div>
+<a class="font-semibold text-primary hover:underline transition-all" href="#">Manage Telemetry Permissions</a>
+</div>
+</section>
+</div>
+<!-- Interactive Modal / Drawer for Reading Taste Adjustment (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-on-background/40 backdrop-blur-sm hidden items-center justify-center p-4" id="tasteModal">
+<div class="w-full max-w-lg rounded-2xl bg-surface shadow-[10px_10px_30px_rgba(0,0,0,0.2),-10px_-10px_30px_rgba(255,255,255,0.9)] p-6 space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-surface shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.7)] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</div>
+<h4 class="font-headline font-semibold text-lg text-on-surface">Taste Profile Sliders</h4>
+</div>
+<button class="w-8 h-8 rounded-xl bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.08),-2px_-2px_5px_rgba(255,255,255,0.8)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface-variant" id="closeModalBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+        Adjust dynamic affinity parameters for Eleanor Vance. Changes will immediately recalibrate discovery weights.
+      </p>
+<div class="space-y-4">
+<!-- Slider 1 -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs font-medium text-on-surface">
+<span>Nordic / Brutalist Architecture</span>
+<span class="font-mono text-primary font-semibold">92%</span>
+</div>
+<div class="relative flex items-center h-5">
+<div class="w-full h-2 rounded-full bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.8)]">
+<div class="h-full bg-primary rounded-full" style="width: 92%"></div>
+</div>
+<div class="absolute left-[92%] -translate-x-1/2 w-4 h-4 rounded-full bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.2),-2px_-2px_5px_rgba(255,255,255,0.9)] cursor-pointer"></div>
+</div>
+</div>
+<!-- Slider 2 -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs font-medium text-on-surface">
+<span>Hard Sci-Fi / Space Travel</span>
+<span class="font-mono text-primary font-semibold">84%</span>
+</div>
+<div class="relative flex items-center h-5">
+<div class="w-full h-2 rounded-full bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.8)]">
+<div class="h-full bg-primary rounded-full" style="width: 84%"></div>
+</div>
+<div class="absolute left-[84%] -translate-x-1/2 w-4 h-4 rounded-full bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.2),-2px_-2px_5px_rgba(255,255,255,0.9)] cursor-pointer"></div>
+</div>
+</div>
+<!-- Slider 3 -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs font-medium text-on-surface">
+<span>Modernist Continental Philosophy</span>
+<span class="font-mono text-tertiary font-semibold">78%</span>
+</div>
+<div class="relative flex items-center h-5">
+<div class="w-full h-2 rounded-full bg-surface shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.8)]">
+<div class="h-full bg-tertiary rounded-full" style="width: 78%"></div>
+</div>
+<div class="absolute left-[78%] -translate-x-1/2 w-4 h-4 rounded-full bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.2),-2px_-2px_5px_rgba(255,255,255,0.9)] cursor-pointer"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-4">
+<button class="px-4 py-2 rounded-xl bg-surface shadow-[2px_2px_5px_rgba(0,0,0,0.06),-2px_-2px_5px_rgba(255,255,255,0.8)] text-xs font-semibold text-on-surface-variant" id="cancelModalBtn">
+          Reset
+        </button>
+<button class="px-5 py-2 rounded-xl bg-surface shadow-[4px_4px_10px_rgba(0,0,0,0.08),-4px_-4px_10px_rgba(255,255,255,0.8)] text-xs font-semibold text-primary" id="saveModalBtn">
+          Save Profile
+        </button>
+</div>
+</div>
+</div>
+<!-- Client-side Micro-interactions -->
+<script>
+    (function() {
+      // Highlight "Recommendations" in parent App Shell navigation
+      const navLinks = document.querySelectorAll('header nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'recommendations') {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('bg-surface', 'text-primary', 'shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)]', 'font-semibold');
+        } else {
+          link.classList.remove('bg-surface', 'text-primary', 'shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)]', 'font-semibold');
+          link.classList.add('text-on-surface-variant');
+        }
+      });
+
+      // Taste profile tuning modal controls
+      const tuneBtn = document.getElementById('tuneProfileBtn');
+      const modal = document.getElementById('tasteModal');
+      const closeBtn = document.getElementById('closeModalBtn');
+      const cancelBtn = document.getElementById('cancelModalBtn');
+      const saveBtn = document.getElementById('saveModalBtn');
+
+      function openModal() {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      if (tuneBtn) tuneBtn.addEventListener('click', openModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+      if (saveBtn) saveBtn.addEventListener('click', closeModal);
+
+      // Refresh engine animation interaction
+      const refreshBtn = document.getElementById('refreshEngineBtn');
+      const refreshIcon = document.getElementById('refreshIcon');
+
+      if (refreshBtn && refreshIcon) {
+        refreshBtn.addEventListener('click', function() {
+          refreshIcon.classList.add('animate-spin');
+          setTimeout(() => {
+            refreshIcon.classList.remove('animate-spin');
+          }, 850);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-12 mt-16 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b-0"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-xl bg-surface flex items-center justify-center shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.6)] text-primary"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><span class="text-base font-headline font-semibold text-on-surface">BookSphere Public Library System</span></div><div class="flex items-center gap-6 text-xs text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>System Online</span><span>•</span><span>142,500+ Items Cataloged</span><span>•</span><span>Library Card Active</span></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-on-surface-variant"><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" href="#">Borrowing Rules</a><a class="hover:text-on-surface transition-colors" href="#">Digital Archives</a><a class="hover:text-on-surface transition-colors" href="#">Branch Locations</a><a class="hover:text-on-surface transition-colors" href="#">Help &amp; Patron Support</a></div><p>© 2024 BookSphere Municipal Library Network. All rights reserved.</p></div></div></footer></body></html>

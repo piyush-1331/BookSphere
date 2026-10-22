@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>BookSphere Patron Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#d6d8de", "tertiary-fixed-dim": "#c4b5fd", "surface-container": "#e2e4ea", "on-primary-container": "#e0e2ff", "primary-container": "#818cf8", "surface-variant": "#dcdee4", "on-tertiary-fixed-variant": "#5b21b6", "on-background": "#2e3040", "background": "#e8eaf0", "tertiary-container": "#a78bfa", "surface-container-high": "#dcdee4", "surface-tint": "#6366f1", "surface-container-low": "#e5e7ed", "primary-fixed": "#e0e2ff", "secondary-container": "#d8dae6", "surface-container-lowest": "#f0f2f8", "on-error-container": "#991b1b", "secondary-fixed-dim": "#b8baca", "error": "#dc2626", "on-surface": "#2e3040", "surface-bright": "#edeef4", "on-secondary-container": "#585a68", "secondary-fixed": "#d8dae6", "surface": "#e8eaf0", "tertiary": "#7c3aed", "tertiary-fixed": "#ede9fe", "on-tertiary-fixed": "#2e1065", "on-secondary-fixed-variant": "#404252", "on-secondary-fixed": "#1a1b26", "primary-fixed-dim": "#a5b4fc", "on-primary-fixed-variant": "#4338ca", "inverse-surface": "#2e3040", "on-surface-variant": "#585a68", "inverse-primary": "#a5b4fc", "primary": "#6366f1", "inverse-on-surface": "#e8eaf0", "on-tertiary": "#ffffff", "on-error": "#ffffff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "outline-variant": "#d0d2dc", "error-container": "#fee2e2", "outline": "#8a8c9a", "on-primary-fixed": "#1e1b4b", "secondary": "#6c6e7e", "on-tertiary-container": "#3b1f63", "surface-dim": "#d4d6dc" }, "borderRadius": { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" }, "spacing": {}, "fontFamily": { "headline": [ "Plus Jakarta Sans" ], "display": [ "Plus Jakarta Sans" ], "body": [ "Plus Jakarta Sans" ], "label": [ "Plus Jakarta Sans" ] }, "fontSize": {} } } }</script></head><body class="bg-background font-body text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><div class="flex items-center gap-3 cursor-pointer"><div class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center shadow-[4px_4px_10px_rgba(0,0,0,0.08),-4px_-4px_10px_rgba(255,255,255,0.7)] text-primary"><span class="material-symbols-outlined text-[22px]">auto_stories</span></div><span class="text-lg font-headline font-semibold tracking-tight text-on-surface">BookSphere</span></div><nav class="hidden xl:flex items-center gap-1.5" data-active-classes="bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] font-semibold"><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="dashboard" href="#">Dashboard</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="explore-directory" href="#">Explore Directory</a><a aria-current="page" class="px-3.5 py-2 rounded-xl transition-all bg-surface text-primary shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] font-semibold" data-path="my-books" href="#">My Books</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="favorites" href="#">Favorites</a><a class="px-3.5 py-2 rounded-xl text-sm text-on-surface-variant hover:text-on-surface transition-all" data-path="recommendations" href="#">Recommendations</a></nav></div><div class="hidden md:flex items-center flex-1 max-w-xs mx-4"><div class="w-full flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface shadow-[inset_3px_3px_6px_rgba(0,0,0,0.06),inset_-3px_-3px_6px_rgba(255,255,255,0.6)]"><span class="material-symbols-outlined text-outline text-[20px]">search</span><input class="w-full bg-transparent border-0 outline-none text-xs text-on-surface placeholder:text-outline font-medium" placeholder="Search catalog..." type="text"/><kbd class="px-1.5 py-0.5 text-[10px] rounded bg-surface shadow-[2px_2px_4px_rgba(0,0,0,0.06),-2px_-2px_4px_rgba(255,255,255,0.6)] text-on-surface-variant font-mono">⌘K</kbd></div></div><div class="flex items-center gap-3.5"><div class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.6)] cursor-pointer"><span class="material-symbols-outlined text-primary text-[18px]">book</span><span class="text-xs font-semibold text-on-surface">3 Active Loans</span></div><button class="relative w-9 h-9 rounded-xl bg-surface shadow-[3px_3px_8px_rgba(0,0,0,0.06),-3px_-3px_8px_rgba(255,255,255,0.6)] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-2.5 pl-1 cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="text-xs font-semibold text-on-surface leading-tight">Eleanor Vance</span><span class="text-[11px] text-on-surface-variant leading-tight">Patron</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Interactive Style Helper for Neomorphic States -->
+<style>
+    .neo-raised {
+      box-shadow: 6px 6px 14px rgba(0,0,0,0.07), -6px -6px 14px rgba(255,255,255,0.75);
+    }
+    .neo-raised-sm {
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.06), -3px -3px 8px rgba(255,255,255,0.7);
+    }
+    .neo-pressed {
+      box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.6);
+    }
+    .neo-pressed-sm {
+      box-shadow: inset 2px 2px 5px rgba(0,0,0,0.06), inset -2px -2px 5px rgba(255,255,255,0.6);
+    }
+  </style>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-8 w-full space-y-10">
+<!-- Header & Quick Overview Section -->
+<div class="space-y-6">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-primary bg-surface neo-pressed-sm">Patron Shelf</span>
+<span class="text-xs text-outline font-medium tracking-tight">CARD #BS-8842-V</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface tracking-tight">
+            My Digital Shelf &amp; Borrowing History
+          </h1>
+<p class="text-sm sm:text-base text-on-surface-variant max-w-2xl font-normal leading-relaxed">
+            Manage your active loans, renewal deadlines, downloaded folios, and past reading archive with zero municipal late penalties.
+          </p>
+</div>
+<!-- Quick Top Action Buttons -->
+<div class="flex flex-wrap items-center gap-3 self-start lg:self-end">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface text-primary neo-raised active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold transition-all">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Download All (.epub)</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface text-on-surface-variant hover:text-on-surface neo-raised active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold transition-all">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+<span>Export (CSV/BibTeX)</span>
+</button>
+</div>
+</div>
+<!-- Quick Stats Metrics Bento -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+<!-- Stat 1 -->
+<div class="p-4 rounded-2xl bg-surface neo-raised flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center neo-pressed text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">book_2</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-xl font-headline font-semibold text-on-surface">3</span>
+<span class="w-2 h-2 rounded-full bg-error animate-pulse" title="1 item due soon"></span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium truncate">Active Loans (1 Due Soon)</p>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="p-4 rounded-2xl bg-surface neo-raised flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center neo-pressed text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">pending_actions</span>
+</div>
+<div class="min-w-0">
+<span class="text-xl font-headline font-semibold text-on-surface">1</span>
+<p class="text-xs text-on-surface-variant font-medium truncate">Hold in Transit / Ready</p>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="p-4 rounded-2xl bg-surface neo-raised flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center neo-pressed text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+</div>
+<div class="min-w-0">
+<span class="text-xl font-headline font-semibold text-on-surface">24</span>
+<p class="text-xs text-on-surface-variant font-medium truncate">Titles Read &amp; Archived</p>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="p-4 rounded-2xl bg-surface neo-raised flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center neo-pressed text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="min-w-0">
+<span class="text-xl font-headline font-semibold text-on-surface">$0.00</span>
+<p class="text-xs text-on-surface-variant font-medium truncate">Zero Fines (Good Standing)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Segmented Tab Bar -->
+<div class="p-1.5 rounded-2xl bg-surface neo-pressed flex flex-wrap gap-1 items-center max-w-full overflow-x-auto">
+<button class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-surface text-primary neo-raised flex items-center gap-2 shrink-0 transition-all">
+<span class="material-symbols-outlined text-[17px]">local_library</span>
+<span>Currently Borrowed</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-surface neo-pressed font-bold">3</span>
+</button>
+<button class="px-5 py-2.5 rounded-xl text-xs font-medium text-on-surface-variant hover:text-on-surface flex items-center gap-2 shrink-0 transition-all">
+<span class="material-symbols-outlined text-[17px]">bookmark</span>
+<span>Holds &amp; Reserves</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-surface-container-highest font-bold">1</span>
+</button>
+<button class="px-5 py-2.5 rounded-xl text-xs font-medium text-on-surface-variant hover:text-on-surface flex items-center gap-2 shrink-0 transition-all">
+<span class="material-symbols-outlined text-[17px]">history_edu</span>
+<span>Past Borrowing Archive</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-surface-container-highest font-bold">24</span>
+</button>
+<button class="px-5 py-2.5 rounded-xl text-xs font-medium text-on-surface-variant hover:text-on-surface flex items-center gap-2 shrink-0 transition-all">
+<span class="material-symbols-outlined text-[17px]">stylus_note</span>
+<span>Digital Notes &amp; Highlights</span>
+</button>
+</div>
+<!-- Section 1: Active Loans Detailed Interactive Cards -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-6 rounded-full bg-primary"></div>
+<h2 class="text-xl font-headline font-semibold text-on-surface">Active Borrowed Titles</h2>
+<span class="text-xs text-on-surface-variant font-mono">3 / 10 Max Allowed</span>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">sync</span>
+<span>Cloud Whispersync Active</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Card 1: The Architecture of Silence -->
+<div class="rounded-2xl bg-surface neo-raised p-6 flex flex-col justify-between relative overflow-hidden group">
+<!-- Urgency Accent Tab -->
+<div class="absolute top-0 right-0 pt-3 pr-4">
+<span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-surface text-error neo-pressed-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+              Due in 4 Days
+            </span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 items-start">
+<div class="w-20 h-28 rounded-xl overflow-hidden shrink-0 neo-pressed p-1 bg-surface">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Minimalist architectural book cover for The Architecture of Silence with clean concrete structures, indigo geometry, soft overcast lighting, modern graphic design layout, matte texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj0azY5L9onQS9Dk9qIu2eEXhMJv7btY9SY2461h7yxl1Uq02JWAV8tC24eczxZk2_QQ8ifaRr7brZlB8_E4395fX3wf5BDJrsbU4kukiDlk5za9zucehZXAvenDi4PTJcgoWKQVrPEmqHs1P-nhPMY8yW1EXFVSwqxGb5HnmW0mlTKg0ZewFw3ey7Q6cGeK_y9Nxk0vpawMSFFaVZWGNlNPLYkdYxuogsMXK55aDiAhjpMU2CjWb5NQ"/>
+</div>
+<div class="min-w-0 pr-12">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[14px]">menu_book</span> EPUB Folio
+                </span>
+<h3 class="text-base font-headline font-semibold text-on-surface leading-tight truncate" title="The Architecture of Silence">
+                  The Architecture of Silence
+                </h3>
+<p class="text-xs text-on-surface-variant mt-0.5 font-medium">Helena Vance</p>
+<div class="mt-2 text-[11px] text-secondary space-y-0.5 font-mono">
+<div>Loaned: Oct 29, 2025</div>
+<div class="text-error font-semibold">Due: Nov 12, 2025</div>
+</div>
+</div>
+</div>
+<!-- Reading Progress Widget -->
+<div class="p-3.5 rounded-xl bg-surface neo-pressed space-y-2">
+<div class="flex items-center justify-between text-xs font-medium">
+<span class="text-on-surface-variant">Reading Progress</span>
+<span class="text-primary font-semibold font-mono">68% <span class="text-[10px] text-outline font-normal">(p. 261/384)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high neo-pressed-sm overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-5 mt-4 space-y-2.5">
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface text-primary neo-raised active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold flex items-center justify-center gap-2 hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">chrome_reader_mode</span>
+<span>Open Reader</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-xl bg-surface text-on-surface-variant hover:text-primary neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[15px]">update</span>
+<span>Renew (+14d)</span>
+</button>
+<button class="py-2 px-3 rounded-xl bg-surface text-outline hover:text-error neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[15px]">keyboard_return</span>
+<span>Return Early</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Project Hail Mary -->
+<div class="rounded-2xl bg-surface neo-raised p-6 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 pt-3 pr-4">
+<span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-surface text-on-surface-variant neo-pressed-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              11 Days Left
+            </span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 items-start">
+<div class="w-20 h-28 rounded-xl overflow-hidden shrink-0 neo-pressed p-1 bg-surface">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Sci-fi cosmic book cover for Project Hail Mary with deep indigo nebula, starship thruster trail, glowing starlight, cinematic aesthetic, high-detail digital illustration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqJl9UdHBo-mCMU_Y4evKypwmt4DexxrWzycdYE23SLzAsqLHoNbW83t1T1ETow_htArhxlRkMdUetGVNAYBx0L6x1TUS2eddsQHKkY8tZPgZPcLHL2RKNXjh88s-CI06Silj0PpFCShNg3MuCmL1k1v0gOgnleRxyFyzrudw_e4WwKFM1df8ge6T_6Kjk-cMUNrY6qh5qXa_XKLsyEM9dSG-3_onDiToyg1qfLyXfxFPESIgM5y9cSg"/>
+</div>
+<div class="min-w-0 pr-12">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-tertiary uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[14px]">headphones</span> Unabridged Audio
+                </span>
+<h3 class="text-base font-headline font-semibold text-on-surface leading-tight truncate" title="Project Hail Mary">
+                  Project Hail Mary
+                </h3>
+<p class="text-xs text-on-surface-variant mt-0.5 font-medium">Andy Weir (Ray Porter)</p>
+<div class="mt-2 text-[11px] text-secondary space-y-0.5 font-mono">
+<div>Loaned: Oct 22, 2025</div>
+<div>Due: Nov 19, 2025</div>
+</div>
+</div>
+</div>
+<!-- Audio Progress Widget -->
+<div class="p-3.5 rounded-xl bg-surface neo-pressed space-y-2">
+<div class="flex items-center justify-between text-xs font-medium">
+<span class="text-on-surface-variant">Listening Time</span>
+<span class="text-tertiary font-semibold font-mono">75% <span class="text-[10px] text-outline font-normal">(4h left / 16h 10m)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high neo-pressed-sm overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-tertiary transition-all duration-500" style="width: 75%;"></div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-5 mt-4 space-y-2.5">
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface text-tertiary neo-raised active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold flex items-center justify-center gap-2 hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+<span>Play Audiobook</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-xl bg-surface text-on-surface-variant hover:text-tertiary neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[15px]">update</span>
+<span>Renew (+14d)</span>
+</button>
+<button class="py-2 px-3 rounded-xl bg-surface text-outline hover:text-error neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[15px]">keyboard_return</span>
+<span>Return Early</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Klara and the Sun -->
+<div class="rounded-2xl bg-surface neo-raised p-6 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 pt-3 pr-4">
+<span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-surface text-on-surface-variant neo-pressed-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              14 Days Left
+            </span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 items-start">
+<div class="w-20 h-28 rounded-xl overflow-hidden shrink-0 neo-pressed p-1 bg-surface">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Artistic subtle yellow and solar gradient book cover for Klara and the Sun with gentle light flare, silhouette of an artificial friend in window, poetic modern literature vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1XFI8nUu8SojhhBPuOW5_HKAxfhdepw7ePNbz2nhHQYlpL9XDLipizYWqczRGjvSPRmpas_nULSf5iaVJBzahmWk7t2DBxw3574t8tHZ6k7jSe2iaKwCIvBLY2hV1muW5BvoJ3iosKju60cAJFb2v2Y7P1pNRs7H0Kq085tsdqwQJlL476ZlH0UIkFV1bgNCzVn2GsUcfS1GgjYZkVd9lHRlyoyYmVXV-snhE2-J5lmcbW2Tf10L-FQ"/>
+</div>
+<div class="min-w-0 pr-12">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[14px]">devices</span> Kindle Whispernet
+                </span>
+<h3 class="text-base font-headline font-semibold text-on-surface leading-tight truncate" title="Klara and the Sun">
+                  Klara and the Sun
+                </h3>
+<p class="text-xs text-on-surface-variant mt-0.5 font-medium">Kazuo Ishiguro</p>
+<div class="mt-2 text-[11px] text-secondary space-y-0.5 font-mono">
+<div>Loaned: Nov 1, 2025</div>
+<div>Due: Nov 22, 2025</div>
+</div>
+</div>
+</div>
+<!-- Reading Progress Widget -->
+<div class="p-3.5 rounded-xl bg-surface neo-pressed space-y-2">
+<div class="flex items-center justify-between text-xs font-medium">
+<span class="text-on-surface-variant">Device Synced</span>
+<span class="text-on-surface font-semibold font-mono">35% <span class="text-[10px] text-outline font-normal">(Ch. 4)</span></span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high neo-pressed-sm overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 35%;"></div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-5 mt-4 space-y-2.5">
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface text-primary neo-raised active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold flex items-center justify-center gap-2 hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>Sync to Kindle</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-xl bg-surface text-on-surface-variant hover:text-primary neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[15px]">update</span>
+<span>Renew (+14d)</span>
+</button>
+<button class="py-2 px-3 rounded-xl bg-surface text-outline hover:text-error neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-[11px] font-medium flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[15px]">keyboard_return</span>
+<span>Return Early</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Informational Policy Alert Card -->
+<div class="p-6 rounded-2xl bg-surface neo-raised flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface neo-pressed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[26px]">shield_with_heart</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-headline font-semibold text-on-surface">BookSphere Frictionless Guarantee</h4>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-surface text-primary neo-pressed-sm">No Late Fees</span>
+</div>
+<p class="text-xs text-on-surface-variant max-w-3xl leading-relaxed">
+            Digital folios seamlessly return to the municipal cloud at 11:59 PM on their designated due date. If no fellow patron is waiting on the reserve queue, eligible titles automatically renew for an additional 14 days.
+          </p>
+</div>
+</div>
+<button class="shrink-0 px-4 py-2 rounded-xl bg-surface text-xs font-semibold text-on-surface-variant hover:text-primary neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] transition-all">
+        View Borrowing Policies
+      </button>
+</div>
+<!-- Section 3: Holds & Queued Section -->
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-6 rounded-full bg-tertiary"></div>
+<h2 class="text-xl font-headline font-semibold text-on-surface">Holds &amp; Reserved Titles</h2>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-surface text-tertiary neo-pressed-sm">1 Ready to Check Out</span>
+</div>
+<span class="text-xs text-on-surface-variant font-mono">Quota: 1/5 Active Reserves</span>
+</div>
+<div class="rounded-2xl bg-surface neo-raised p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="w-16 h-24 rounded-xl overflow-hidden shrink-0 neo-pressed p-1 bg-surface">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Cover of Tomorrow and Tomorrow and Tomorrow with vibrant wave artwork inspired by Hokusai, colorful artistic title typography, pastel lavender and cobalt shades." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjm8pGzZbaUR2yI46z0Bx8WD4DdChwfD474vUFsPmSrYSv3p4PIbhGoM4YSxGzCVwQ8VUqA9A64UxtO7tRz6BHdOyGdFoAmdcr-Y5f0ylwUfDENitTudRm-bUgy6vkXgspqc8_UXo76b2mYI6WnNQfoxlFSf9Nu8SrncwfbxfuFWh4mUZu0p75yNjnxAZ7AEoQSauI8L9k0WeMh-adaKzAOp8o5ZxWyY17AMGnAlY4KjMsOI4UwGWpUQ"/>
+</div>
+<div class="space-y-1.5">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-surface text-tertiary neo-pressed-sm uppercase">Ready for Checkout</span>
+<span class="text-xs text-error font-medium flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">timer</span> 3 days remaining to claim
+              </span>
+</div>
+<h3 class="text-lg font-headline font-semibold text-on-surface">Tomorrow, and Tomorrow, and Tomorrow</h3>
+<p class="text-xs text-on-surface-variant">Gabrielle Zevin • Digital EPUB Folio &amp; Annex Physical Copy</p>
+<p class="text-xs text-outline pt-1">
+              Location: Central Library Annex Desk or direct download to your e-Reader app.
+            </p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 self-end md:self-center w-full md:w-auto">
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-surface text-tertiary neo-raised active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.7)] text-xs font-semibold flex items-center justify-center gap-2 hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">file_download_done</span>
+<span>Borrow Now (Use 1 of 7 Quota)</span>
+</button>
+<button class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-surface text-outline hover:text-error neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] text-xs font-medium flex items-center justify-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Cancel Hold</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section 4: Borrowing History & Archive Preview -->
+<div class="space-y-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-6 rounded-full bg-secondary"></div>
+<div>
+<h2 class="text-xl font-headline font-semibold text-on-surface">Borrowing History &amp; Archive</h2>
+<p class="text-xs text-on-surface-variant">Showing recent 3 of 24 returned titles with ratings and highlights</p>
+</div>
+</div>
+<!-- History Filter/Search Box -->
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface neo-pressed w-full sm:w-64">
+<span class="material-symbols-outlined text-outline text-[18px]">search</span>
+<input class="bg-transparent border-0 outline-none text-xs text-on-surface placeholder:text-outline font-medium w-full" placeholder="Filter completed books..." type="text"/>
+</div>
+<button class="p-2 rounded-xl bg-surface text-on-surface-variant hover:text-on-surface neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)]" title="Filter list">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- History Table / Structured Card List -->
+<div class="rounded-2xl bg-surface neo-raised overflow-hidden">
+<div class="divide-y-0">
+<!-- Row 1: Designing Data-Intensive Applications -->
+<div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-center gap-4 min-w-0">
+<div class="w-12 h-16 rounded-lg overflow-hidden shrink-0 neo-pressed p-0.5 bg-surface">
+<img class="w-full h-full object-cover rounded" data-alt="Technical O'Reilly style book cover for Designing Data-Intensive Applications with an engraved boar animal illustration, clean red and black framing on cream paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLcrE57QsE1jyOv6RUajRxbA2mETlQtTFy40VT0_V7g5I4_R6wPia8m6HgDgnt68YKeBd9C8BUMwGS_jLbhOvN3phN6F1cYfErk_OHXWbiFjTU8BX2wVi3ULcTvmDtLQfO85Wz-x8YqF2nu1FoTFAj-TM-nwINYxzG4tHR2i7Qm_J3kynQ9LOsuoS32ULktPAwOe1KnCyY0YNiFt1EGh94OV5cNNwq5lGPES-jt4sw0hZFLy8fMblBzQ"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-headline font-semibold text-on-surface truncate">Designing Data-Intensive Applications</h4>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-surface text-primary neo-pressed-sm shrink-0">EPUB</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-0.5">Martin Kleppmann • Returned Oct 15, 2025</p>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[11px] text-on-surface-variant ml-1 font-mono">5.0 Patron Rating</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2.5 self-end sm:self-center shrink-0">
+<button class="px-3 py-1.5 rounded-xl bg-surface text-xs font-semibold text-on-surface-variant hover:text-primary neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">bookmark_border</span>
+<span>Borrow Again</span>
+</button>
+<button class="p-1.5 rounded-xl bg-surface text-outline hover:text-on-surface neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)]" title="Options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-6"></div>
+<!-- Row 2: Atomic Habits -->
+<div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-center gap-4 min-w-0">
+<div class="w-12 h-16 rounded-lg overflow-hidden shrink-0 neo-pressed p-0.5 bg-surface">
+<img class="w-full h-full object-cover rounded" data-alt="Minimalist book cover for Atomic Habits with clean dots pattern forming circular gradient, crisp modern sans-serif typography, clean white and bright yellow accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBinUBOzEgHNqBio__B2eie6FwoWJWXr7OIkvJKTZpY5725y7KvkkKBRMOdB4GWWhvXzHsNXBKx83Ybvp21s1ILh3hc5JXVJ_EjmzKL9cEVSoGoGaY_Y9wsi83a0ySd1HPQBYNPqIxS7paJb0OPdcSfLkYxaxvwS02IxQ9PSQjxsZ8kyblGjQ4XnHeqiDg7lSC5iAImUCXbdgXouFIUNDgzaRhUoNsKsCxi5wMCpLNv4dwee3aJA3Pzug"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-headline font-semibold text-on-surface truncate">Atomic Habits</h4>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-surface text-tertiary neo-pressed-sm shrink-0">Audio</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-0.5">James Clear • Returned Sep 28, 2025</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 text-[11px] text-primary font-medium">
+<span class="material-symbols-outlined text-[14px]">edit_note</span> 14 Highlights Saved
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2.5 self-end sm:self-center shrink-0">
+<button class="px-3 py-1.5 rounded-xl bg-surface text-xs font-semibold text-primary neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">notes</span>
+<span>View Notes</span>
+</button>
+<button class="px-3 py-1.5 rounded-xl bg-surface text-xs font-semibold text-on-surface-variant hover:text-primary neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">bookmark_border</span>
+<span>Borrow Again</span>
+</button>
+<button class="p-1.5 rounded-xl bg-surface text-outline hover:text-on-surface neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)]" title="Options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-6"></div>
+<!-- Row 3: Piranesi -->
+<div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-center gap-4 min-w-0">
+<div class="w-12 h-16 rounded-lg overflow-hidden shrink-0 neo-pressed p-0.5 bg-surface">
+<img class="w-full h-full object-cover rounded" data-alt="Cover of Piranesi by Susanna Clarke featuring classical marble statues surrounded by ocean tides inside infinite halls, ethereal blue and soft stone tones, high detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPKArwBd02Qhz6FHOuC3d-LSg3sTre7mEBa-pfn2LtXC8l8tZfqjX2r5TEMIZLV4hfTOBViVJSO4agelxJ-6YMzbG4CXJC0gzwA3D99ZCWOou5Eb-wgYhXJUqg9ljhSK0brUAzhX-6fNWIc36mhCLfj_kTcHAEfRrOE9IZ8vzdIMWIz9a_fHgg-dHwAWOzaHy88QPrgtOk1SdSJHDncC96wZuis6JkhnwlN2ExApQ2LO5h0k5EzmG-mQ"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-headline font-semibold text-on-surface truncate">Piranesi</h4>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-surface text-secondary neo-pressed-sm shrink-0">EPUB</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-0.5">Susanna Clarke • Returned Aug 12, 2025</p>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px] text-outline">star</span>
+<span class="text-[11px] text-on-surface-variant ml-1 font-mono">4.0 Patron Rating</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2.5 self-end sm:self-center shrink-0">
+<button class="px-3 py-1.5 rounded-xl bg-surface text-xs font-semibold text-on-surface-variant hover:text-primary neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">bookmark_border</span>
+<span>Borrow Again</span>
+</button>
+<button class="p-1.5 rounded-xl bg-surface text-outline hover:text-on-surface neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)]" title="Options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- History Pagination Bar -->
+<div class="px-6 py-4 bg-surface flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant">
+<span>Showing 1 – 3 of 24 returned items</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface neo-pressed flex items-center justify-center text-outline cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="px-3 py-1 rounded-lg bg-surface text-primary neo-pressed-sm font-semibold">1</span>
+<button class="px-3 py-1 rounded-lg bg-surface text-on-surface-variant hover:text-on-surface neo-raised-sm">2</button>
+<button class="px-3 py-1 rounded-lg bg-surface text-on-surface-variant hover:text-on-surface neo-raised-sm">3</button>
+<span class="text-outline">...</span>
+<button class="px-3 py-1 rounded-lg bg-surface text-on-surface-variant hover:text-on-surface neo-raised-sm">8</button>
+<button class="w-8 h-8 rounded-lg bg-surface neo-raised-sm active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.08),inset_-2px_-2px_4px_rgba(255,255,255,0.7)] flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low py-12 mt-16 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b-0"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-xl bg-surface flex items-center justify-center shadow-[3px_3px_6px_rgba(0,0,0,0.06),-3px_-3px_6px_rgba(255,255,255,0.6)] text-primary"><span class="material-symbols-outlined text-[18px]">auto_stories</span></div><span class="text-base font-headline font-semibold text-on-surface">BookSphere Public Library System</span></div><div class="flex items-center gap-6 text-xs text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>System Online</span><span>•</span><span>142,500+ Items Cataloged</span><span>•</span><span>Library Card Active</span></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-on-surface-variant"><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" href="#">Borrowing Rules</a><a class="hover:text-on-surface transition-colors" href="#">Digital Archives</a><a class="hover:text-on-surface transition-colors" href="#">Branch Locations</a><a class="hover:text-on-surface transition-colors" href="#">Help &amp; Patron Support</a></div><p>© 2024 BookSphere Municipal Library Network. All rights reserved.</p></div></div></footer></body></html>
