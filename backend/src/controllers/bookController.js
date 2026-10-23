@@ -17,10 +17,13 @@ const getBooks = async (req, res, next) => {
   try {
     const {
       search,
+      scope = 'general',
       title,
       genre,
       category,
       author,
+      isbn,
+      ISBN,
       availability,
       page = 1,
       limit = 10,
@@ -30,17 +33,32 @@ const getBooks = async (req, res, next) => {
 
     const filter = {};
 
-    // 1. Text / Keyword Search (Title, Author, Description, ISBN)
+    // 1. Text / Keyword Search with optional scope targeting
     if (search && search.trim() !== '') {
       const sanitizedSearch = escapeRegex(search.trim());
-      filter.$or = [
-        { title: { $regex: sanitizedSearch, $options: 'i' } },
-        { author: { $regex: sanitizedSearch, $options: 'i' } },
-        { ISBN: { $regex: sanitizedSearch, $options: 'i' } },
-        { category: { $regex: sanitizedSearch, $options: 'i' } },
-        { genre: { $regex: sanitizedSearch, $options: 'i' } },
-        { description: { $regex: sanitizedSearch, $options: 'i' } },
-      ];
+      const cleanScope = (scope || 'general').toLowerCase();
+
+      if (cleanScope === 'title') {
+        filter.title = { $regex: sanitizedSearch, $options: 'i' };
+      } else if (cleanScope === 'author') {
+        filter.author = { $regex: sanitizedSearch, $options: 'i' };
+      } else if (cleanScope === 'isbn') {
+        filter.ISBN = { $regex: sanitizedSearch, $options: 'i' };
+      } else if (cleanScope === 'category') {
+        filter.category = { $regex: sanitizedSearch, $options: 'i' };
+      } else if (cleanScope === 'genre') {
+        filter.genre = { $regex: sanitizedSearch, $options: 'i' };
+      } else {
+        // General / All fields search
+        filter.$or = [
+          { title: { $regex: sanitizedSearch, $options: 'i' } },
+          { author: { $regex: sanitizedSearch, $options: 'i' } },
+          { ISBN: { $regex: sanitizedSearch, $options: 'i' } },
+          { category: { $regex: sanitizedSearch, $options: 'i' } },
+          { genre: { $regex: sanitizedSearch, $options: 'i' } },
+          { description: { $regex: sanitizedSearch, $options: 'i' } },
+        ];
+      }
     }
 
     // 2. Specific Title Search/Filter
@@ -48,22 +66,28 @@ const getBooks = async (req, res, next) => {
       filter.title = { $regex: escapeRegex(title.trim()), $options: 'i' };
     }
 
-    // 2. Genre Filter
-    if (genre && genre.trim() !== '' && genre.toLowerCase() !== 'all') {
-      filter.genre = { $regex: `^${escapeRegex(genre.trim())}$`, $options: 'i' };
-    }
-
-    // 3. Category Filter
-    if (category && category.trim() !== '' && category.toLowerCase() !== 'all') {
-      filter.category = {
-        $regex: `^${escapeRegex(category.trim())}$`,
-        $options: 'i',
-      };
-    }
-
-    // 4. Author Filter
+    // 3. Author Filter
     if (author && author.trim() !== '') {
       filter.author = { $regex: escapeRegex(author.trim()), $options: 'i' };
+    }
+
+    // 4. ISBN Filter
+    const isbnQuery = isbn || ISBN;
+    if (isbnQuery && isbnQuery.trim() !== '') {
+      filter.ISBN = { $regex: escapeRegex(isbnQuery.trim()), $options: 'i' };
+    }
+
+    // 5. Genre Filter
+    if (genre && genre.trim() !== '' && genre.toLowerCase() !== 'all') {
+      filter.genre = { $regex: escapeRegex(genre.trim()), $options: 'i' };
+    }
+
+    // 6. Category Filter
+    if (category && category.trim() !== '' && category.toLowerCase() !== 'all') {
+      filter.category = {
+        $regex: escapeRegex(category.trim()),
+        $options: 'i',
+      };
     }
 
     // 5. Availability Filter

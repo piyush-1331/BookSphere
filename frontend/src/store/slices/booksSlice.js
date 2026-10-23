@@ -69,11 +69,17 @@ export const deleteBook = createAsyncThunk(
 
 const initialFilters = {
   search: '',
+  scope: 'general',
+  title: '',
+  author: '',
+  isbn: '',
   genre: '',
   category: '',
-  available: '',
+  availability: '',
   sortBy: 'createdAt',
   order: 'desc',
+  page: 1,
+  limit: 12,
 };
 
 const initialState = {
@@ -114,9 +120,12 @@ const booksSlice = createSlice({
   extraReducers: (builder) => {
     builder
       // Fetch books
-      .addCase(fetchBooks.pending, (state) => {
+      .addCase(fetchBooks.pending, (state, action) => {
         state.loading = true;
         state.error = null;
+        if (action.meta?.arg) {
+          state.filters = { ...state.filters, ...action.meta.arg };
+        }
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.loading = false;

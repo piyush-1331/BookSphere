@@ -26,6 +26,7 @@ describe('BookSphere Book Management, Circulation & Favorites Test Suite', () =>
   let adminToken = null;
 
   let testBookId = null;
+  let testBookISBN = null;
   let zeroStockBookId = null;
   let adminCreatedBookId = null;
   let testBorrowId = null;
@@ -103,6 +104,7 @@ describe('BookSphere Book Management, Circulation & Favorites Test Suite', () =>
       formats: ['epub', 'hardcover'],
     });
     testBookId = book._id.toString();
+    testBookISBN = book.ISBN;
 
     // 5. Create a Book with Zero Available Copies (out of stock)
     const outOfStockBook = await Book.create({
@@ -190,6 +192,59 @@ describe('BookSphere Book Management, Circulation & Favorites Test Suite', () =>
       assert.equal(res.status, 200);
       assert.equal(res.body.success, true);
       assert.ok(res.body.data.some((b) => b._id === testBookId));
+    });
+
+    it('should search books by ISBN query parameter', async () => {
+      const res = await request(app).get(`/api/books?isbn=${encodeURIComponent(testBookISBN)}`);
+      assert.equal(res.status, 200);
+      assert.equal(res.body.success, true);
+      assert.ok(res.body.data.length >= 1);
+      assert.equal(res.body.data[0].ISBN, testBookISBN);
+    });
+
+    it('should search books with specific scope=title', async () => {
+      const res = await request(app).get(`/api/books?search=Chronology&scope=title`);
+      assert.equal(res.status, 200);
+      assert.equal(res.body.success, true);
+      assert.ok(res.body.data.some((b) => b._id === testBookId));
+    });
+
+    it('should search books with specific scope=author', async () => {
+      const res = await request(app).get(`/api/books?search=Alistair&scope=author`);
+      assert.equal(res.status, 200);
+      assert.equal(res.body.success, true);
+      assert.ok(res.body.data.some((b) => b._id === testBookId));
+    });
+
+    it('should search books with specific scope=isbn', async () => {
+      const res = await request(app).get(`/api/books?search=${encodeURIComponent(testBookISBN)}&scope=isbn`);
+      assert.equal(res.status, 200);
+      assert.equal(res.body.success, true);
+      assert.ok(res.body.data.some((b) => b.ISBN === testBookISBN));
+    });
+
+    it('should search books with specific scope=genre', async () => {
+      const res = await request(app).get(`/api/books?search=Astrophysics&scope=genre`);
+      assert.equal(res.status, 200);
+      assert.equal(res.body.success, true);
+      assert.ok(res.body.data.some((b) => b._id === testBookId));
+    });
+
+    it('should search books with specific scope=category', async () => {
+      const res = await request(app).get(`/api/books?search=Science&scope=category`);
+      assert.equal(res.status, 200);
+      assert.equal(res.body.success, true);
+      assert.ok(res.body.data.some((b) => b._id === testBookId));
+    });
+
+    it('should search books matching multi-field criteria simultaneously', async () => {
+      const res = await request(app).get(
+        `/api/books?title=Chronology&author=Finch&genre=Astrophysics&category=Science%20%26%20Technology&isbn=${encodeURIComponent(testBookISBN)}`
+      );
+      assert.equal(res.status, 200);
+      assert.equal(res.body.success, true);
+      assert.equal(res.body.data.length, 1);
+      assert.equal(res.body.data[0]._id, testBookId);
     });
 
     it('should filter available books only', async () => {

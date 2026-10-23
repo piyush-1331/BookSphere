@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBooks } from '../store/slices/booksSlice';
+import { fetchBooks, setFilters, resetFilters } from '../store/slices/booksSlice';
 import { borrowBook } from '../store/slices/borrowSlice';
 import { fetchFavorites } from '../store/slices/favoritesSlice';
 
@@ -33,10 +33,12 @@ export const BooksPage = () => {
   const currentQuery = useMemo(() => {
     return {
       search: searchParams.get('search') || '',
+      scope: searchParams.get('scope') || 'general',
       title: searchParams.get('title') || '',
       genre: searchParams.get('genre') || '',
       category: searchParams.get('category') || '',
       author: searchParams.get('author') || '',
+      isbn: searchParams.get('isbn') || searchParams.get('ISBN') || '',
       availability:
         searchParams.get('availability') || searchParams.get('available') || '',
       sortBy: searchParams.get('sortBy') || 'createdAt',
@@ -46,8 +48,9 @@ export const BooksPage = () => {
     };
   }, [searchParams]);
 
-  // Synchronize catalog with API whenever URL search params change
+  // Synchronize catalog with API whenever URL search params change and update Redux filter state
   useEffect(() => {
+    dispatch(setFilters(currentQuery));
     dispatch(fetchBooks(currentQuery));
   }, [dispatch, currentQuery]);
 
@@ -58,19 +61,60 @@ export const BooksPage = () => {
     }
   }, [dispatch, isAuthenticated]);
 
-  // Search handler supporting title, author, and general keyword modes
+  // Search handler supporting title, author, isbn, category, genre, and general keyword modes
   const handleSearch = ({ term, type = 'general' }) => {
     const nextParams = new URLSearchParams(searchParams);
     nextParams.delete('search');
+    nextParams.delete('scope');
     nextParams.delete('title');
+    nextParams.delete('author');
+    nextParams.delete('isbn');
+    nextParams.delete('ISBN');
+    nextParams.delete('category');
+    nextParams.delete('genre');
 
-    if (type === 'title') {
-      if (term) nextParams.set('title', term);
-    } else if (type === 'author') {
-      if (term) nextParams.set('author', term);
-      else nextParams.delete('author');
-    } else {
-      if (term) nextParams.set('search', term);
+    if (term && term.trim()) {
+      const cleanTerm = term.trim();
+      if (type === 'title') {
+        nextParams.set('title', cleanTerm);
+      } else if (type === 'author') {
+        nextParams.set('author', cleanTerm);
+      } else if (type === 'isbn') {
+        nextParams.set('isbn', cleanTerm);
+      } else if (type === 'category') {
+        nextParams.set('category', cleanTerm);
+      } else if (type === 'genre') {
+        nextParams.set('genre', cleanTerm);
+      } else {
+        nextParams.set('search', cleanTerm);
+        nextParams.set('scope', 'general');
+      }
+    }
+
+    nextParams.delete('page');
+    setSearchParams(nextParams);
+  };
+
+  // Multi-field advanced search handler (combines title, author, isbn, category, genre)
+  const handleAdvancedSearch = (fields = {}) => {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete('search');
+    nextParams.delete('scope');
+    nextParams.delete('title');
+    nextParams.delete('author');
+    nextParams.delete('isbn');
+    nextParams.delete('ISBN');
+    nextParams.delete('category');
+    nextParams.delete('genre');
+
+    if (fields.title?.trim()) nextParams.set('title', fields.title.trim());
+    if (fields.author?.trim()) nextParams.set('author', fields.author.trim());
+    if (fields.isbn?.trim()) nextParams.set('isbn', fields.isbn.trim());
+    if (fields.category?.trim() && fields.category !== 'All Categories') {
+      nextParams.set('category', fields.category.trim());
+    }
+    if (fields.genre?.trim() && fields.genre !== 'All Genres') {
+      nextParams.set('genre', fields.genre.trim());
     }
 
     nextParams.delete('page');
@@ -94,6 +138,7 @@ export const BooksPage = () => {
   // Reset all filters and search query parameters
   const handleResetFilters = () => {
     setSearchParams({});
+    dispatch(resetFilters());
   };
 
   // Pagination page change handler
@@ -205,14 +250,20 @@ export const BooksPage = () => {
         </div>
       </header>
 
-      {/* Multi-Scope Search Bar: Title, Author, or General Keyword */}
+      {/* Multi-Scope Search Bar: Title, Author, ISBN, Category, Genre, or General Keyword */}
       <section aria-label="Search Catalog" className="w-full">
         <SearchBar
           search={currentQuery.search}
+          scope={currentQuery.scope}
           title={currentQuery.title}
           author={currentQuery.author}
+          isbn={currentQuery.isbn}
+          category={currentQuery.category}
+          genre={currentQuery.genre}
           onSearch={handleSearch}
-          className="w-full max-w-3xl"
+          onAdvancedSearch={handleAdvancedSearch}
+          onReset={handleResetFilters}
+          className="w-full"
         />
       </section>
 
@@ -243,7 +294,17 @@ export const BooksPage = () => {
               showBorrowButton={true}
               skeletonCount={currentQuery.limit}
               emptyTitle="No Catalog Volumes Discovered"
-              emptyDescription="We could not find any books matching your specific search query or active filter criteria. Try broadening your keywords or clearing selected filters."
+              emptyDescription={
+                currentQuery.search ||
+                currentQuery.title ||
+                currentQuery.author ||
+                currentQuery.isbn ||
+                currentQuery.category ||
+                currentQuery.genre ||
+                (currentQuery.availability && currentQuery.availability !== 'all')
+                  ? 'We could not find any books matching your specific search query or active filter criteria. Try adjusting your search term, changing scope, or clearing filters.'
+                  : 'There are currently no catalog volumes available in the library directory.'
+              }
               emptyActionLabel="Reset All Filters"
               onEmptyAction={handleResetFilters}
             />

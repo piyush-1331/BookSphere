@@ -16,6 +16,11 @@ const bookQuerySchema = z.object({
   genre: z.string().trim().max(50).optional(),
   category: z.string().trim().max(50).optional(),
   author: z.string().trim().max(100).optional(),
+  isbn: z.string().trim().max(50).optional(),
+  ISBN: z.string().trim().max(50).optional(),
+  scope: z
+    .enum(['all', 'general', 'title', 'author', 'isbn', 'category', 'genre'])
+    .optional(),
   availability: z
     .enum(['true', 'false', 'available', 'unavailable', 'all'])
     .optional(),

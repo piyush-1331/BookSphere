@@ -1,44 +1,9 @@
-const GENRES = [
-  'All Genres',
-  'Architecture & Design',
-  'Speculative Fiction',
-  'Computer Science',
-  'Literary Fiction',
-  'Astrophysics',
-  'Historical Epigraphy',
-  'Environmental Science',
-  'Philosophy & Ethics',
-  'Science Fiction',
-  'History',
-  'Psychology',
-];
-
-const CATEGORIES = [
-  'All Categories',
-  'Architecture',
-  'Literary Fiction',
-  'Science & Technology',
-  'Rare Manuscripts',
-  'Arts & Humanities',
-  'Philosophy & Ethics',
-  'History & Civilization',
-];
-
-const SORT_OPTIONS = [
-  { id: 'newest', label: 'Newest', sortBy: 'createdAt', order: 'desc' },
-  { id: 'title-asc', label: 'Title (A-Z)', sortBy: 'title', order: 'asc' },
-  { id: 'title-desc', label: 'Title (Z-A)', sortBy: 'title', order: 'desc' },
-  { id: 'popularity', label: 'Popularity', sortBy: 'rating', order: 'desc' },
-];
-
-const SUGGESTED_INQUIRIES = [
-  'Quantum Cosmology',
-  'Architectural Theory',
-  'Neurological Habits',
-  'Speculative AI Fiction',
-  'Helena Vance',
-  'Andy Weir',
-];
+import {
+  GENRES,
+  CATEGORIES,
+  SORT_OPTIONS,
+  SUGGESTED_INQUIRIES,
+} from './catalogConstants';
 
 /**
  * FilterPanel component supporting genre, category, author, availability,
@@ -73,6 +38,7 @@ export const FilterPanel = ({
     Boolean(filters.genre) ||
     Boolean(filters.category) ||
     Boolean(filters.author) ||
+    Boolean(filters.isbn) ||
     Boolean(filters.search) ||
     Boolean(filters.title) ||
     (filters.availability && filters.availability !== 'all');
@@ -276,6 +242,19 @@ export const FilterPanel = ({
                 <button
                   type="button"
                   onClick={() => onFilterChange({ author: '' })}
+                  className="hover:text-error transition-colors flex items-center ml-1"
+                >
+                  <span className="material-symbols-outlined text-[14px]">close</span>
+                </button>
+              </span>
+            )}
+
+            {filters.isbn && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface neo-raised-sm text-xs text-on-surface">
+                <span className="text-primary font-semibold">ISBN:</span> {filters.isbn}
+                <button
+                  type="button"
+                  onClick={() => onFilterChange({ isbn: '' })}
                   className="hover:text-error transition-colors flex items-center ml-1"
                 >
                   <span className="material-symbols-outlined text-[14px]">close</span>
