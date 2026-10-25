@@ -146,11 +146,11 @@ BookSphere uses a decoupled, three-tier microservice architecture where client i
 ```mermaid
 flowchart TD
     subgraph Client_Tier ["Client Tier (Browser)"]
-        U["Library Patron / Admin User"]
-        SPA["React 19 + Vite SPA"]
-        RTK["Redux Toolkit Store<br/>(books, auth, borrow, favorites)"]
-        Router["React Router 7<br/>(URL Query Sync)"]
-        AX["Axios Client<br/>(Interceptors & Token Auth)"]
+        U["Library Patron or Admin User"]
+        SPA["React 19 and Vite SPA"]
+        RTK["Redux Toolkit Store"]
+        Router["React Router 7 Navigation"]
+        AX["Axios HTTP Client"]
         
         U --> SPA
         SPA <--> RTK
@@ -160,12 +160,12 @@ flowchart TD
 
     subgraph Backend_Gateway_Tier ["Backend Gateway Tier (Port 5000)"]
         EXP["Express.js 5 REST Server"]
-        MW["Security Stack<br/>(Helmet, CORS, RateLimiter, CookieParser)"]
+        MW["Security Stack (Helmet, CORS, Rate Limiter)"]
         VAL["Zod Request Validation"]
-        AUTH["JWT Auth & Role Guard<br/>(User / Admin)"]
-        CTRL["Domain Controllers<br/>(Books, Borrows, Favorites, Auth, Users)"]
+        AUTH["JWT Auth and Role Guards"]
+        CTRL["Domain Controllers"]
         
-        AX -->|HTTPS / JSON Requests| EXP
+        AX -->|"HTTPS JSON Requests"| EXP
         EXP --> MW
         MW --> VAL
         VAL --> AUTH
@@ -173,19 +173,19 @@ flowchart TD
     end
 
     subgraph Database_Tier ["Cloud Database Tier"]
-        MDB[("MongoDB Atlas Cloud Cluster<br/>(Collections: books, users, borrows, favorites)")]
-        CTRL -->|Mongoose 9 ODM<br/>(Atomic $inc, Compound & Text Indexes)| MDB
+        MDB[("MongoDB Atlas Cloud Database")]
+        CTRL -->|"Mongoose 9 ODM Queries"| MDB
     end
 
     subgraph AI_Microservice_Tier ["AI Service Tier (Port 8000)"]
         FAST["Python FastAPI Microservice"]
         PDS["Pydantic Schema Validation"]
-        REC["Content-Based Scoring Engine<br/>(Genre, Category, Author, Keyword overlap)"]
+        REC["Content-Based Scoring Engine"]
         
-        CTRL -->|Internal Token-Authenticated HTTP<br/>(AI_SERVICE_TOKEN)| FAST
+        CTRL -->|"Internal Token HTTP"| FAST
         FAST --> PDS
         PDS --> REC
-        REC -->|Scored Recommendations + Explanations| CTRL
+        REC -->|"Scored Recommendations"| CTRL
     end
 ```
 
@@ -364,19 +364,21 @@ BookSphere was developed following an **Agile / Iterative Development Model**. R
 ```mermaid
 flowchart LR
     subgraph Iteration_1 ["Iteration 1: Foundation"]
-        I1A["Data Models & Express Server"] --> I1B["React SPA & Catalog Grid"]
+        I1A["Data Models and Express Server"] --> I1B["React SPA and Catalog Grid"]
     end
     subgraph Iteration_2 ["Iteration 2: Discovery"]
-        I2A["Search & Multi-Filter Engine"] --> I2B["Pagination & Sorting"]
+        I2A["Search and Filter Engine"] --> I2B["Pagination and Sorting"]
     end
-    subgraph Iteration_3 ["Iteration 3: Auth & Circulation"]
-        I3A["JWT Auth & Security"] --> I3B["Borrowing & Returns"]
+    subgraph Iteration_3 ["Iteration 3: Auth and Circulation"]
+        I3A["JWT Auth and Security"] --> I3B["Borrowing and Returns"]
     end
-    subgraph Iteration_4 ["Iteration 4: AI & Admin"]
-        I4A["FastAPI Recommender"] --> I4B["Admin Management & Audit"]
+    subgraph Iteration_4 ["Iteration 4: AI and Admin"]
+        I4A["FastAPI Recommender"] --> I4B["Admin Management and Audit"]
     end
 
-    Iteration_1 --> Iteration_2 --> Iteration_3 --> Iteration_4
+    I1B --> I2A
+    I2B --> I3A
+    I3B --> I4A
 ```
 
 ### Why Agile is Suitable for BookSphere
@@ -394,26 +396,26 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    Patron((Library Patron))
-    Admin((Library Admin))
+    Patron["Library Patron"]
+    Admin["Library Admin"]
 
     subgraph BookSphere_System ["BookSphere Online Book Management System"]
-        UC1([Browse Book Catalog])
-        UC2([Search Books by Keyword / Scope])
-        UC3([Apply Advanced Filters & Sorting])
-        UC4([View Book Details & Stock])
-        UC5([Register / Sign In])
-        UC6([Borrow Book Volume])
-        UC7([Return Borrowed Book])
-        UC8([Manage Favorites Shelf])
-        UC9([View Personalized Recommendations])
-        UC10([Update Patron Profile])
+        UC1(["Browse Book Catalog"])
+        UC2(["Search Books by Keyword or Scope"])
+        UC3(["Apply Advanced Filters and Sorting"])
+        UC4(["View Book Details and Stock"])
+        UC5(["Register and Sign In"])
+        UC6(["Borrow Book Volume"])
+        UC7(["Return Borrowed Book"])
+        UC8(["Manage Favorites Shelf"])
+        UC9(["View Personalized Recommendations"])
+        UC10(["Update Patron Profile"])
         
-        UC11([Create / Update / Delete Books])
-        UC12([View Admin Circulation Dashboard])
-        UC13([Manage Patron Directory])
-        UC14([Audit Overdue Loans])
-        UC15([Approve / Reject Borrow Requests])
+        UC11(["Create, Update, or Delete Books"])
+        UC12(["View Admin Circulation Dashboard"])
+        UC13(["Manage Patron Directory"])
+        UC14(["Audit Overdue Loans"])
+        UC15(["Approve or Reject Borrow Requests"])
     end
 
     Patron --> UC1
@@ -448,26 +450,26 @@ sequenceDiagram
     autonumber
     actor Patron as Library Patron
     participant UI as React Catalog (BooksPage)
-    participant SearchBar as SearchBar / FilterPanel
+    participant SearchUI as SearchBar and FilterPanel
     participant RTK as Redux (booksSlice)
     participant AX as Axios Client
-    participant API as Express Router & Controller
+    participant API as Express Router and Controller
     participant DB as MongoDB Atlas
 
-    Patron->>SearchBar: Select Category ("Science"), Genre ("Astrophysics"), Sort ("Popularity")
-    SearchBar->>UI: onFilterChange(filters)
-    UI->>UI: Update URL parameters via useSearchParams()
-    UI->>RTK: dispatch(fetchBooks(queryParams))
+    Patron->>SearchUI: Select Category, Genre, and Sorting
+    SearchUI->>UI: onFilterChange(filters)
+    UI->>UI: Update URL parameters via useSearchParams
+    UI->>RTK: dispatch(fetchBooks)
     RTK->>AX: api.books.getAll(params)
-    AX->>API: GET /api/books?category=Science&genre=Astrophysics&sortBy=rating&order=desc
+    AX->>API: GET /api/books with query parameters
     API->>API: Validate query with bookQuerySchema (Zod)
-    API->>API: escapeRegex(search) & construct MongoDB filter
-    API->>DB: Book.find(filter).sort().skip().limit() + Book.countDocuments(filter)
-    DB-->>API: Matching Book Documents & Total Count
-    API-->>AX: HTTP 200 { success: true, data: [...], pagination: {...} }
-    AX-->>RTK: fetchBooks.fulfilled(payload)
-    RTK-->>UI: Update Redux state (books, pagination, loading=false)
-    UI-->>Patron: Render Filtered Book Cards with Active Filter Chips
+    API->>API: Escape regex and construct MongoDB filter
+    API->>DB: Execute Book find query and countDocuments
+    DB-->>API: Matching Book documents and total count
+    API-->>AX: HTTP 200 response with books and pagination
+    AX-->>RTK: fetchBooks fulfilled
+    RTK-->>UI: Update Redux state with catalog data
+    UI-->>Patron: Render filtered book cards
 ```
 
 ---
@@ -491,7 +493,7 @@ classDiagram
         +Number totalCopies
         +Number availableCopies
         +String status
-        +List~String~ formats
+        +Array formats
         +Number rating
         +Number pageCount
         +String fileSize
@@ -563,7 +565,7 @@ classDiagram
     Book "1" --> "0..*" Favorite : bookmarked_as
     BookController ..> Book : queries
     BorrowController ..> Borrow : manages
-    BorrowController ..> Book : updates copies
+    BorrowController ..> Book : updates_copies
     FastApiRecommender ..> Book : analyzes
 ```
 
@@ -573,35 +575,35 @@ classDiagram
 
 ```mermaid
 flowchart TD
-    Start([Start]) --> OpenCatalog[Patron Opens BookSphere Catalog Page]
-    OpenCatalog --> DisplayDefault[Fetch and Display Default Paginated Books]
-    DisplayDefault --> UserAction{Patron Interaction?}
+    StartNode([Start]) --> OpenCatalog["Patron Opens BookSphere Catalog Page"]
+    OpenCatalog --> DisplayDefault["Fetch and Display Default Paginated Books"]
+    DisplayDefault --> UserAction{"Patron Interaction?"}
 
-    UserAction -->|Enter Search Term| InputQuery[Input Title, Author, ISBN, or General Keyword]
-    UserAction -->|Select Category / Genre| SelectFilter[Choose Category or Genre Dropdown Option]
-    UserAction -->|Select Availability| SelectStock[Toggle 'Available Now' or 'All Copies']
-    UserAction -->|Change Sorting| SelectSort[Choose Newest, Title A-Z, or Popularity]
-    UserAction -->|Click Clear Filters| ClearAll[Click 'Reset Filters' or Remove Filter Chip]
+    UserAction -->|Enter Search Term| InputQuery["Input Title, Author, ISBN, or Keyword"]
+    UserAction -->|Select Filters| SelectFilter["Choose Category or Genre Option"]
+    UserAction -->|Select Availability| SelectStock["Toggle Available Now or All Copies"]
+    UserAction -->|Change Sorting| SelectSort["Choose Newest, Title, or Popularity"]
+    UserAction -->|Clear Filters| ClearAll["Click Reset Filters Action"]
 
-    InputQuery --> CombineState[Combine Query & Filter State]
+    InputQuery --> CombineState["Combine Query and Filter State"]
     SelectFilter --> CombineState
     SelectStock --> CombineState
     SelectSort --> CombineState
-    ClearAll --> ResetQuery[Reset State to Defaults]
+    ClearAll --> ResetQuery["Reset State to Defaults"]
     ResetQuery --> SendAPI
 
-    CombineState --> SyncURL[Update Browser URL Search Parameters]
-    SyncURL --> SendAPI[Dispatch Axios GET /api/books with Query Parameters]
+    CombineState --> SyncURL["Update Browser URL Search Parameters"]
+    SyncURL --> SendAPI["Dispatch Axios GET Request to Express API"]
     
-    SendAPI --> ExpressProcess[Express Sanitizes Regex & Validates Schema]
-    ExpressProcess --> QueryMongo[Execute MongoDB Indexed Query & Count]
-    QueryMongo --> ResultsFound{Matching Books Found?}
+    SendAPI --> ExpressProcess["Express Sanitizes Regex and Validates Schema"]
+    ExpressProcess --> QueryMongo["Execute MongoDB Indexed Query and Count"]
+    QueryMongo --> ResultsFound{"Matching Books Found?"}
 
-    ResultsFound -->|Yes| RenderGrid[Render Responsive Book Cards with Pagination Controls]
-    ResultsFound -->|No| RenderEmpty[Render EmptyState Component with Reset Action]
+    ResultsFound -->|Yes| RenderGrid["Render Responsive Book Cards and Pagination"]
+    ResultsFound -->|No| RenderEmpty["Render EmptyState with Reset Option"]
 
-    RenderGrid --> End([End / Await Next Action])
-    RenderEmpty --> End
+    RenderGrid --> EndNode([End])
+    RenderEmpty --> EndNode
 ```
 
 ---
@@ -615,11 +617,11 @@ erDiagram
         string name
         string email UK
         string passwordHash
-        string role "user | admin"
+        string role
         string profile_cardId UK
         string profile_branch
         number profile_quotaLimit
-        string profile_status "active | grace_period | flagged | inactive"
+        string profile_status
         string profile_avatar
         string profile_bio
         string profile_phone
@@ -645,8 +647,8 @@ erDiagram
         string coverImage
         number totalCopies
         number availableCopies
-        string status "available | borrowed | reserved | maintenance | archived"
-        string_array formats "epub | audiobook | hardcover | pdf"
+        string status
+        string_array formats
         number rating
         number pageCount
         string fileSize
@@ -659,11 +661,11 @@ erDiagram
         ObjectId _id PK
         ObjectId user FK
         ObjectId book FK
-        string format "epub | audiobook | hardcover | pdf"
+        string format
         date borrowedAt
         date dueDate
         date returnedAt
-        string status "pending | borrowed | returned | overdue | rejected"
+        string status
         number renewalCount
         string notes
         date createdAt
@@ -679,10 +681,10 @@ erDiagram
         date updatedAt
     }
 
-    USER ||--o{ BORROW : "borrows (1:N)"
-    BOOK ||--o{ BORROW : "circulated_in (1:N)"
-    USER ||--o{ FAVORITE : "favorites (1:N)"
-    BOOK ||--o{ FAVORITE : "saved_in (1:N)"
+    USER ||--o{ BORROW : places
+    BOOK ||--o{ BORROW : included_in
+    USER ||--o{ FAVORITE : saves
+    BOOK ||--o{ FAVORITE : bookmarked_in
 ```
 
 ---
